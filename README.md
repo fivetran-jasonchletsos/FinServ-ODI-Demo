@@ -9,6 +9,20 @@ ODI's pitch in one line: **storage, catalog, and compute are independently
 swappable open standards** — Iceberg + Glue + (Athena | DuckDB | Trino | Spark | …).
 No warehouse vendor in the path. AI agents read the lake directly.
 
+## Quick demo (synthetic only, ~30 seconds)
+
+No API keys, no AWS, no Fivetran. The snapshot JSONs are pre-built and
+checked in under `meridian-app/frontend/public/data/`.
+
+```bash
+cd meridian-app/frontend
+npm ci
+npm run dev    # http://localhost:5173
+```
+
+That's it — the full site is browsable against the committed synthetic
+snapshot. Skip to **AWS deployment** below to wire it to live data.
+
 ```
    ┌────────────────────────────────────────────────────────────┐
    │  Three public APIs                                         │
