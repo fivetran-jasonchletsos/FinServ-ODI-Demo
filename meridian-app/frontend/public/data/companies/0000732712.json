@@ -1,0 +1,462 @@
+{
+  "company": {
+    "cik": "0000732712",
+    "ticker": "VZ",
+    "name": "Verizon Communications",
+    "sector": "Communication Services",
+    "industry": "Telecom",
+    "exchange": "NYSE",
+    "market_cap": 175000000000,
+    "employees": 105000,
+    "hq_city": "New York",
+    "hq_state": "NY",
+    "description": "Verizon Communications is a telecom company headquartered in New York, NY.",
+    "revenue_ttm": 134000000000,
+    "net_income_ttm": 29242243644,
+    "total_assets": 232917453292,
+    "total_liabilities": 139486040975,
+    "revenue_growth_yoy": -0.0027,
+    "net_margin": 0.2182,
+    "risk_score": 26.65,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 10,
+    "last_filing_date": "2026-05-05",
+    "last_complaint_date": "2024-07-22",
+    "filings": [
+      {
+        "accession_no": "0000732712-26-627030",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2026-05-05",
+        "period_of_report": "2026-05-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3479
+      },
+      {
+        "accession_no": "0000732712-26-456785",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2026-04-28",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 41301
+      },
+      {
+        "accession_no": "0000732712-26-246533",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2026-04-20",
+        "period_of_report": "2026-04-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3146
+      },
+      {
+        "accession_no": "0000732712-26-971112",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-K",
+        "filing_date": "2026-03-06",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 143281
+      },
+      {
+        "accession_no": "0000732712-26-322970",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2026-01-16",
+        "period_of_report": "2026-01-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2730
+      },
+      {
+        "accession_no": "0000732712-25-091772",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-12-14",
+        "period_of_report": "2025-12-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1131
+      },
+      {
+        "accession_no": "0000732712-25-298263",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-11-12",
+        "period_of_report": "2025-11-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1935
+      },
+      {
+        "accession_no": "0000732712-25-566620",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-01",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 42042
+      },
+      {
+        "accession_no": "0000732712-25-773252",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-22",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28278
+      },
+      {
+        "accession_no": "0000732712-25-622194",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-07-20",
+        "period_of_report": "2025-07-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3187
+      },
+      {
+        "accession_no": "0000732712-25-086083",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2025-04-30",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 30697
+      },
+      {
+        "accession_no": "0000732712-25-040834",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-03-26",
+        "period_of_report": "2025-03-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1474
+      },
+      {
+        "accession_no": "0000732712-25-894644",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-K",
+        "filing_date": "2025-03-10",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 90431
+      },
+      {
+        "accession_no": "0000732712-25-297478",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-02-19",
+        "period_of_report": "2025-02-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1062
+      },
+      {
+        "accession_no": "0000732712-25-494098",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-02-17",
+        "period_of_report": "2025-02-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2254
+      },
+      {
+        "accession_no": "0000732712-25-674721",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-02-03",
+        "period_of_report": "2025-02-03",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 5017
+      },
+      {
+        "accession_no": "0000732712-25-827896",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-01-21",
+        "period_of_report": "2025-01-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2192
+      },
+      {
+        "accession_no": "0000732712-25-884558",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2025-01-17",
+        "period_of_report": "2025-01-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 3804
+      },
+      {
+        "accession_no": "0000732712-24-083313",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2024-12-26",
+        "period_of_report": "2024-12-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 1281
+      },
+      {
+        "accession_no": "0000732712-24-504991",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2024-12-18",
+        "period_of_report": "2024-12-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4366
+      },
+      {
+        "accession_no": "0000732712-24-483695",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2024-12-07",
+        "period_of_report": "2024-12-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2018
+      },
+      {
+        "accession_no": "0000732712-24-997935",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-08",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 44674
+      },
+      {
+        "accession_no": "0000732712-24-112905",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2024-10-27",
+        "period_of_report": "2024-10-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4477
+      },
+      {
+        "accession_no": "0000732712-24-409778",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "8-K",
+        "filing_date": "2024-08-30",
+        "period_of_report": "2024-08-30",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2368
+      },
+      {
+        "accession_no": "0000732712-24-849631",
+        "cik": "0000732712",
+        "ticker": "VZ",
+        "company_name": "Verizon Communications",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-12",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000732712&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 42827
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402993",
+        "date_received": "2024-07-22",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Identity theft reporting",
+        "issue": "Unable to get your credit report or credit score",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "Verizon Communications",
+        "company_normalized": "VERIZON COMMUNICATIONS",
+        "cik": "0000732712",
+        "state": "OH",
+        "zip_prefix": "253xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "Closed with non-monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Spectrum-auction capital requirements",
+      "Content-amortization step-up as streaming originals expand",
+      "Cord-cutting acceleration in linear TV portfolio"
+    ],
+    "ai_summary": "Verizon Communications sits in the Moderate risk band. Revenue trajectory is essentially flat, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

@@ -1,0 +1,41 @@
+.DS_Store
+.vscode/
+.idea/
+.env
+.env.local
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+meridian-app/frontend/node_modules/
+meridian-app/frontend/dist/
+
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/logs/
+transform/.user.yml
+
+# Terraform — local state ONLY (use remote state in production)
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate*
+infra/*.tfvars
+!infra/terraform.tfvars.example
+
+# Fivetran connector secrets
+connectors/*/configuration.json
+!connectors/*/configuration.example.json
+connectors/*/files/
+connectors/*/state.json
+connectors/*/warehouse.db
+
+# Build artifacts
+logs/
+*.log

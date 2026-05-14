@@ -1,0 +1,449 @@
+{
+  "company": {
+    "cik": "0000034088",
+    "ticker": "XOM",
+    "name": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas Integrated",
+    "exchange": "NYSE",
+    "market_cap": 480000000000,
+    "employees": 62000,
+    "hq_city": "Spring",
+    "hq_state": "TX",
+    "description": "Exxon Mobil Corporation is a oil & gas integrated company headquartered in Spring, TX.",
+    "revenue_ttm": 345000000000,
+    "net_income_ttm": 49907822221,
+    "total_assets": 540641564959,
+    "total_liabilities": 361545433730,
+    "revenue_growth_yoy": 0.0168,
+    "net_margin": 0.1447,
+    "risk_score": 20.12,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 9,
+    "last_filing_date": "2026-05-03",
+    "last_complaint_date": "2025-05-24",
+    "filings": [
+      {
+        "accession_no": "0000034088-26-610111",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-03",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38175
+      },
+      {
+        "accession_no": "0000034088-26-097899",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-04-02",
+        "period_of_report": "2026-04-02",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1541
+      },
+      {
+        "accession_no": "0000034088-26-016702",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-K",
+        "filing_date": "2026-03-06",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 92305
+      },
+      {
+        "accession_no": "0000034088-25-583347",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-11-10",
+        "period_of_report": "2025-11-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5315
+      },
+      {
+        "accession_no": "0000034088-25-886057",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-10-31",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 37630
+      },
+      {
+        "accession_no": "0000034088-25-274195",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-10-25",
+        "period_of_report": "2025-10-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3781
+      },
+      {
+        "accession_no": "0000034088-25-235746",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-10-19",
+        "period_of_report": "2025-10-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4425
+      },
+      {
+        "accession_no": "0000034088-25-195096",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-10-18",
+        "period_of_report": "2025-10-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5048
+      },
+      {
+        "accession_no": "0000034088-25-139495",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-09",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40623
+      },
+      {
+        "accession_no": "0000034088-25-558711",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-07",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39593
+      },
+      {
+        "accession_no": "0000034088-25-679368",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-06",
+        "period_of_report": "2025-05-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2569
+      },
+      {
+        "accession_no": "0000034088-25-255518",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-03-16",
+        "period_of_report": "2025-03-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 970
+      },
+      {
+        "accession_no": "0000034088-25-152847",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-K",
+        "filing_date": "2025-03-02",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 131916
+      },
+      {
+        "accession_no": "0000034088-25-699947",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-01-21",
+        "period_of_report": "2025-01-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3042
+      },
+      {
+        "accession_no": "0000034088-25-728844",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-01-14",
+        "period_of_report": "2025-01-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2593
+      },
+      {
+        "accession_no": "0000034088-24-846467",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-12-28",
+        "period_of_report": "2024-12-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2666
+      },
+      {
+        "accession_no": "0000034088-24-101315",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-12-25",
+        "period_of_report": "2024-12-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4957
+      },
+      {
+        "accession_no": "0000034088-24-726872",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-10-30",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 32407
+      },
+      {
+        "accession_no": "0000034088-24-457373",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-08-23",
+        "period_of_report": "2024-08-23",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1329
+      },
+      {
+        "accession_no": "0000034088-24-566619",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-07",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39700
+      },
+      {
+        "accession_no": "0000034088-24-602155",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-06-27",
+        "period_of_report": "2024-06-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1235
+      },
+      {
+        "accession_no": "0000034088-24-715137",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-06-26",
+        "period_of_report": "2024-06-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3703
+      },
+      {
+        "accession_no": "0000034088-24-943774",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-08",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 35690
+      },
+      {
+        "accession_no": "0000034088-24-586150",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-03-28",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1271
+      },
+      {
+        "accession_no": "0000034088-24-452267",
+        "cik": "0000034088",
+        "ticker": "XOM",
+        "company_name": "Exxon Mobil Corporation",
+        "form_type": "10-K",
+        "filing_date": "2024-03-01",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000034088&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 109263
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402982",
+        "date_received": "2025-05-24",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Identity theft reporting",
+        "issue": "Improper use of your report",
+        "sub_issue": "Was not notified of investigation",
+        "company": "Exxon Mobil Corporation",
+        "company_normalized": "EXXON MOBIL CORPORATION",
+        "cik": "0000034088",
+        "state": "IL",
+        "zip_prefix": "287xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "Closed with monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "GDP",
+        "title": "Gross Domestic Product",
+        "units": "Billions of Dollars",
+        "frequency": "Quarterly",
+        "category": "growth",
+        "latest_value": 26229.35,
+        "latest_date": "2026-04-01",
+        "prior_value": 26080.24,
+        "yoy_change": 0.0186,
+        "observations_count": 20
+      },
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Refining crack-spread compression",
+      "Stranded-asset risk on long-cycle upstream projects",
+      "Methane emissions regulatory exposure (EPA 60 OOOOb)",
+      "Permian Basin gas-takeaway constraints"
+    ],
+    "ai_summary": "Exxon Mobil Corporation sits in the Moderate risk band. Revenue trajectory is essentially flat, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

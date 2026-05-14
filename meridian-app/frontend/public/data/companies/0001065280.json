@@ -1,0 +1,455 @@
+{
+  "company": {
+    "cik": "0001065280",
+    "ticker": "NFLX",
+    "name": "Netflix, Inc.",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "exchange": "NASDAQ",
+    "market_cap": 280000000000,
+    "employees": 14000,
+    "hq_city": "Los Gatos",
+    "hq_state": "CA",
+    "description": "Netflix, Inc. is a entertainment company headquartered in Los Gatos, CA.",
+    "revenue_ttm": 36000000000,
+    "net_income_ttm": 5637578262,
+    "total_assets": 21785112825,
+    "total_liabilities": 10212125721,
+    "revenue_growth_yoy": 0.0894,
+    "net_margin": 0.1566,
+    "risk_score": 8.08,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 10,
+    "last_filing_date": "2026-05-10",
+    "last_complaint_date": "2024-09-26",
+    "filings": [
+      {
+        "accession_no": "0001065280-26-050084",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-10",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 30493
+      },
+      {
+        "accession_no": "0001065280-26-416264",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-03-01",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 85147
+      },
+      {
+        "accession_no": "0001065280-26-695536",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-01-09",
+        "period_of_report": "2026-01-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1219
+      },
+      {
+        "accession_no": "0001065280-25-760974",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-14",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38767
+      },
+      {
+        "accession_no": "0001065280-25-450364",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-10-07",
+        "period_of_report": "2025-10-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1452
+      },
+      {
+        "accession_no": "0001065280-25-970593",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-04",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40747
+      },
+      {
+        "accession_no": "0001065280-25-214008",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-08-01",
+        "period_of_report": "2025-08-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2142
+      },
+      {
+        "accession_no": "0001065280-25-324527",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-07-05",
+        "period_of_report": "2025-07-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 5242
+      },
+      {
+        "accession_no": "0001065280-25-104292",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-06-18",
+        "period_of_report": "2025-06-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1863
+      },
+      {
+        "accession_no": "0001065280-25-301526",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-14",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31796
+      },
+      {
+        "accession_no": "0001065280-25-704445",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-13",
+        "period_of_report": "2025-05-13",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2906
+      },
+      {
+        "accession_no": "0001065280-25-560034",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-02-27",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 128338
+      },
+      {
+        "accession_no": "0001065280-24-069188",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-04",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 36849
+      },
+      {
+        "accession_no": "0001065280-24-644210",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-08-26",
+        "period_of_report": "2024-08-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3079
+      },
+      {
+        "accession_no": "0001065280-24-894468",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-07-31",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28109
+      },
+      {
+        "accession_no": "0001065280-24-079929",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-04-29",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 33097
+      },
+      {
+        "accession_no": "0001065280-24-955169",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-04-06",
+        "period_of_report": "2024-04-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1507
+      },
+      {
+        "accession_no": "0001065280-24-575334",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2024-03-29",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 126878
+      },
+      {
+        "accession_no": "0001065280-24-524774",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-02-28",
+        "period_of_report": "2024-02-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 5179
+      },
+      {
+        "accession_no": "0001065280-24-184968",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-02-12",
+        "period_of_report": "2024-02-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3977
+      },
+      {
+        "accession_no": "0001065280-24-358720",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-02-02",
+        "period_of_report": "2024-02-02",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2113
+      },
+      {
+        "accession_no": "0001065280-23-878203",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-11-29",
+        "period_of_report": "2023-11-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 860
+      },
+      {
+        "accession_no": "0001065280-23-038147",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-11-25",
+        "period_of_report": "2023-11-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4510
+      },
+      {
+        "accession_no": "0001065280-23-563171",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-11-23",
+        "period_of_report": "2023-11-23",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4286
+      },
+      {
+        "accession_no": "0001065280-23-496428",
+        "cik": "0001065280",
+        "ticker": "NFLX",
+        "company_name": "Netflix, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-11-01",
+        "period_of_report": "2023-11-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 4849
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402994",
+        "date_received": "2024-09-26",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Identity theft reporting",
+        "issue": "Incorrect information on your report",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "Netflix, Inc.",
+        "company_normalized": "NETFLIX, INC.",
+        "cik": "0001065280",
+        "state": "AL",
+        "zip_prefix": "368xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "Closed with explanation",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Cord-cutting acceleration in linear TV portfolio",
+      "Content-amortization step-up as streaming originals expand",
+      "Spectrum-auction capital requirements"
+    ],
+    "ai_summary": "Netflix, Inc. screens cleanly across our cross-source signal set \u2014 healthy mid-single-digit revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Communication Services."
+  }
+}

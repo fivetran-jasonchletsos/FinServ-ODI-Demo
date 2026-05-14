@@ -1,0 +1,27 @@
+# ============================================================
+# Example dbt profile for the FinServ ODI Demo.
+#
+# Copy to profiles.yml or ~/.dbt/profiles.yml and set
+# the environment variables referenced below.
+#
+#   AWS_REGION         e.g. us-east-1
+#   LAKE_BUCKET        e.g. meridian-odi-lakehouse
+#   ATHENA_WORKGROUP   e.g. meridian_odi
+#
+# AWS credentials are resolved through the standard boto3 chain
+# (env vars, shared config, or IAM role).
+# ============================================================
+
+finserv_odi:
+    target: dev
+    outputs:
+        dev:
+            type: athena
+            region_name: "{{ env_var('AWS_REGION', 'us-east-1') }}"
+            schema: silver
+            database: awsdatacatalog
+            s3_staging_dir: "s3://{{ env_var('LAKE_BUCKET') }}/athena-results/"
+            s3_data_dir: "s3://{{ env_var('LAKE_BUCKET') }}/dbt/"
+            work_group: "{{ env_var('ATHENA_WORKGROUP', 'meridian_odi') }}"
+            threads: 4
+            num_retries: 2

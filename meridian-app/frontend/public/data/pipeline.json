@@ -1,0 +1,36 @@
+{
+  "layers": [
+    {
+      "layer": "connector",
+      "rows_in": 0,
+      "rows_out": 107435,
+      "tables": 4,
+      "last_run": "2026-05-14",
+      "status": "ok"
+    },
+    {
+      "layer": "bronze",
+      "rows_in": 107435,
+      "rows_out": 107435,
+      "tables": 4,
+      "last_run": "2026-05-14",
+      "status": "ok"
+    },
+    {
+      "layer": "silver",
+      "rows_in": 107435,
+      "rows_out": 5430,
+      "tables": 3,
+      "last_run": "2026-05-14",
+      "status": "ok"
+    },
+    {
+      "layer": "gold",
+      "rows_in": 5430,
+      "rows_out": 10850,
+      "tables": 5,
+      "last_run": "2026-05-14",
+      "status": "ok"
+    }
+  ]
+}

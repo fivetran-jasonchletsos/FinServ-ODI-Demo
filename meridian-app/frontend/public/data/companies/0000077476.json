@@ -1,0 +1,460 @@
+{
+  "company": {
+    "cik": "0000077476",
+    "ticker": "PEP",
+    "name": "PepsiCo, Inc.",
+    "sector": "Consumer Staples",
+    "industry": "Beverages",
+    "exchange": "NASDAQ",
+    "market_cap": 230000000000,
+    "employees": 318000,
+    "hq_city": "Purchase",
+    "hq_state": "NY",
+    "description": "PepsiCo, Inc. is a beverages company headquartered in Purchase, NY.",
+    "revenue_ttm": 91000000000,
+    "net_income_ttm": 18576893158,
+    "total_assets": 163245090182,
+    "total_liabilities": 95445231925,
+    "revenue_growth_yoy": -0.0951,
+    "net_margin": 0.2041,
+    "risk_score": 33.41,
+    "risk_bucket": "elevated",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 14,
+    "last_filing_date": "2026-05-08",
+    "last_complaint_date": "2025-02-23",
+    "filings": [
+      {
+        "accession_no": "0000077476-26-601187",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-08",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 43496
+      },
+      {
+        "accession_no": "0000077476-26-763536",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-24",
+        "period_of_report": "2026-04-24",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4573
+      },
+      {
+        "accession_no": "0000077476-26-418037",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-06",
+        "period_of_report": "2026-04-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2284
+      },
+      {
+        "accession_no": "0000077476-26-837765",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-03-30",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 88200
+      },
+      {
+        "accession_no": "0000077476-26-628181",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-03-08",
+        "period_of_report": "2026-03-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 3406
+      },
+      {
+        "accession_no": "0000077476-26-018951",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-02-19",
+        "period_of_report": "2026-02-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3459
+      },
+      {
+        "accession_no": "0000077476-26-820040",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-01-03",
+        "period_of_report": "2026-01-03",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4194
+      },
+      {
+        "accession_no": "0000077476-25-802098",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-11-16",
+        "period_of_report": "2025-11-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 991
+      },
+      {
+        "accession_no": "0000077476-25-359610",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-10-28",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39160
+      },
+      {
+        "accession_no": "0000077476-25-975043",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-12",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 46273
+      },
+      {
+        "accession_no": "0000077476-25-438494",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-07-25",
+        "period_of_report": "2025-07-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3084
+      },
+      {
+        "accession_no": "0000077476-25-895858",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-06-27",
+        "period_of_report": "2025-06-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4887
+      },
+      {
+        "accession_no": "0000077476-25-163474",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-06-11",
+        "period_of_report": "2025-06-11",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2165
+      },
+      {
+        "accession_no": "0000077476-25-965924",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-26",
+        "period_of_report": "2025-05-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5203
+      },
+      {
+        "accession_no": "0000077476-25-567760",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-07",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40748
+      },
+      {
+        "accession_no": "0000077476-25-187300",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-04-19",
+        "period_of_report": "2025-04-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2103
+      },
+      {
+        "accession_no": "0000077476-25-268114",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-04-18",
+        "period_of_report": "2025-04-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "3.02 Unregistered Sales of Equity Securities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4100
+      },
+      {
+        "accession_no": "0000077476-25-665608",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-03-12",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 124009
+      },
+      {
+        "accession_no": "0000077476-25-414974",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-03-09",
+        "period_of_report": "2025-03-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2588
+      },
+      {
+        "accession_no": "0000077476-25-318802",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-02-12",
+        "period_of_report": "2025-02-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3190
+      },
+      {
+        "accession_no": "0000077476-25-588593",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-01-17",
+        "period_of_report": "2025-01-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3628
+      },
+      {
+        "accession_no": "0000077476-24-023824",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-12-16",
+        "period_of_report": "2024-12-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3989
+      },
+      {
+        "accession_no": "0000077476-24-401976",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-12-01",
+        "period_of_report": "2024-12-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 4225
+      },
+      {
+        "accession_no": "0000077476-24-526705",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-07",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 45551
+      },
+      {
+        "accession_no": "0000077476-24-484665",
+        "cik": "0000077476",
+        "ticker": "PEP",
+        "company_name": "PepsiCo, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-11-05",
+        "period_of_report": "2024-11-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000077476&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1372
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402976",
+        "date_received": "2025-02-23",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit repair",
+        "issue": "Unable to get your credit report or credit score",
+        "sub_issue": "Account information incorrect",
+        "company": "PepsiCo, Inc.",
+        "company_normalized": "PEPSICO, INC.",
+        "cik": "0000077476",
+        "state": "IL",
+        "zip_prefix": "921xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "Closed with monetary relief",
+        "timely_response": true,
+        "consumer_disputed": true,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Private-label market share gains in core categories",
+      "GLP-1 demand-disruption risk in snack categories",
+      "Commodity input cost volatility (cocoa, sugar, aluminum)"
+    ],
+    "ai_summary": "PepsiCo, Inc. screens as Elevated risk: a softening top-line and 0 normalized complaints/quarter suggest customer-facing friction is compounding. The 4-event 8-K cadence over 90 days warrants close monitoring around the upcoming filing window."
+  }
+}

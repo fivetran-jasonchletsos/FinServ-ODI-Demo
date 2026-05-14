@@ -1,0 +1,461 @@
+{
+  "company": {
+    "cik": "0000063908",
+    "ticker": "MCD",
+    "name": "McDonald's Corporation",
+    "sector": "Consumer Discretionary",
+    "industry": "Restaurants",
+    "exchange": "NYSE",
+    "market_cap": 215000000000,
+    "employees": 150000,
+    "hq_city": "Chicago",
+    "hq_state": "IL",
+    "description": "McDonald's Corporation is a restaurants company headquartered in Chicago, IL.",
+    "revenue_ttm": 25000000000,
+    "net_income_ttm": 7191151509,
+    "total_assets": 31906182996,
+    "total_liabilities": 19594893181,
+    "revenue_growth_yoy": 0.0211,
+    "net_margin": 0.2876,
+    "risk_score": 27.73,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 12,
+    "last_filing_date": "2026-05-12",
+    "last_complaint_date": "2026-04-21",
+    "filings": [
+      {
+        "accession_no": "0000063908-26-611562",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-05-12",
+        "period_of_report": "2026-05-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3281
+      },
+      {
+        "accession_no": "0000063908-26-595214",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-02",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 48771
+      },
+      {
+        "accession_no": "0000063908-26-306534",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-03-21",
+        "period_of_report": "2026-03-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.02 Departure of Directors or Certain Officers",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3947
+      },
+      {
+        "accession_no": "0000063908-26-756170",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-03-17",
+        "period_of_report": "2026-03-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 4966
+      },
+      {
+        "accession_no": "0000063908-26-990687",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-K",
+        "filing_date": "2026-03-05",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 131913
+      },
+      {
+        "accession_no": "0000063908-25-532065",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-11-17",
+        "period_of_report": "2025-11-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1350
+      },
+      {
+        "accession_no": "0000063908-25-548760",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-07",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40267
+      },
+      {
+        "accession_no": "0000063908-25-782507",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-13",
+        "period_of_report": "2025-09-13",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 5093
+      },
+      {
+        "accession_no": "0000063908-25-505469",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-06",
+        "period_of_report": "2025-09-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2236
+      },
+      {
+        "accession_no": "0000063908-25-992948",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-05",
+        "period_of_report": "2025-09-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 1330
+      },
+      {
+        "accession_no": "0000063908-25-894027",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-15",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 44419
+      },
+      {
+        "accession_no": "0000063908-25-216457",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-06-25",
+        "period_of_report": "2025-06-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2637
+      },
+      {
+        "accession_no": "0000063908-25-675128",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-08",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 33107
+      },
+      {
+        "accession_no": "0000063908-25-034436",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-04-27",
+        "period_of_report": "2025-04-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4064
+      },
+      {
+        "accession_no": "0000063908-25-943723",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-K",
+        "filing_date": "2025-03-25",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 96167
+      },
+      {
+        "accession_no": "0000063908-25-206509",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-03-18",
+        "period_of_report": "2025-03-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3720
+      },
+      {
+        "accession_no": "0000063908-24-548352",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-15",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 36125
+      },
+      {
+        "accession_no": "0000063908-24-563016",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-10-26",
+        "period_of_report": "2024-10-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1218
+      },
+      {
+        "accession_no": "0000063908-24-199245",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-10-09",
+        "period_of_report": "2024-10-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1321
+      },
+      {
+        "accession_no": "0000063908-24-058694",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-22",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 42635
+      },
+      {
+        "accession_no": "0000063908-24-563850",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-20",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 30603
+      },
+      {
+        "accession_no": "0000063908-24-899178",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-05-11",
+        "period_of_report": "2024-05-11",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2807
+      },
+      {
+        "accession_no": "0000063908-24-638728",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-04-26",
+        "period_of_report": "2024-04-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2977
+      },
+      {
+        "accession_no": "0000063908-24-238642",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-03-08",
+        "period_of_report": "2024-03-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2798
+      },
+      {
+        "accession_no": "0000063908-24-580161",
+        "cik": "0000063908",
+        "ticker": "MCD",
+        "company_name": "McDonald's Corporation",
+        "form_type": "10-K",
+        "filing_date": "2024-03-02",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000063908&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 120045
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402977",
+        "date_received": "2026-04-21",
+        "product": "Debt collection",
+        "sub_product": "Credit card debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "McDonald's Corporation",
+        "company_normalized": "MCDONALD'S CORPORATION",
+        "cik": "0000063908",
+        "state": "NJ",
+        "zip_prefix": "298xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Account was charged off despite ongoing modification negotiations.",
+        "resolution": "Closed with explanation",
+        "timely_response": true,
+        "consumer_disputed": false,
+        "topic_cluster": "debt-collection-tactics"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UNRATE",
+        "title": "Unemployment Rate",
+        "units": "Percent",
+        "frequency": "Monthly",
+        "category": "employment",
+        "latest_value": 4.4842,
+        "latest_date": "2026-05-01",
+        "prior_value": 4.4868,
+        "yoy_change": 0.0268,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Trade-down behavior in middle-income cohort",
+      "Inventory shrink elevated in urban store footprint",
+      "Consumer credit-card delinquency leading indicators softening",
+      "Lease commitments outpace same-store-sales growth"
+    ],
+    "ai_summary": "McDonald's Corporation sits in the Moderate risk band. Revenue trajectory is modest positive, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

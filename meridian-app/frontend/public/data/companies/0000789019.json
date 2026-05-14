@@ -1,0 +1,455 @@
+{
+  "company": {
+    "cik": "0000789019",
+    "ticker": "MSFT",
+    "name": "Microsoft Corporation",
+    "sector": "Technology",
+    "industry": "Software\u2014Infrastructure",
+    "exchange": "NASDAQ",
+    "market_cap": 3100000000000,
+    "employees": 221000,
+    "hq_city": "Redmond",
+    "hq_state": "WA",
+    "description": "Microsoft Corporation is a software\u2014infrastructure company headquartered in Redmond, WA.",
+    "revenue_ttm": 245000000000,
+    "net_income_ttm": 18419506671,
+    "total_assets": 275601785416,
+    "total_liabilities": 162238017371,
+    "revenue_growth_yoy": 0.0422,
+    "net_margin": 0.0752,
+    "risk_score": 25.55,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 11,
+    "last_filing_date": "2026-04-10",
+    "last_complaint_date": "2025-07-03",
+    "filings": [
+      {
+        "accession_no": "0000789019-26-807815",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-04-10",
+        "period_of_report": "2026-04-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2933
+      },
+      {
+        "accession_no": "0000789019-26-570082",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-K",
+        "filing_date": "2026-03-31",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 90162
+      },
+      {
+        "accession_no": "0000789019-26-251367",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-03-08",
+        "period_of_report": "2026-03-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2616
+      },
+      {
+        "accession_no": "0000789019-26-274722",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-02-24",
+        "period_of_report": "2026-02-24",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2279
+      },
+      {
+        "accession_no": "0000789019-26-972239",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-02-22",
+        "period_of_report": "2026-02-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1805
+      },
+      {
+        "accession_no": "0000789019-26-657917",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-01-27",
+        "period_of_report": "2026-01-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 989
+      },
+      {
+        "accession_no": "0000789019-25-023024",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-22",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 41557
+      },
+      {
+        "accession_no": "0000789019-25-440305",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-07",
+        "period_of_report": "2025-09-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3874
+      },
+      {
+        "accession_no": "0000789019-25-105562",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-09",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 44090
+      },
+      {
+        "accession_no": "0000789019-25-547094",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-06-27",
+        "period_of_report": "2025-06-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2884
+      },
+      {
+        "accession_no": "0000789019-25-188541",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-06-10",
+        "period_of_report": "2025-06-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3247
+      },
+      {
+        "accession_no": "0000789019-25-957056",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-08",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34814
+      },
+      {
+        "accession_no": "0000789019-25-081141",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-K",
+        "filing_date": "2025-02-19",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 117390
+      },
+      {
+        "accession_no": "0000789019-25-122901",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-01-06",
+        "period_of_report": "2025-01-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3608
+      },
+      {
+        "accession_no": "0000789019-24-908984",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-03",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39956
+      },
+      {
+        "accession_no": "0000789019-24-536604",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-13",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 32992
+      },
+      {
+        "accession_no": "0000789019-24-181362",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-08-11",
+        "period_of_report": "2024-08-11",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2421
+      },
+      {
+        "accession_no": "0000789019-24-561989",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-04-27",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28754
+      },
+      {
+        "accession_no": "0000789019-24-145296",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-04-21",
+        "period_of_report": "2024-04-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2600
+      },
+      {
+        "accession_no": "0000789019-24-202213",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-K",
+        "filing_date": "2024-02-21",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 124722
+      },
+      {
+        "accession_no": "0000789019-24-781394",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-02-17",
+        "period_of_report": "2024-02-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4861
+      },
+      {
+        "accession_no": "0000789019-24-504968",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-02-12",
+        "period_of_report": "2024-02-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2432
+      },
+      {
+        "accession_no": "0000789019-23-173700",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2023-11-06",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34744
+      },
+      {
+        "accession_no": "0000789019-23-866844",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2023-10-28",
+        "period_of_report": "2023-10-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 5145
+      },
+      {
+        "accession_no": "0000789019-23-859143",
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "company_name": "Microsoft Corporation",
+        "form_type": "8-K",
+        "filing_date": "2023-10-18",
+        "period_of_report": "2023-10-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1326
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402903",
+        "date_received": "2025-07-03",
+        "product": "Credit card or prepaid card",
+        "sub_product": "Prepaid card",
+        "issue": "Closing your account",
+        "sub_issue": "Account status incorrect",
+        "company": "Microsoft Corporation",
+        "company_normalized": "MICROSOFT CORPORATION",
+        "cik": "0000789019",
+        "state": "WA",
+        "zip_prefix": "499xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Consumer reports unauthorized account activity that was not promptly investigated.",
+        "resolution": "In progress",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "billing-disputes"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Supply chain dependency on Taiwan-based foundry capacity",
+      "Customer concentration risk \u2014 top 10 customers > 30% of revenue",
+      "AI-related capex outpacing operating cash flow growth",
+      "Antitrust scrutiny in App Store / advertising business"
+    ],
+    "ai_summary": "Microsoft Corporation sits in the Moderate risk band. Revenue trajectory is modest positive, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

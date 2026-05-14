@@ -1,0 +1,15 @@
+{
+  "total_companies": 60,
+  "total_filings": 2375,
+  "total_complaints": 2995,
+  "total_macro_series": 10,
+  "total_macro_observations": 5360,
+  "bronze_rows": 70365,
+  "silver_rows": 5430,
+  "gold_rows": 10850,
+  "iceberg_table_count": 12,
+  "s3_bytes": 2884112995,
+  "last_sync_at": "2026-05-14",
+  "generated_at": "2026-05-14T07:23:01+00:00",
+  "source": "demo"
+}

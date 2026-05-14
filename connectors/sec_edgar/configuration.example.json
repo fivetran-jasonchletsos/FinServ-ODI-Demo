@@ -1,0 +1,5 @@
+{
+  "user_agent": "YourCompany ODI Demo (you@example.com)",
+  "ticker_seed_path": "/absolute/path/to/sp500_tickers.csv",
+  "cik_limit": "50"
+}

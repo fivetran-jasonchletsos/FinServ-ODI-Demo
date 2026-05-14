@@ -1,0 +1,459 @@
+{
+  "company": {
+    "cik": "0000200406",
+    "ticker": "JNJ",
+    "name": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers",
+    "exchange": "NYSE",
+    "market_cap": 380000000000,
+    "employees": 134000,
+    "hq_city": "New Brunswick",
+    "hq_state": "NJ",
+    "description": "Johnson & Johnson is a drug manufacturers company headquartered in New Brunswick, NJ.",
+    "revenue_ttm": 85000000000,
+    "net_income_ttm": 21829168242,
+    "total_assets": 79166722941,
+    "total_liabilities": 52306768925,
+    "revenue_growth_yoy": 0.1864,
+    "net_margin": 0.2568,
+    "risk_score": 12.41,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 12,
+    "last_filing_date": "2026-05-02",
+    "last_complaint_date": "2024-11-30",
+    "filings": [
+      {
+        "accession_no": "0000200406-26-154038",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-02",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 48248
+      },
+      {
+        "accession_no": "0000200406-26-531334",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2026-02-28",
+        "period_of_report": "2026-02-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 4407
+      },
+      {
+        "accession_no": "0000200406-26-238467",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-K",
+        "filing_date": "2026-02-22",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 126309
+      },
+      {
+        "accession_no": "0000200406-26-271639",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2026-01-22",
+        "period_of_report": "2026-01-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2908
+      },
+      {
+        "accession_no": "0000200406-26-046907",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2026-01-09",
+        "period_of_report": "2026-01-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2722
+      },
+      {
+        "accession_no": "0000200406-25-447192",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-12-15",
+        "period_of_report": "2025-12-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3119
+      },
+      {
+        "accession_no": "0000200406-25-386193",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-11-15",
+        "period_of_report": "2025-11-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1165
+      },
+      {
+        "accession_no": "0000200406-25-341615",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-03",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 46689
+      },
+      {
+        "accession_no": "0000200406-25-081213",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-13",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 35765
+      },
+      {
+        "accession_no": "0000200406-25-988262",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-06-21",
+        "period_of_report": "2025-06-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3208
+      },
+      {
+        "accession_no": "0000200406-25-871081",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-06-10",
+        "period_of_report": "2025-06-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.02 Departure of Directors or Certain Officers",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1067
+      },
+      {
+        "accession_no": "0000200406-25-111393",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-05-29",
+        "period_of_report": "2025-05-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2532
+      },
+      {
+        "accession_no": "0000200406-25-465372",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-13",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31708
+      },
+      {
+        "accession_no": "0000200406-25-636451",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2025-03-15",
+        "period_of_report": "2025-03-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3751
+      },
+      {
+        "accession_no": "0000200406-25-114467",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-K",
+        "filing_date": "2025-03-08",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 90077
+      },
+      {
+        "accession_no": "0000200406-24-527954",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-15",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 46823
+      },
+      {
+        "accession_no": "0000200406-24-824500",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-11-05",
+        "period_of_report": "2024-11-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 4231
+      },
+      {
+        "accession_no": "0000200406-24-127132",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-10-07",
+        "period_of_report": "2024-10-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5123
+      },
+      {
+        "accession_no": "0000200406-24-685067",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-09-15",
+        "period_of_report": "2024-09-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4766
+      },
+      {
+        "accession_no": "0000200406-24-369083",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-08-15",
+        "period_of_report": "2024-08-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5391
+      },
+      {
+        "accession_no": "0000200406-24-081067",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2024-07-30",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 35359
+      },
+      {
+        "accession_no": "0000200406-24-603187",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-06-11",
+        "period_of_report": "2024-06-11",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3200
+      },
+      {
+        "accession_no": "0000200406-24-799657",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-09",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 49273
+      },
+      {
+        "accession_no": "0000200406-24-804933",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-05-04",
+        "period_of_report": "2024-05-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3765
+      },
+      {
+        "accession_no": "0000200406-24-121024",
+        "cik": "0000200406",
+        "ticker": "JNJ",
+        "company_name": "Johnson & Johnson",
+        "form_type": "8-K",
+        "filing_date": "2024-04-28",
+        "period_of_report": "2024-04-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000200406&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2774
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402936",
+        "date_received": "2024-11-30",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "False statements or representation",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "Johnson & Johnson",
+        "company_normalized": "JOHNSON & JOHNSON",
+        "cik": "0000200406",
+        "state": "TX",
+        "zip_prefix": "918xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Collection attempt on a debt that consumer believes was previously settled.",
+        "resolution": "In progress",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "debt-collection-tactics"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UNRATE",
+        "title": "Unemployment Rate",
+        "units": "Percent",
+        "frequency": "Monthly",
+        "category": "employment",
+        "latest_value": 4.4842,
+        "latest_date": "2026-05-01",
+        "prior_value": 4.4868,
+        "yoy_change": 0.0268,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Patent cliff on legacy biologic franchise",
+      "Medicare Advantage star-rating downgrade risk",
+      "Provider-network adequacy regulatory exposure",
+      "Cybersecurity event impacting claims-processing platform",
+      "Drug pricing reform (IRA Part D redesign) margin pressure"
+    ],
+    "ai_summary": "Johnson & Johnson screens cleanly across our cross-source signal set \u2014 double-digit revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Healthcare."
+  }
+}

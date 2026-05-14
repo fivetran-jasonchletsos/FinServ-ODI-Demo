@@ -1,0 +1,451 @@
+{
+  "company": {
+    "cik": "0001108524",
+    "ticker": "CRM",
+    "name": "Salesforce, Inc.",
+    "sector": "Technology",
+    "industry": "Software\u2014Application",
+    "exchange": "NYSE",
+    "market_cap": 280000000000,
+    "employees": 72000,
+    "hq_city": "San Francisco",
+    "hq_state": "CA",
+    "description": "Salesforce, Inc. is a software\u2014application company headquartered in San Francisco, CA.",
+    "revenue_ttm": 35000000000,
+    "net_income_ttm": 8489114966,
+    "total_assets": 60539933483,
+    "total_liabilities": 38386102884,
+    "revenue_growth_yoy": 0.0253,
+    "net_margin": 0.2425,
+    "risk_score": 17.02,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 7,
+    "last_filing_date": "2026-05-07",
+    "last_complaint_date": "2025-06-05",
+    "filings": [
+      {
+        "accession_no": "0001108524-26-731667",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-07",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 45741
+      },
+      {
+        "accession_no": "0001108524-26-936356",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-03-19",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 102533
+      },
+      {
+        "accession_no": "0001108524-25-523143",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-11-29",
+        "period_of_report": "2025-11-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1076
+      },
+      {
+        "accession_no": "0001108524-25-579827",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-20",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34906
+      },
+      {
+        "accession_no": "0001108524-25-241735",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-13",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 37992
+      },
+      {
+        "accession_no": "0001108524-25-732265",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-07-10",
+        "period_of_report": "2025-07-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4406
+      },
+      {
+        "accession_no": "0001108524-25-867360",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-19",
+        "period_of_report": "2025-05-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 1492
+      },
+      {
+        "accession_no": "0001108524-25-956353",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-03",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 32493
+      },
+      {
+        "accession_no": "0001108524-25-293375",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-03-17",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 90141
+      },
+      {
+        "accession_no": "0001108524-25-019765",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-01-31",
+        "period_of_report": "2025-01-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3934
+      },
+      {
+        "accession_no": "0001108524-24-600418",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-12-13",
+        "period_of_report": "2024-12-13",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5455
+      },
+      {
+        "accession_no": "0001108524-24-054799",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-14",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 49640
+      },
+      {
+        "accession_no": "0001108524-24-490034",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-09-22",
+        "period_of_report": "2024-09-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2751
+      },
+      {
+        "accession_no": "0001108524-24-580171",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-08-06",
+        "period_of_report": "2024-08-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3979
+      },
+      {
+        "accession_no": "0001108524-24-691983",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-02",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 42125
+      },
+      {
+        "accession_no": "0001108524-24-357507",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-05-14",
+        "period_of_report": "2024-05-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4355
+      },
+      {
+        "accession_no": "0001108524-24-215724",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-04",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40429
+      },
+      {
+        "accession_no": "0001108524-24-465589",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2024-03-09",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 87910
+      },
+      {
+        "accession_no": "0001108524-24-838430",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-03-08",
+        "period_of_report": "2024-03-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 3047
+      },
+      {
+        "accession_no": "0001108524-24-791128",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-01-17",
+        "period_of_report": "2024-01-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3554
+      },
+      {
+        "accession_no": "0001108524-23-187470",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-12-05",
+        "period_of_report": "2023-12-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4435
+      },
+      {
+        "accession_no": "0001108524-23-321803",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-12-04",
+        "period_of_report": "2023-12-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 5456
+      },
+      {
+        "accession_no": "0001108524-23-287593",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2023-11-16",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39852
+      },
+      {
+        "accession_no": "0001108524-23-009302",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-08-25",
+        "period_of_report": "2023-08-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 4621
+      },
+      {
+        "accession_no": "0001108524-23-413770",
+        "cik": "0001108524",
+        "ticker": "CRM",
+        "company_name": "Salesforce, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2023-08-15",
+        "period_of_report": "2023-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 29265
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402935",
+        "date_received": "2025-06-05",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit repair",
+        "issue": "Unable to get your credit report or credit score",
+        "sub_issue": "Account information incorrect",
+        "company": "Salesforce, Inc.",
+        "company_normalized": "SALESFORCE, INC.",
+        "cik": "0001108524",
+        "state": "WI",
+        "zip_prefix": "374xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Branch staff refused to provide required disclosures at account opening.",
+        "resolution": "Closed with non-monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Talent retention costs rising with stock-based comp inflation",
+      "Supply chain dependency on Taiwan-based foundry capacity",
+      "Antitrust scrutiny in App Store / advertising business",
+      "AI-related capex outpacing operating cash flow growth",
+      "FX headwind from strengthening USD vs. EUR/JPY"
+    ],
+    "ai_summary": "Salesforce, Inc. sits in the Moderate risk band. Revenue trajectory is modest positive, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

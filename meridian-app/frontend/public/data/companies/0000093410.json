@@ -1,0 +1,474 @@
+{
+  "company": {
+    "cik": "0000093410",
+    "ticker": "CVX",
+    "name": "Chevron Corporation",
+    "sector": "Energy",
+    "industry": "Oil & Gas Integrated",
+    "exchange": "NYSE",
+    "market_cap": 290000000000,
+    "employees": 45000,
+    "hq_city": "San Ramon",
+    "hq_state": "CA",
+    "description": "Chevron Corporation is a oil & gas integrated company headquartered in San Ramon, CA.",
+    "revenue_ttm": 200000000000,
+    "net_income_ttm": 57469484728,
+    "total_assets": 239923637671,
+    "total_liabilities": 109254006291,
+    "revenue_growth_yoy": -0.2176,
+    "net_margin": 0.2873,
+    "risk_score": 42.06,
+    "risk_bucket": "high",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 24,
+    "last_filing_date": "2026-05-08",
+    "last_complaint_date": "2025-09-09",
+    "filings": [
+      {
+        "accession_no": "0000093410-26-678665",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-08",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 48742
+      },
+      {
+        "accession_no": "0000093410-26-914461",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-04-04",
+        "period_of_report": "2026-04-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2067
+      },
+      {
+        "accession_no": "0000093410-26-156081",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-04-01",
+        "period_of_report": "2026-04-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4446
+      },
+      {
+        "accession_no": "0000093410-26-210352",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "10-K",
+        "filing_date": "2026-03-11",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 99853
+      },
+      {
+        "accession_no": "0000093410-26-063860",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-02-18",
+        "period_of_report": "2026-02-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "2.02 Results of Operations and Financial Condition",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 5363
+      },
+      {
+        "accession_no": "0000093410-26-001813",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-01-31",
+        "period_of_report": "2026-01-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 5134
+      },
+      {
+        "accession_no": "0000093410-26-180768",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-01-15",
+        "period_of_report": "2026-01-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2344
+      },
+      {
+        "accession_no": "0000093410-26-403444",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-01-07",
+        "period_of_report": "2026-01-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3308
+      },
+      {
+        "accession_no": "0000093410-25-197216",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-12-17",
+        "period_of_report": "2025-12-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 1530
+      },
+      {
+        "accession_no": "0000093410-25-095372",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-12-04",
+        "period_of_report": "2025-12-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3425
+      },
+      {
+        "accession_no": "0000093410-25-574600",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-11-10",
+        "period_of_report": "2025-11-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3985
+      },
+      {
+        "accession_no": "0000093410-25-113011",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-06",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39437
+      },
+      {
+        "accession_no": "0000093410-25-521787",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-10-15",
+        "period_of_report": "2025-10-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3152
+      },
+      {
+        "accession_no": "0000093410-25-317662",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-10-01",
+        "period_of_report": "2025-10-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3953
+      },
+      {
+        "accession_no": "0000093410-25-674443",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-27",
+        "period_of_report": "2025-09-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2446
+      },
+      {
+        "accession_no": "0000093410-25-714221",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-18",
+        "period_of_report": "2025-09-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1166
+      },
+      {
+        "accession_no": "0000093410-25-109386",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-09-09",
+        "period_of_report": "2025-09-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3433
+      },
+      {
+        "accession_no": "0000093410-25-979630",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-22",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38212
+      },
+      {
+        "accession_no": "0000093410-25-354780",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-08-18",
+        "period_of_report": "2025-08-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2817
+      },
+      {
+        "accession_no": "0000093410-25-857301",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-07-07",
+        "period_of_report": "2025-07-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4820
+      },
+      {
+        "accession_no": "0000093410-25-775168",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-06-07",
+        "period_of_report": "2025-06-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1192
+      },
+      {
+        "accession_no": "0000093410-25-395384",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-30",
+        "period_of_report": "2025-05-30",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 1474
+      },
+      {
+        "accession_no": "0000093410-25-800612",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-25",
+        "period_of_report": "2025-05-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2422
+      },
+      {
+        "accession_no": "0000093410-25-931381",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-14",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31941
+      },
+      {
+        "accession_no": "0000093410-25-061472",
+        "cik": "0000093410",
+        "ticker": "CVX",
+        "company_name": "Chevron Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-04-07",
+        "period_of_report": "2025-04-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000093410&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 4735
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402983",
+        "date_received": "2025-09-09",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Identity theft reporting",
+        "issue": "Unable to get your credit report or credit score",
+        "sub_issue": null,
+        "company": "Chevron Corporation",
+        "company_normalized": "CHEVRON CORPORATION",
+        "cik": "0000093410",
+        "state": "NC",
+        "zip_prefix": "742xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Collection attempt on a debt that consumer believes was previously settled.",
+        "resolution": "Closed with monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "GDP",
+        "title": "Gross Domestic Product",
+        "units": "Billions of Dollars",
+        "frequency": "Quarterly",
+        "category": "growth",
+        "latest_value": 26229.35,
+        "latest_date": "2026-04-01",
+        "prior_value": 26080.24,
+        "yoy_change": 0.0186,
+        "observations_count": 20
+      },
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Refining crack-spread compression",
+      "Methane emissions regulatory exposure (EPA 60 OOOOb)",
+      "Permian Basin gas-takeaway constraints",
+      "Stranded-asset risk on long-cycle upstream projects"
+    ],
+    "ai_summary": "Chevron Corporation's complaint velocity has accelerated meaningfully over the trailing four quarters, with 0 complaints/quarter normalized for headcount well above peer median. Combined with 3 8-K filings over the past 90 days and materially negative revenue trajectory, we maintain a High risk view and recommend underweight positioning into the next reporting cycle."
+  }
+}

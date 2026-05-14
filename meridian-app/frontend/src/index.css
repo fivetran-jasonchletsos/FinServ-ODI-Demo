@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@import 'leaflet/dist/leaflet.css';
+
+/*
+ * Meridian Capital — institutional financial design system.
+ *
+ * The visual language references Wall Street prime-broker portals
+ * (Morgan Stanley, UBS, BlackRock Aladdin): deep navy + cream paper +
+ * muted gold accent, Source Serif headers for institutional authority,
+ * JetBrains Mono for tickers / CUSIPs / numerics.
+ *
+ * Brand color (Fivetran / Snowflake) is intentionally absent — this is
+ * Meridian's portal. ODI lives in the architecture, not the chrome.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Surfaces */
+  --paper:         #faf7f0;
+  --paper-deep:    #f1ece1;
+  --card:          #ffffff;
+  --navy-deep:     #0b2545;
+  --navy:          #13315c;
+  --navy-soft:     #1d4e89;
+  --hairline:      #d9d3c4;
+  --hairline-soft: #ebe6d8;
+  --ink-strong:    #0b1220;
+  --ink:           #1f2937;
+  --ink-muted:     #4b5563;
+  --ink-soft:      #6b7280;
+
+  /* Meridian accent — muted gold */
+  --gold:          #b8975c;
+  --gold-bright:   #d4af75;
+  --gold-dim:      #826b3f;
+  --gold-bg:       #faf3e1;
+
+  /* Status — institutional finance palette */
+  --bull:          #15803d;
+  --bull-bg:       #f0fdf4;
+  --bear:          #b91c1c;
+  --bear-bg:       #fef2f2;
+  --caution:       #b45309;
+  --caution-bg:    #fffbeb;
+  --teal:          #0f766e;
+  --teal-bg:       #f0fdfa;
+
+  /* ODI layer colors */
+  --bronze:        #b45309;
+  --bronze-bg:     #fff7ed;
+  --silver:        #6b7280;
+  --silver-bg:     #f8fafc;
+  --gold-layer:    #b8975c;
+  --gold-layer-bg: #faf3e1;
+}
+
+@theme {
+  --color-navy-50:  #eff3f8;
+  --color-navy-100: #d8e2ee;
+  --color-navy-200: #b3c6dd;
+  --color-navy-300: #7e9bc1;
+  --color-navy-400: #4c70a2;
+  --color-navy-500: #2d558a;
+  --color-navy-600: #1d4e89;
+  --color-navy-700: #13315c;
+  --color-navy-800: #0b2545;
+  --color-navy-900: #051628;
+
+  --color-gold-50:  #fbf7ec;
+  --color-gold-100: #f5ecd1;
+  --color-gold-200: #ebd9a3;
+  --color-gold-300: #dec176;
+  --color-gold-400: #d4af75;
+  --color-gold-500: #b8975c;
+  --color-gold-600: #9a7c42;
+  --color-gold-700: #7a6233;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html, body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.012em;
+}
+h1 { color: var(--ink-strong); }
+
+.institutional-rail {
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dim) 0%, var(--gold-bright) 50%, var(--gold-dim) 100%);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid transparent;
+  font-family: "Inter", sans-serif;
+}
+.status-pill::before {
+  content: "";
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: currentColor;
+}
+.status-pill.bull      { background: var(--bull-bg);    color: var(--bull);    border-color: #bbf7d0; }
+.status-pill.bear      { background: var(--bear-bg);    color: var(--bear);    border-color: #fecaca; }
+.status-pill.caution   { background: var(--caution-bg); color: var(--caution); border-color: #fde68a; }
+.status-pill.neutral   { background: var(--paper-deep); color: var(--ink-muted); border-color: var(--hairline); }
+.status-pill.gold      { background: var(--gold-bg);    color: var(--gold-dim);   border-color: #ebd9a3; }
+
+.layer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: "JetBrains Mono", monospace;
+}
+.layer-chip.bronze { background: var(--bronze-bg); color: var(--bronze); border: 1px solid #fed7aa; }
+.layer-chip.silver { background: var(--silver-bg); color: var(--silver); border: 1px solid #e2e8f0; }
+.layer-chip.gold   { background: var(--gold-layer-bg); color: var(--gold-layer); border: 1px solid #ebd9a3; }
+
+.research-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(11, 37, 69, 0.04);
+}
+.research-card-header {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--hairline-soft);
+  background: linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold-dim);
+}
+.eyebrow-light {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold-bright);
+}
+
+.quote-tile {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 0.375rem;
+  padding: 1rem 1.125rem;
+}
+.quote-tile-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+.quote-tile-value {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--ink-strong);
+  line-height: 1.1;
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  border-radius: 0.375rem;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--paper-deep); }
+::-webkit-scrollbar-thumb { background: #cbc5b3; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a39c89; }
+
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+.ticker {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

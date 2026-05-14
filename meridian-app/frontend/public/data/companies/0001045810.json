@@ -1,0 +1,448 @@
+{
+  "company": {
+    "cik": "0001045810",
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "exchange": "NASDAQ",
+    "market_cap": 2400000000000,
+    "employees": 29000,
+    "hq_city": "Santa Clara",
+    "hq_state": "CA",
+    "description": "NVIDIA Corporation is a semiconductors company headquartered in Santa Clara, CA.",
+    "revenue_ttm": 96000000000,
+    "net_income_ttm": 23379523958,
+    "total_assets": 82226583594,
+    "total_liabilities": 46888950818,
+    "revenue_growth_yoy": 0.0482,
+    "net_margin": 0.2435,
+    "risk_score": 12.23,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 9,
+    "last_filing_date": "2026-05-14",
+    "last_complaint_date": "2025-01-19",
+    "filings": [
+      {
+        "accession_no": "0001045810-26-069453",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-14",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40635
+      },
+      {
+        "accession_no": "0001045810-26-751059",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2026-04-22",
+        "period_of_report": "2026-04-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1412
+      },
+      {
+        "accession_no": "0001045810-26-942402",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-K",
+        "filing_date": "2026-03-06",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 100246
+      },
+      {
+        "accession_no": "0001045810-25-517928",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-22",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 44339
+      },
+      {
+        "accession_no": "0001045810-25-604414",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-11-04",
+        "period_of_report": "2025-11-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 974
+      },
+      {
+        "accession_no": "0001045810-25-206699",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-03",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 29627
+      },
+      {
+        "accession_no": "0001045810-25-955928",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-26",
+        "period_of_report": "2025-05-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 4582
+      },
+      {
+        "accession_no": "0001045810-25-038806",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-26",
+        "period_of_report": "2025-05-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5170
+      },
+      {
+        "accession_no": "0001045810-25-474780",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2025-05-21",
+        "period_of_report": "2025-05-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2201
+      },
+      {
+        "accession_no": "0001045810-25-852906",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-07",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38489
+      },
+      {
+        "accession_no": "0001045810-25-792935",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-K",
+        "filing_date": "2025-03-29",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 113521
+      },
+      {
+        "accession_no": "0001045810-24-315620",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-20",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 37000
+      },
+      {
+        "accession_no": "0001045810-24-730289",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-09-09",
+        "period_of_report": "2024-09-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 4523
+      },
+      {
+        "accession_no": "0001045810-24-983254",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-09-09",
+        "period_of_report": "2024-09-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1641
+      },
+      {
+        "accession_no": "0001045810-24-099741",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-12",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 41601
+      },
+      {
+        "accession_no": "0001045810-24-812242",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-06-26",
+        "period_of_report": "2024-06-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3365
+      },
+      {
+        "accession_no": "0001045810-24-017063",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-17",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 30275
+      },
+      {
+        "accession_no": "0001045810-24-200446",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-04-25",
+        "period_of_report": "2024-04-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3821
+      },
+      {
+        "accession_no": "0001045810-24-041021",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-K",
+        "filing_date": "2024-03-18",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 107111
+      },
+      {
+        "accession_no": "0001045810-24-903232",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-03-12",
+        "period_of_report": "2024-03-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4369
+      },
+      {
+        "accession_no": "0001045810-24-865554",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2024-01-15",
+        "period_of_report": "2024-01-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 885
+      },
+      {
+        "accession_no": "0001045810-23-078795",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2023-12-04",
+        "period_of_report": "2023-12-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4851
+      },
+      {
+        "accession_no": "0001045810-23-178613",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2023-11-10",
+        "period_of_report": "2023-11-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1928
+      },
+      {
+        "accession_no": "0001045810-23-276538",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "10-Q",
+        "filing_date": "2023-10-30",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38791
+      },
+      {
+        "accession_no": "0001045810-23-128318",
+        "cik": "0001045810",
+        "ticker": "NVDA",
+        "company_name": "NVIDIA Corporation",
+        "form_type": "8-K",
+        "filing_date": "2023-10-27",
+        "period_of_report": "2023-10-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5074
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402904",
+        "date_received": "2025-01-19",
+        "product": "Checking or savings account",
+        "sub_product": "Checking account",
+        "issue": "Problem with a lender or other company charging your account",
+        "sub_issue": "Information belongs to someone else",
+        "company": "NVIDIA Corporation",
+        "company_normalized": "NVIDIA CORPORATION",
+        "cik": "0001045810",
+        "state": "MD",
+        "zip_prefix": "822xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Consumer reports unauthorized account activity that was not promptly investigated.",
+        "resolution": "Closed with monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "account-fraud"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "FX headwind from strengthening USD vs. EUR/JPY",
+      "Talent retention costs rising with stock-based comp inflation",
+      "AI-related capex outpacing operating cash flow growth",
+      "Antitrust scrutiny in App Store / advertising business"
+    ],
+    "ai_summary": "NVIDIA Corporation screens cleanly across our cross-source signal set \u2014 modest positive revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Technology."
+  }
+}

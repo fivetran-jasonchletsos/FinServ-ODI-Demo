@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="10" fill="#0b2545"/>
+  <!-- Meridian compass-rose mark in muted gold -->
+  <g stroke="#b8975c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="20"/>
+    <path d="M32 12 L32 52 M12 32 L52 32"/>
+  </g>
+  <!-- Filled compass-rose triangles -->
+  <path d="M32 32 L20 20 L26 32 Z" fill="#d4af75"/>
+  <path d="M32 32 L44 44 L38 32 Z" fill="#d4af75"/>
+</svg>

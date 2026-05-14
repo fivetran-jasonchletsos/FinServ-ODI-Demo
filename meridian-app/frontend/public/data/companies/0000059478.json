@@ -1,0 +1,456 @@
+{
+  "company": {
+    "cik": "0000059478",
+    "ticker": "LLY",
+    "name": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers",
+    "exchange": "NYSE",
+    "market_cap": 720000000000,
+    "employees": 43000,
+    "hq_city": "Indianapolis",
+    "hq_state": "IN",
+    "description": "Eli Lilly and Company is a drug manufacturers company headquartered in Indianapolis, IN.",
+    "revenue_ttm": 42000000000,
+    "net_income_ttm": 9090979254,
+    "total_assets": 49065138745,
+    "total_liabilities": 30268761206,
+    "revenue_growth_yoy": 0.0002,
+    "net_margin": 0.2165,
+    "risk_score": 13.56,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 7,
+    "last_filing_date": "2026-05-06",
+    "last_complaint_date": "2025-04-02",
+    "filings": [
+      {
+        "accession_no": "0000059478-26-776483",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-06",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 39071
+      },
+      {
+        "accession_no": "0000059478-26-264267",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-K",
+        "filing_date": "2026-03-17",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 111991
+      },
+      {
+        "accession_no": "0000059478-26-589730",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2026-01-03",
+        "period_of_report": "2026-01-03",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4803
+      },
+      {
+        "accession_no": "0000059478-25-900363",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-14",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 30668
+      },
+      {
+        "accession_no": "0000059478-25-418808",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2025-09-07",
+        "period_of_report": "2025-09-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 875
+      },
+      {
+        "accession_no": "0000059478-25-506459",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-19",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 44856
+      },
+      {
+        "accession_no": "0000059478-25-793654",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2025-08-06",
+        "period_of_report": "2025-08-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 911
+      },
+      {
+        "accession_no": "0000059478-25-337472",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-04",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 43118
+      },
+      {
+        "accession_no": "0000059478-25-458859",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2025-03-24",
+        "period_of_report": "2025-03-24",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1731
+      },
+      {
+        "accession_no": "0000059478-25-328222",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-K",
+        "filing_date": "2025-03-17",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 127730
+      },
+      {
+        "accession_no": "0000059478-25-656582",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2025-01-20",
+        "period_of_report": "2025-01-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5097
+      },
+      {
+        "accession_no": "0000059478-24-544610",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-12-16",
+        "period_of_report": "2024-12-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 2858
+      },
+      {
+        "accession_no": "0000059478-24-304294",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-11-28",
+        "period_of_report": "2024-11-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 5086
+      },
+      {
+        "accession_no": "0000059478-24-014816",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-11-21",
+        "period_of_report": "2024-11-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2378
+      },
+      {
+        "accession_no": "0000059478-24-932756",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-16",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40177
+      },
+      {
+        "accession_no": "0000059478-24-972114",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-08-29",
+        "period_of_report": "2024-08-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1908
+      },
+      {
+        "accession_no": "0000059478-24-547861",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-05",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38563
+      },
+      {
+        "accession_no": "0000059478-24-754915",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-06",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 50173
+      },
+      {
+        "accession_no": "0000059478-24-347116",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-04-12",
+        "period_of_report": "2024-04-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "7.01 Regulation FD Disclosure",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1575
+      },
+      {
+        "accession_no": "0000059478-24-436526",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-03-25",
+        "period_of_report": "2024-03-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2268
+      },
+      {
+        "accession_no": "0000059478-24-326989",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-03-17",
+        "period_of_report": "2024-03-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2337
+      },
+      {
+        "accession_no": "0000059478-24-123296",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-K",
+        "filing_date": "2024-03-03",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 113539
+      },
+      {
+        "accession_no": "0000059478-24-070016",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2024-02-01",
+        "period_of_report": "2024-02-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3670
+      },
+      {
+        "accession_no": "0000059478-23-422858",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "10-Q",
+        "filing_date": "2023-11-21",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 36347
+      },
+      {
+        "accession_no": "0000059478-23-002801",
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "company_name": "Eli Lilly and Company",
+        "form_type": "8-K",
+        "filing_date": "2023-11-12",
+        "period_of_report": "2023-11-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000059478&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2699
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402939",
+        "date_received": "2025-04-02",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Identity theft reporting",
+        "issue": "Problem with a credit reporting company's investigation into an existing problem",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "Eli Lilly and Company",
+        "company_normalized": "ELI LILLY AND COMPANY",
+        "cik": "0000059478",
+        "state": "IN",
+        "zip_prefix": "266xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Branch staff refused to provide required disclosures at account opening.",
+        "resolution": "Closed with explanation",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "other"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UNRATE",
+        "title": "Unemployment Rate",
+        "units": "Percent",
+        "frequency": "Monthly",
+        "category": "employment",
+        "latest_value": 4.4842,
+        "latest_date": "2026-05-01",
+        "prior_value": 4.4868,
+        "yoy_change": 0.0268,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Patent cliff on legacy biologic franchise",
+      "Medicare Advantage star-rating downgrade risk",
+      "Cybersecurity event impacting claims-processing platform",
+      "Drug pricing reform (IRA Part D redesign) margin pressure",
+      "Provider-network adequacy regulatory exposure"
+    ],
+    "ai_summary": "Eli Lilly and Company screens cleanly across our cross-source signal set \u2014 essentially flat revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Healthcare."
+  }
+}

@@ -1,0 +1,224 @@
+version: 2
+
+sources:
+    - name: bronze_sec_edgar
+      description: |
+          Raw SEC EDGAR data landed as Iceberg tables in S3 by the Fivetran
+          custom EDGAR connector. Covers public-company registrations, filing
+          events, and parsed XBRL financial facts.
+      database: awsdatacatalog
+      schema: bronze_sec_edgar
+      loader: fivetran_custom_sec_edgar
+      tables:
+          - name: companies
+            description: One row per SEC-registered company (CIK).
+            columns:
+                - name: cik
+                  description: Central Index Key — SEC's unique company identifier (zero-padded).
+                  data_tests:
+                      - not_null
+                      - unique
+                - name: ticker
+                  description: Primary trading ticker (nullable for non-listed filers).
+                - name: company_name
+                  description: Legal entity name as registered with the SEC.
+                - name: sic_code
+                  description: Standard Industrial Classification code.
+                - name: sic_description
+                  description: Plain-English SIC industry label.
+                - name: state_of_incorporation
+                  description: U.S. state or foreign jurisdiction of incorporation.
+                - name: fiscal_year_end
+                  description: MMDD string for fiscal-year-end (e.g. '1231').
+                - name: ein
+                  description: Employer Identification Number.
+                - name: exchange
+                  description: Primary listing exchange.
+                - name: _fivetran_synced
+                  description: Timestamp the row was synced by Fivetran.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: True if Fivetran has soft-deleted this row.
+
+          - name: filings
+            description: One row per filing event submitted to EDGAR.
+            columns:
+                - name: accession_number
+                  description: SEC accession number — unique filing identifier.
+                  data_tests:
+                      - not_null
+                      - unique
+                - name: cik
+                  description: Filer CIK.
+                  data_tests:
+                      - not_null
+                - name: form_type
+                  description: Form type (10-K, 10-Q, 8-K, S-1, etc.).
+                  data_tests:
+                      - not_null
+                - name: filing_date
+                  description: Date the filing was accepted by EDGAR.
+                  data_tests:
+                      - not_null
+                - name: period_of_report
+                  description: Fiscal period the filing covers.
+                - name: filing_url
+                  description: Direct URL to the filing index page on sec.gov.
+                - name: primary_document
+                  description: Filename of the primary document inside the filing.
+                - name: _fivetran_synced
+                  description: Sync timestamp.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: Soft-delete flag.
+
+          - name: xbrl_facts
+            description: |
+                Parsed XBRL facts extracted from 10-K / 10-Q filings.
+                One row per (filing, concept, period, unit).
+            columns:
+                - name: fact_id
+                  description: Surrogate ID for the XBRL fact row.
+                  data_tests:
+                      - not_null
+                      - unique
+                - name: accession_number
+                  description: Filing this fact came from.
+                  data_tests:
+                      - not_null
+                - name: cik
+                  description: Filer CIK.
+                  data_tests:
+                      - not_null
+                - name: concept
+                  description: us-gaap concept name (e.g. 'Revenues', 'NetIncomeLoss').
+                  data_tests:
+                      - not_null
+                - name: period_start
+                  description: Period start date for the fact (null for instant facts).
+                - name: period_end
+                  description: Period end date.
+                  data_tests:
+                      - not_null
+                - name: period_type
+                  description: 'duration' or 'instant'.
+                - name: value
+                  description: Numeric value of the fact.
+                - name: unit
+                  description: Unit of measure (USD, USD/share, shares, etc.).
+                - name: _fivetran_synced
+                  description: Sync timestamp.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: Soft-delete flag.
+
+    - name: bronze_fred
+      description: |
+          Federal Reserve Economic Data (FRED) macroeconomic series landed
+          by the Fivetran custom FRED connector.
+      database: awsdatacatalog
+      schema: bronze_fred
+      loader: fivetran_custom_fred
+      tables:
+          - name: series
+            description: Metadata for each FRED economic series subscribed to.
+            columns:
+                - name: series_id
+                  description: FRED series identifier (e.g. 'DGS10', 'UNRATE').
+                  data_tests:
+                      - not_null
+                      - unique
+                - name: title
+                  description: Human-readable series title.
+                - name: frequency
+                  description: Native release frequency (Daily, Monthly, Quarterly, etc.).
+                - name: units
+                  description: Units of measure.
+                - name: seasonal_adjustment
+                  description: Seasonal-adjustment flag from FRED.
+                - name: last_updated
+                  description: Last-updated timestamp from FRED.
+                - name: notes
+                  description: FRED notes / methodology text.
+                - name: _fivetran_synced
+                  description: Sync timestamp.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: Soft-delete flag.
+
+          - name: observations
+            description: One row per (series, date) observation.
+            columns:
+                - name: series_id
+                  description: FRED series identifier.
+                  data_tests:
+                      - not_null
+                - name: observation_date
+                  description: Date of the observation.
+                  data_tests:
+                      - not_null
+                - name: value
+                  description: Observed numeric value (FRED uses '.' for missing).
+                - name: _fivetran_synced
+                  description: Sync timestamp.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: Soft-delete flag.
+
+    - name: bronze_cfpb
+      description: |
+          Consumer complaints from the CFPB Consumer Complaint Database,
+          landed by the Fivetran custom CFPB connector.
+      database: awsdatacatalog
+      schema: bronze_cfpb
+      loader: fivetran_custom_cfpb
+      tables:
+          - name: complaints
+            description: One row per consumer complaint submitted to the CFPB.
+            columns:
+                - name: complaint_id
+                  description: CFPB complaint identifier.
+                  data_tests:
+                      - not_null
+                      - unique
+                - name: date_received
+                  description: Date the complaint was received by the CFPB.
+                  data_tests:
+                      - not_null
+                - name: product
+                  description: Top-level product (e.g. 'Credit reporting', 'Mortgage').
+                - name: sub_product
+                  description: Sub-product detail.
+                - name: issue
+                  description: Top-level issue label.
+                - name: sub_issue
+                  description: Sub-issue detail.
+                - name: company_name
+                  description: Free-text company name as submitted.
+                - name: state
+                  description: U.S. state of the consumer.
+                - name: zip_code
+                  description: Consumer ZIP (3-digit prefix only for PII).
+                - name: consumer_consent_provided
+                  description: Whether the consumer consented to publish their narrative.
+                - name: submitted_via
+                  description: Submission channel (Web, Phone, Referral, etc.).
+                - name: date_sent_to_company
+                  description: Date CFPB forwarded the complaint to the company.
+                - name: company_response
+                  description: Company's structured response to the consumer.
+                - name: timely_response
+                  description: Yes/No flag — did the company respond within 15 days.
+                - name: consumer_disputed
+                  description: Whether the consumer disputed the resolution.
+                - name: _fivetran_synced
+                  description: Sync timestamp.
+                  data_tests:
+                      - not_null
+                - name: _fivetran_deleted
+                  description: Soft-delete flag.

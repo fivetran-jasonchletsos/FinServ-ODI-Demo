@@ -1,0 +1,124 @@
+{
+  "series": [
+    {
+      "series_id": "DGS10",
+      "title": "10-Year Treasury Constant Maturity Rate",
+      "units": "Percent",
+      "frequency": "Daily",
+      "category": "rates",
+      "latest_value": 1.1758,
+      "latest_date": "2026-05-14",
+      "prior_value": 1.0521,
+      "yoy_change": -0.157,
+      "observations_count": 1260
+    },
+    {
+      "series_id": "DGS2",
+      "title": "2-Year Treasury Constant Maturity Rate",
+      "units": "Percent",
+      "frequency": "Daily",
+      "category": "rates",
+      "latest_value": 4.1377,
+      "latest_date": "2026-05-14",
+      "prior_value": 4.3781,
+      "yoy_change": -0.1696,
+      "observations_count": 1260
+    },
+    {
+      "series_id": "DGS30",
+      "title": "30-Year Treasury Constant Maturity Rate",
+      "units": "Percent",
+      "frequency": "Daily",
+      "category": "rates",
+      "latest_value": 1.5858,
+      "latest_date": "2026-05-14",
+      "prior_value": 1.5446,
+      "yoy_change": -0.5713,
+      "observations_count": 1260
+    },
+    {
+      "series_id": "T10Y2Y",
+      "title": "10-Year minus 2-Year Treasury Yield Spread",
+      "units": "Percent",
+      "frequency": "Daily",
+      "category": "rates",
+      "latest_value": -0.4308,
+      "latest_date": "2026-05-14",
+      "prior_value": -0.3201,
+      "yoy_change": -1.3894,
+      "observations_count": 1260
+    },
+    {
+      "series_id": "FEDFUNDS",
+      "title": "Effective Federal Funds Rate",
+      "units": "Percent",
+      "frequency": "Monthly",
+      "category": "rates",
+      "latest_value": 1.1938,
+      "latest_date": "2026-05-01",
+      "prior_value": 1.1581,
+      "yoy_change": 0.0841,
+      "observations_count": 60
+    },
+    {
+      "series_id": "CPIAUCSL",
+      "title": "Consumer Price Index for All Urban Consumers",
+      "units": "Index 1982-84=100",
+      "frequency": "Monthly",
+      "category": "inflation",
+      "latest_value": 272.85,
+      "latest_date": "2026-05-01",
+      "prior_value": 273.02,
+      "yoy_change": 0.0045,
+      "observations_count": 60
+    },
+    {
+      "series_id": "UNRATE",
+      "title": "Unemployment Rate",
+      "units": "Percent",
+      "frequency": "Monthly",
+      "category": "employment",
+      "latest_value": 4.4842,
+      "latest_date": "2026-05-01",
+      "prior_value": 4.4868,
+      "yoy_change": 0.0268,
+      "observations_count": 60
+    },
+    {
+      "series_id": "GDP",
+      "title": "Gross Domestic Product",
+      "units": "Billions of Dollars",
+      "frequency": "Quarterly",
+      "category": "growth",
+      "latest_value": 26229.35,
+      "latest_date": "2026-04-01",
+      "prior_value": 26080.24,
+      "yoy_change": 0.0186,
+      "observations_count": 20
+    },
+    {
+      "series_id": "HOUST",
+      "title": "Housing Starts: Total New Privately Owned",
+      "units": "Thousands of Units",
+      "frequency": "Monthly",
+      "category": "growth",
+      "latest_value": 1750.16,
+      "latest_date": "2026-05-01",
+      "prior_value": 1770.05,
+      "yoy_change": 0.0172,
+      "observations_count": 60
+    },
+    {
+      "series_id": "UMCSENT",
+      "title": "University of Michigan Consumer Sentiment",
+      "units": "Index 1966:Q1=100",
+      "frequency": "Monthly",
+      "category": "other",
+      "latest_value": 60.9634,
+      "latest_date": "2026-05-01",
+      "prior_value": 56.3594,
+      "yoy_change": 0.0078,
+      "observations_count": 60
+    }
+  ]
+}

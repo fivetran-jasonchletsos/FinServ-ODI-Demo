@@ -1,0 +1,453 @@
+{
+  "company": {
+    "cik": "0000021344",
+    "ticker": "KO",
+    "name": "The Coca-Cola Company",
+    "sector": "Consumer Staples",
+    "industry": "Beverages",
+    "exchange": "NYSE",
+    "market_cap": 275000000000,
+    "employees": 79000,
+    "hq_city": "Atlanta",
+    "hq_state": "GA",
+    "description": "The Coca-Cola Company is a beverages company headquartered in Atlanta, GA.",
+    "revenue_ttm": 46000000000,
+    "net_income_ttm": 5053440025,
+    "total_assets": 61190432866,
+    "total_liabilities": 38571583811,
+    "revenue_growth_yoy": 0.1205,
+    "net_margin": 0.1099,
+    "risk_score": 12.59,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 12,
+    "last_filing_date": "2026-05-13",
+    "last_complaint_date": "2026-04-19",
+    "filings": [
+      {
+        "accession_no": "0000021344-26-863228",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-13",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28052
+      },
+      {
+        "accession_no": "0000021344-26-356083",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2026-04-19",
+        "period_of_report": "2026-04-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 3946
+      },
+      {
+        "accession_no": "0000021344-26-326204",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2026-04-03",
+        "period_of_report": "2026-04-03",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3968
+      },
+      {
+        "accession_no": "0000021344-26-379879",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-K",
+        "filing_date": "2026-03-09",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 107272
+      },
+      {
+        "accession_no": "0000021344-26-197102",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2026-02-09",
+        "period_of_report": "2026-02-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1162
+      },
+      {
+        "accession_no": "0000021344-26-171488",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2026-01-18",
+        "period_of_report": "2026-01-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 4062
+      },
+      {
+        "accession_no": "0000021344-25-842584",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-09",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28400
+      },
+      {
+        "accession_no": "0000021344-25-496551",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2025-11-06",
+        "period_of_report": "2025-11-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3544
+      },
+      {
+        "accession_no": "0000021344-25-187527",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2025-10-01",
+        "period_of_report": "2025-10-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 4273
+      },
+      {
+        "accession_no": "0000021344-25-106331",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-20",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 49491
+      },
+      {
+        "accession_no": "0000021344-25-719637",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2025-06-13",
+        "period_of_report": "2025-06-13",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 4524
+      },
+      {
+        "accession_no": "0000021344-25-664921",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2025-06-05",
+        "period_of_report": "2025-06-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1749
+      },
+      {
+        "accession_no": "0000021344-25-363109",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-04-29",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 50480
+      },
+      {
+        "accession_no": "0000021344-25-487507",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-K",
+        "filing_date": "2025-02-20",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 137837
+      },
+      {
+        "accession_no": "0000021344-25-808830",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2025-01-06",
+        "period_of_report": "2025-01-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 1246
+      },
+      {
+        "accession_no": "0000021344-24-270362",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-15",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34475
+      },
+      {
+        "accession_no": "0000021344-24-487340",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-11-10",
+        "period_of_report": "2024-11-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3107
+      },
+      {
+        "accession_no": "0000021344-24-767458",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-11-01",
+        "period_of_report": "2024-11-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1099
+      },
+      {
+        "accession_no": "0000021344-24-088130",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-09-29",
+        "period_of_report": "2024-09-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5182
+      },
+      {
+        "accession_no": "0000021344-24-353492",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-07-28",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 51185
+      },
+      {
+        "accession_no": "0000021344-24-083896",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-18",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 32927
+      },
+      {
+        "accession_no": "0000021344-24-796510",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "10-K",
+        "filing_date": "2024-03-19",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 110131
+      },
+      {
+        "accession_no": "0000021344-24-663665",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-02-18",
+        "period_of_report": "2024-02-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4842
+      },
+      {
+        "accession_no": "0000021344-24-353855",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-01-26",
+        "period_of_report": "2024-01-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3226
+      },
+      {
+        "accession_no": "0000021344-24-482608",
+        "cik": "0000021344",
+        "ticker": "KO",
+        "company_name": "The Coca-Cola Company",
+        "form_type": "8-K",
+        "filing_date": "2024-01-21",
+        "period_of_report": "2024-01-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000021344&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3807
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402975",
+        "date_received": "2026-04-19",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit repair",
+        "issue": "Credit monitoring or identity theft protection services",
+        "sub_issue": "Was not notified of investigation",
+        "company": "The Coca-Cola Company",
+        "company_normalized": "THE COCA-COLA COMPANY",
+        "cik": "0000021344",
+        "state": "CA",
+        "zip_prefix": "883xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Collection attempt on a debt that consumer believes was previously settled.",
+        "resolution": "Closed with non-monetary relief",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "GLP-1 demand-disruption risk in snack categories",
+      "Commodity input cost volatility (cocoa, sugar, aluminum)",
+      "Private-label market share gains in core categories"
+    ],
+    "ai_summary": "The Coca-Cola Company screens cleanly across our cross-source signal set \u2014 healthy mid-single-digit revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Consumer Staples."
+  }
+}

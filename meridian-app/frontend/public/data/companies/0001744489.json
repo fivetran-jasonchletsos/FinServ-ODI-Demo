@@ -1,0 +1,457 @@
+{
+  "company": {
+    "cik": "0001744489",
+    "ticker": "DIS",
+    "name": "The Walt Disney Company",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "exchange": "NYSE",
+    "market_cap": 200000000000,
+    "employees": 225000,
+    "hq_city": "Burbank",
+    "hq_state": "CA",
+    "description": "The Walt Disney Company is a entertainment company headquartered in Burbank, CA.",
+    "revenue_ttm": 91000000000,
+    "net_income_ttm": 15512279102,
+    "total_assets": 79954135743,
+    "total_liabilities": 52304769325,
+    "revenue_growth_yoy": 0.0246,
+    "net_margin": 0.1705,
+    "risk_score": 16.95,
+    "risk_bucket": "moderate",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 11,
+    "last_filing_date": "2026-05-11",
+    "last_complaint_date": "2025-11-10",
+    "filings": [
+      {
+        "accession_no": "0001744489-26-157691",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-11",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40598
+      },
+      {
+        "accession_no": "0001744489-26-716470",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2026-03-15",
+        "period_of_report": "2026-03-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3893
+      },
+      {
+        "accession_no": "0001744489-26-747032",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-K",
+        "filing_date": "2026-03-12",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 114106
+      },
+      {
+        "accession_no": "0001744489-26-515396",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2026-01-12",
+        "period_of_report": "2026-01-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4377
+      },
+      {
+        "accession_no": "0001744489-26-463670",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2026-01-11",
+        "period_of_report": "2026-01-11",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2483
+      },
+      {
+        "accession_no": "0001744489-25-749663",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 37524
+      },
+      {
+        "accession_no": "0001744489-25-458608",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2025-08-12",
+        "period_of_report": "2025-08-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2888
+      },
+      {
+        "accession_no": "0001744489-25-424781",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-08",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 36983
+      },
+      {
+        "accession_no": "0001744489-25-021490",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2025-07-19",
+        "period_of_report": "2025-07-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4821
+      },
+      {
+        "accession_no": "0001744489-25-980697",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2025-07-14",
+        "period_of_report": "2025-07-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5414
+      },
+      {
+        "accession_no": "0001744489-25-384403",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2025-06-28",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 2928
+      },
+      {
+        "accession_no": "0001744489-25-838967",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2025-05-05",
+        "period_of_report": "2025-05-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 979
+      },
+      {
+        "accession_no": "0001744489-25-228515",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-03",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 38296
+      },
+      {
+        "accession_no": "0001744489-25-826352",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-K",
+        "filing_date": "2025-02-24",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 111476
+      },
+      {
+        "accession_no": "0001744489-24-849496",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-13",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34413
+      },
+      {
+        "accession_no": "0001744489-24-282114",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-11-04",
+        "period_of_report": "2024-11-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2264
+      },
+      {
+        "accession_no": "0001744489-24-493092",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-10-20",
+        "period_of_report": "2024-10-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4267
+      },
+      {
+        "accession_no": "0001744489-24-580323",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-09-30",
+        "period_of_report": "2024-09-30",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3822
+      },
+      {
+        "accession_no": "0001744489-24-148515",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-08-19",
+        "period_of_report": "2024-08-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4370
+      },
+      {
+        "accession_no": "0001744489-24-542292",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-17",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 47631
+      },
+      {
+        "accession_no": "0001744489-24-429355",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-05-22",
+        "period_of_report": "2024-05-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3352
+      },
+      {
+        "accession_no": "0001744489-24-895114",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-04",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 47185
+      },
+      {
+        "accession_no": "0001744489-24-651108",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-03-26",
+        "period_of_report": "2024-03-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1227
+      },
+      {
+        "accession_no": "0001744489-24-846965",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "8-K",
+        "filing_date": "2024-03-26",
+        "period_of_report": "2024-03-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2400
+      },
+      {
+        "accession_no": "0001744489-24-165778",
+        "cik": "0001744489",
+        "ticker": "DIS",
+        "company_name": "The Walt Disney Company",
+        "form_type": "10-K",
+        "filing_date": "2024-03-15",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 96045
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402991",
+        "date_received": "2025-11-10",
+        "product": "Vehicle loan or lease",
+        "sub_product": "Loan",
+        "issue": "Getting a loan or lease",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "The Walt Disney Company",
+        "company_normalized": "THE WALT DISNEY COMPANY",
+        "cik": "0001744489",
+        "state": "PA",
+        "zip_prefix": "917xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "In progress",
+        "timely_response": true,
+        "consumer_disputed": false,
+        "topic_cluster": "loan-modification"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Content-amortization step-up as streaming originals expand",
+      "Cord-cutting acceleration in linear TV portfolio",
+      "Spectrum-auction capital requirements"
+    ],
+    "ai_summary": "The Walt Disney Company sits in the Moderate risk band. Revenue trajectory is modest positive, complaint volume is in line with sector medians (0/qtr normalized), and 8-K activity is unremarkable. We see no near-term catalyst that changes the constructive view."
+  }
+}

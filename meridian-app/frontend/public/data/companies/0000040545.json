@@ -1,0 +1,456 @@
+{
+  "company": {
+    "cik": "0000040545",
+    "ticker": "GE",
+    "name": "GE Aerospace",
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "exchange": "NYSE",
+    "market_cap": 195000000000,
+    "employees": 52000,
+    "hq_city": "Cincinnati",
+    "hq_state": "OH",
+    "description": "GE Aerospace is a aerospace & defense company headquartered in Cincinnati, OH.",
+    "revenue_ttm": 35000000000,
+    "net_income_ttm": 3604913061,
+    "total_assets": 30211067435,
+    "total_liabilities": 13260914932,
+    "revenue_growth_yoy": 0.1202,
+    "net_margin": 0.103,
+    "risk_score": 9.23,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 10,
+    "last_filing_date": "2026-02-23",
+    "last_complaint_date": "2025-05-11",
+    "filings": [
+      {
+        "accession_no": "0000040545-26-262848",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2026-02-23",
+        "period_of_report": "2026-02-23",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2312
+      },
+      {
+        "accession_no": "0000040545-26-779287",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-K",
+        "filing_date": "2026-02-19",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 91212
+      },
+      {
+        "accession_no": "0000040545-25-152276",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-18",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 46984
+      },
+      {
+        "accession_no": "0000040545-25-475208",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-11-18",
+        "period_of_report": "2025-11-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2952
+      },
+      {
+        "accession_no": "0000040545-25-360608",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-10-20",
+        "period_of_report": "2025-10-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2338
+      },
+      {
+        "accession_no": "0000040545-25-897806",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-10-09",
+        "period_of_report": "2025-10-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3604
+      },
+      {
+        "accession_no": "0000040545-25-292873",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-10-07",
+        "period_of_report": "2025-10-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 5014
+      },
+      {
+        "accession_no": "0000040545-25-383173",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-09-23",
+        "period_of_report": "2025-09-23",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 4294
+      },
+      {
+        "accession_no": "0000040545-25-442522",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-07",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40280
+      },
+      {
+        "accession_no": "0000040545-25-357547",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-06-22",
+        "period_of_report": "2025-06-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4792
+      },
+      {
+        "accession_no": "0000040545-25-796807",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 32315
+      },
+      {
+        "accession_no": "0000040545-25-338200",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-05-02",
+        "period_of_report": "2025-05-02",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 895
+      },
+      {
+        "accession_no": "0000040545-25-665459",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-04-04",
+        "period_of_report": "2025-04-04",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1079
+      },
+      {
+        "accession_no": "0000040545-25-542014",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-K",
+        "filing_date": "2025-03-19",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 122825
+      },
+      {
+        "accession_no": "0000040545-25-832774",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2025-01-18",
+        "period_of_report": "2025-01-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 2421
+      },
+      {
+        "accession_no": "0000040545-24-208329",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-12-14",
+        "period_of_report": "2024-12-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3699
+      },
+      {
+        "accession_no": "0000040545-24-577205",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2024-10-31",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 51353
+      },
+      {
+        "accession_no": "0000040545-24-993173",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-09-29",
+        "period_of_report": "2024-09-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 5148
+      },
+      {
+        "accession_no": "0000040545-24-550550",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-09-26",
+        "period_of_report": "2024-09-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "7.01 Regulation FD Disclosure",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1184
+      },
+      {
+        "accession_no": "0000040545-24-870400",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-11",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31641
+      },
+      {
+        "accession_no": "0000040545-24-099179",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-01",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 35442
+      },
+      {
+        "accession_no": "0000040545-24-026649",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "10-K",
+        "filing_date": "2024-03-26",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 120606
+      },
+      {
+        "accession_no": "0000040545-24-713448",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-03-26",
+        "period_of_report": "2024-03-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2156
+      },
+      {
+        "accession_no": "0000040545-24-457352",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-03-05",
+        "period_of_report": "2024-03-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 5332
+      },
+      {
+        "accession_no": "0000040545-24-204345",
+        "cik": "0000040545",
+        "ticker": "GE",
+        "company_name": "GE Aerospace",
+        "form_type": "8-K",
+        "filing_date": "2024-02-12",
+        "period_of_report": "2024-02-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000040545&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 1960
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402980",
+        "date_received": "2025-05-11",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit repair",
+        "issue": "Credit monitoring or identity theft protection services",
+        "sub_issue": "Information belongs to someone else",
+        "company": "GE Aerospace",
+        "company_normalized": "GE AEROSPACE",
+        "cik": "0000040545",
+        "state": "TN",
+        "zip_prefix": "989xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "In progress",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "fee-disputes"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "GDP",
+        "title": "Gross Domestic Product",
+        "units": "Billions of Dollars",
+        "frequency": "Quarterly",
+        "category": "growth",
+        "latest_value": 26229.35,
+        "latest_date": "2026-04-01",
+        "prior_value": 26080.24,
+        "yoy_change": 0.0186,
+        "observations_count": 20
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Working-capital pressure from extended customer payment terms",
+      "Rail-volume sensitivity to industrial production",
+      "Aerospace OEM production-rate uncertainty"
+    ],
+    "ai_summary": "GE Aerospace screens cleanly across our cross-source signal set \u2014 healthy mid-single-digit revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Industrials."
+  }
+}

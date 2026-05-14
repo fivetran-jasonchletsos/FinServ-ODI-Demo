@@ -1,0 +1,330 @@
+version: 2
+
+models:
+    - name: stg_sec__companies
+      description: Conformed company master from SEC EDGAR. One row per CIK.
+      columns:
+          - name: cik
+            description: Zero-padded 10-character Central Index Key.
+            data_tests:
+                - not_null
+                - unique
+          - name: ticker
+            description: Primary ticker symbol, uppercased.
+          - name: company_name
+            description: Legal company name.
+            data_tests:
+                - not_null
+          - name: sic_code
+            description: SIC industry code as string.
+          - name: sic_description
+            description: SIC industry label.
+          - name: state_of_incorporation
+            description: Jurisdiction of incorporation.
+          - name: fiscal_year_end
+            description: Four-character MMDD fiscal-year-end marker.
+          - name: ein
+            description: Employer Identification Number.
+          - name: exchange
+            description: Primary listing exchange.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: stg_sec__filings
+      description: Conformed SEC filing events. One row per accession number.
+      columns:
+          - name: accession_number
+            description: SEC accession number.
+            data_tests:
+                - not_null
+                - unique
+          - name: cik
+            description: Filer CIK (zero-padded).
+            data_tests:
+                - not_null
+          - name: form_type
+            description: SEC form type, uppercased.
+            data_tests:
+                - not_null
+                - accepted_values:
+                      values:
+                          - '10-K'
+                          - '10-Q'
+                          - '8-K'
+                          - 'S-1'
+                          - 'S-3'
+                          - 'DEF 14A'
+                          - '20-F'
+                          - '6-K'
+                          - '10-K/A'
+                          - '10-Q/A'
+                          - '8-K/A'
+                          - 'SC 13D'
+                          - 'SC 13G'
+                          - '4'
+                          - '3'
+                          - '5'
+                          - '424B2'
+                          - '424B3'
+                          - '424B5'
+                          - 'OTHER'
+                      config:
+                          severity: warn
+          - name: filing_date
+            description: Date EDGAR accepted the filing.
+            data_tests:
+                - not_null
+          - name: period_of_report
+            description: Reporting period the filing covers.
+          - name: filing_url
+            description: URL to the filing on sec.gov.
+          - name: primary_document
+            description: Primary document filename inside the filing.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: stg_sec__xbrl_facts
+      description: Conformed XBRL financial facts. One row per (filing, concept, period, unit).
+      columns:
+          - name: fact_id
+            description: Surrogate fact identifier.
+            data_tests:
+                - not_null
+                - unique
+          - name: accession_number
+            description: Filing the fact came from.
+            data_tests:
+                - not_null
+          - name: cik
+            description: Filer CIK.
+            data_tests:
+                - not_null
+          - name: concept
+            description: us-gaap concept name.
+            data_tests:
+                - not_null
+          - name: period_start
+            description: Period start (null for instant facts).
+          - name: period_end
+            description: Period end date.
+            data_tests:
+                - not_null
+          - name: period_type
+            description: 'duration' or 'instant'.
+            data_tests:
+                - accepted_values:
+                      values:
+                          - duration
+                          - instant
+          - name: value
+            description: Numeric fact value.
+          - name: unit
+            description: Unit of measure (USD, USD/SHARES, SHARES, etc.).
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: stg_fred__series
+      description: Conformed FRED series metadata. One row per series_id.
+      columns:
+          - name: series_id
+            description: FRED series identifier, uppercased.
+            data_tests:
+                - not_null
+                - unique
+          - name: title
+            description: Human-readable series title.
+          - name: frequency
+            description: Native release frequency.
+          - name: units
+            description: Units of measure.
+          - name: seasonal_adjustment
+            description: Seasonal-adjustment flag.
+          - name: last_updated
+            description: FRED last-updated timestamp.
+          - name: notes
+            description: FRED methodology notes.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: stg_fred__observations
+      description: Conformed FRED observations. One row per (series_id, observation_date).
+      columns:
+          - name: series_id
+            description: FRED series identifier.
+            data_tests:
+                - not_null
+                - relationships:
+                      to: ref('stg_fred__series')
+                      field: series_id
+          - name: observation_date
+            description: Date of the observation.
+            data_tests:
+                - not_null
+          - name: value
+            description: Observed numeric value (nulls filtered out).
+            data_tests:
+                - not_null
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: stg_cfpb__complaints
+      description: Conformed CFPB consumer complaints. One row per complaint_id.
+      columns:
+          - name: complaint_id
+            description: CFPB complaint identifier.
+            data_tests:
+                - not_null
+                - unique
+          - name: date_received
+            description: Date the CFPB received the complaint.
+            data_tests:
+                - not_null
+          - name: product
+            description: Top-level product label.
+          - name: sub_product
+            description: Sub-product detail.
+          - name: issue
+            description: Top-level issue label.
+          - name: sub_issue
+            description: Sub-issue detail.
+          - name: company_name_raw
+            description: Uppercased original company string.
+          - name: company_name_normalized
+            description: Company name with corporate suffixes stripped, for matching.
+          - name: state
+            description: Two-letter U.S. state code.
+          - name: zip_code
+            description: Three-digit ZIP prefix.
+          - name: consumer_consent_provided
+            description: Whether the consumer consented to publish the narrative.
+          - name: submitted_via
+            description: Submission channel.
+          - name: date_sent_to_company
+            description: Date CFPB forwarded the complaint.
+          - name: company_response
+            description: Company's structured response.
+          - name: timely_response
+            description: Boolean — true if the company responded within 15 days.
+          - name: consumer_disputed
+            description: Boolean — true if the consumer disputed the resolution.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: int_company_financials
+      description: |
+          Wide-form company financials — pivots us-gaap concepts from the
+          XBRL facts table into headline P&L and balance-sheet columns
+          per (cik, period). Adds margin ratios and period-over-period
+          growth columns.
+      columns:
+          - name: cik
+            description: Filer CIK.
+            data_tests:
+                - not_null
+          - name: period_end_date
+            description: End date of the reporting period.
+            data_tests:
+                - not_null
+          - name: period_start_date
+            description: Start date of the reporting period (null for instant facts).
+          - name: source_form_type
+            description: Form that supplied the facts (10-K, 10-Q, etc.).
+          - name: filing_date
+            description: Date the source filing was accepted by EDGAR.
+          - name: revenue
+            description: us-gaap Revenues value in USD.
+          - name: cost_of_revenue
+            description: Cost of revenue in USD.
+          - name: gross_profit
+            description: Gross profit in USD.
+          - name: operating_income
+            description: Operating income in USD.
+          - name: net_income
+            description: Net income (loss) in USD.
+          - name: total_assets
+            description: Total assets in USD.
+          - name: total_liabilities
+            description: Total liabilities in USD.
+          - name: stockholders_equity
+            description: Stockholders' equity in USD.
+          - name: cash_and_equivalents
+            description: Cash and cash equivalents at carrying value.
+          - name: long_term_debt
+            description: Long-term debt in USD.
+          - name: gross_margin
+            description: Gross profit divided by revenue.
+          - name: operating_margin
+            description: Operating income divided by revenue.
+          - name: net_margin
+            description: Net income divided by revenue.
+          - name: debt_to_equity
+            description: Total liabilities divided by stockholders' equity.
+          - name: prior_period_revenue
+            description: Revenue for the prior reported period (lag).
+          - name: prior_period_net_income
+            description: Net income for the prior reported period (lag).
+          - name: revenue_growth_period
+            description: Period-over-period revenue change as a fraction.
+          - name: net_income_growth_period
+            description: Period-over-period net-income change as a fraction.
+
+    - name: int_complaint_company_xref
+      description: |
+          Lightweight bridge from CFPB free-text company strings to SEC
+          CIKs. Uses normalized exact match and prefix-token containment.
+          Produces one row per distinct CFPB company string.
+      columns:
+          - name: company_name_raw
+            description: Uppercased original CFPB company string.
+            data_tests:
+                - not_null
+                - unique
+          - name: cfpb_normalized
+            description: CFPB string with corporate suffixes stripped.
+          - name: cik
+            description: Matched SEC CIK.
+            data_tests:
+                - not_null
+          - name: sec_company_name
+            description: SEC company name selected as the match.
+          - name: match_method
+            description: Match-rule label (exact_normalized | prefix_token).
+            data_tests:
+                - accepted_values:
+                      values:
+                          - exact_normalized
+                          - prefix_token
+          - name: match_confidence
+            description: Heuristic confidence score 0..1.
+
+    - name: int_macro_yoy
+      description: |
+          FRED observations enriched with month-over-month and
+          year-over-year deltas (absolute and percent).
+      columns:
+          - name: series_id
+            description: FRED series identifier.
+            data_tests:
+                - not_null
+          - name: observation_date
+            description: Observation date.
+            data_tests:
+                - not_null
+          - name: value
+            description: Observed value.
+          - name: prior_value
+            description: Prior observation's value (lag 1).
+          - name: prior_observation_date
+            description: Date of the prior observation.
+          - name: yoy_prior_value
+            description: Value 12 months before observation_date.
+          - name: yoy_prior_date
+            description: Date 12 months before observation_date.
+          - name: mom_change_pct
+            description: Percent change vs. the prior observation.
+          - name: yoy_change_pct
+            description: Percent change vs. 12 months prior.
+          - name: mom_change_abs
+            description: Absolute change vs. the prior observation.
+          - name: yoy_change_abs
+            description: Absolute change vs. 12 months prior.

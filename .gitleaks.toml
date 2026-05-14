@@ -1,0 +1,20 @@
+title = "Healthcare Epic — Gitleaks Config"
+
+[allowlist]
+  description = "Global allowlist"
+  paths = [
+    ".env.example",
+    "infra/terraform.tfvars.example",
+  ]
+
+[[rules]]
+  description = "Fivetran API Key"
+  id = "fivetran-api-key"
+  regex = '''[a-zA-Z0-9]{16}:[a-zA-Z0-9]{32}'''
+  tags = ["fivetran", "api-key"]
+
+[[rules]]
+  description = "Generic password in curl"
+  id = "curl-credentials"
+  regex = '''curl\s+-u\s+["']?[^:]+:[^"'\s]+'''
+  tags = ["curl", "credentials"]

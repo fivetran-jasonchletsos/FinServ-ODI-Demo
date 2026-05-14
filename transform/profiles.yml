@@ -1,0 +1,40 @@
+# ============================================================
+# dbt profile for the FinServ ODI Demo.
+#
+# Targets the AWS Glue Data Catalog via Amazon Athena, reading
+# Iceberg tables that Fivetran custom connectors land in S3.
+#
+# Required environment variables:
+#
+#   AWS_REGION         default: us-east-1
+#   LAKE_BUCKET        S3 bucket holding the lakehouse data
+#   ATHENA_WORKGROUP   default: meridian_odi
+#
+# AWS credentials follow the standard boto3 chain
+# (env vars / shared config / IAM role).
+# ============================================================
+
+finserv_odi:
+    target: dev
+    outputs:
+        dev:
+            type: athena
+            region_name: "{{ env_var('AWS_REGION', 'us-east-1') }}"
+            schema: silver
+            database: awsdatacatalog
+            s3_staging_dir: "s3://{{ env_var('LAKE_BUCKET') }}/athena-results/"
+            s3_data_dir: "s3://{{ env_var('LAKE_BUCKET') }}/dbt/"
+            work_group: "{{ env_var('ATHENA_WORKGROUP', 'meridian_odi') }}"
+            threads: 4
+            num_retries: 2
+
+        prod:
+            type: athena
+            region_name: "{{ env_var('AWS_REGION', 'us-east-1') }}"
+            schema: silver
+            database: awsdatacatalog
+            s3_staging_dir: "s3://{{ env_var('LAKE_BUCKET') }}/athena-results/"
+            s3_data_dir: "s3://{{ env_var('LAKE_BUCKET') }}/dbt/"
+            work_group: "{{ env_var('ATHENA_WORKGROUP', 'meridian_odi') }}"
+            threads: 8
+            num_retries: 2

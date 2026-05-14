@@ -1,0 +1,7 @@
+configuration.json
+files/
+state.json
+__pycache__/
+*.pyc
+.warehouse.duckdb*
+warehouse.db*

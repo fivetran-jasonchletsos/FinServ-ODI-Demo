@@ -1,0 +1,353 @@
+sic_code,sic_description,sector
+0100,Agricultural Production-Crops,Consumer Staples
+0200,Agricultural Production-Livestock,Consumer Staples
+0700,Agricultural Services,Consumer Staples
+0800,Forestry,Materials
+0900,Fishing Hunting and Trapping,Consumer Staples
+1000,Metal Mining,Materials
+1040,Gold Mining,Materials
+1090,Miscellaneous Metal Ores,Materials
+1220,Bituminous Coal and Lignite Mining,Energy
+1311,Crude Petroleum and Natural Gas,Energy
+1381,Drilling Oil and Gas Wells,Energy
+1382,Oil and Gas Field Services,Energy
+1389,Services-Oil and Gas Field Services NEC,Energy
+1400,Mining and Quarrying of Nonmetallic Minerals,Materials
+1520,General Building Contractors-Residential,Industrials
+1531,Operative Builders,Consumer Discretionary
+1540,General Building Contractors-Nonresidential,Industrials
+1623,Water Sewer Pipeline Construction,Industrials
+1731,Electrical Work,Industrials
+2000,Food and Kindred Products,Consumer Staples
+2011,Meat Packing Plants,Consumer Staples
+2020,Dairy Products,Consumer Staples
+2024,Ice Cream and Frozen Desserts,Consumer Staples
+2030,Canned Frozen and Preserved Foods,Consumer Staples
+2050,Bakery Products,Consumer Staples
+2060,Sugar and Confectionery Products,Consumer Staples
+2070,Fats and Oils,Consumer Staples
+2080,Beverages,Consumer Staples
+2086,Bottled and Canned Soft Drinks,Consumer Staples
+2090,Miscellaneous Food and Kindred Products,Consumer Staples
+2100,Tobacco Products,Consumer Staples
+2200,Textile Mill Products,Consumer Discretionary
+2300,Apparel and Other Finished Products,Consumer Discretionary
+2400,Lumber and Wood Products,Materials
+2421,Sawmills and Planing Mills,Materials
+2430,Millwork Plywood and Structural Wood Members,Materials
+2451,Mobile Homes,Consumer Discretionary
+2510,Household Furniture,Consumer Discretionary
+2520,Office Furniture,Industrials
+2600,Paper and Allied Products,Materials
+2611,Pulp Mills,Materials
+2621,Paper Mills,Materials
+2631,Paperboard Mills,Materials
+2650,Paperboard Containers and Boxes,Materials
+2670,Converted Paper and Paperboard Products,Materials
+2700,Printing Publishing and Allied Industries,Communication Services
+2711,Newspapers Publishing,Communication Services
+2721,Books Publishing,Communication Services
+2731,Periodicals Publishing,Communication Services
+2741,Miscellaneous Publishing,Communication Services
+2800,Chemicals and Allied Products,Materials
+2810,Industrial Inorganic Chemicals,Materials
+2820,Plastics Materials and Synthetics,Materials
+2821,Plastic Materials and Resins,Materials
+2833,Medicinal Chemicals and Pharmaceutical Preparations,Health Care
+2834,Pharmaceutical Preparations,Health Care
+2835,In Vitro and In Vivo Diagnostic Substances,Health Care
+2836,Biological Products,Health Care
+2840,Soap Detergents Cleaning Preparations,Consumer Staples
+2842,Specialty Cleaning Polishing Preparations,Consumer Staples
+2844,Perfumes Cosmetics Toilet Preparations,Consumer Staples
+2851,Paints Varnishes Lacquers Enamels,Materials
+2860,Industrial Organic Chemicals,Materials
+2870,Agricultural Chemicals,Materials
+2890,Miscellaneous Chemical Products,Materials
+2911,Petroleum Refining,Energy
+2950,Asphalt Paving and Roofing Materials,Materials
+3011,Tires and Inner Tubes,Consumer Discretionary
+3021,Rubber and Plastics Footwear,Consumer Discretionary
+3050,Gaskets Packing and Sealing Devices,Industrials
+3060,Fabricated Rubber Products,Industrials
+3080,Plastics Products,Industrials
+3140,Footwear,Consumer Discretionary
+3221,Glass Containers,Materials
+3241,Cement Hydraulic,Materials
+3270,Concrete Gypsum and Plaster Products,Materials
+3290,Abrasive Asbestos and Misc. Nonmetallic Mineral Prods,Materials
+3310,Steel Works Blast Furnaces and Rolling and Finishing Mills,Materials
+3312,Steel Works Blast Furnaces,Materials
+3317,Steel Pipe and Tubes,Materials
+3320,Iron and Steel Foundries,Materials
+3330,Primary Smelting and Refining of Nonferrous Metals,Materials
+3334,Primary Production of Aluminum,Materials
+3350,Rolling Drawing and Extruding of Nonferrous Metals,Materials
+3357,Drawing and Insulating of Nonferrous Wire,Industrials
+3360,Nonferrous Foundries,Materials
+3411,Metal Cans,Materials
+3420,Cutlery Handtools and General Hardware,Industrials
+3430,Heating Equipment and Plumbing Fixtures,Industrials
+3440,Fabricated Metal Products,Industrials
+3442,Metal Doors Sash Frames Moldings and Trim,Industrials
+3443,Fabricated Plate Work,Industrials
+3444,Sheet Metal Work,Industrials
+3448,Prefabricated Metal Buildings and Components,Industrials
+3451,Screw Machine Products,Industrials
+3460,Metal Forgings and Stampings,Industrials
+3470,Coating Engraving and Allied Services,Industrials
+3480,Ordnance and Accessories NEC,Industrials
+3490,Miscellaneous Fabricated Metal Products,Industrials
+3510,Engines and Turbines,Industrials
+3523,Farm Machinery and Equipment,Industrials
+3531,Construction Machinery and Equipment,Industrials
+3532,Mining Machinery and Equipment,Industrials
+3533,Oil and Gas Field Machinery and Equipment,Energy
+3540,Metalworking Machinery and Equipment,Industrials
+3550,Special Industry Machinery,Industrials
+3559,Special Industry Machinery NEC,Industrials
+3560,General Industrial Machinery and Equipment,Industrials
+3567,Industrial and Commercial Machinery and Computer Equipment,Industrials
+3576,Computer Communications Equipment,Information Technology
+3577,Computer Peripheral Equipment NEC,Information Technology
+3578,Calculating and Accounting Machines,Information Technology
+3579,Office Machines NEC,Information Technology
+3585,Refrigeration and Service Industry Machinery,Industrials
+3590,Misc Industrial and Commercial Machinery and Equipment,Industrials
+3600,Electronic and Other Electrical Equipment,Information Technology
+3612,Power Distribution and Specialty Transformers,Industrials
+3620,Electrical Industrial Apparatus,Industrials
+3630,Household Appliances,Consumer Discretionary
+3634,Electric Housewares and Fans,Consumer Discretionary
+3640,Electric Lighting and Wiring Equipment,Industrials
+3651,Household Audio and Video Equipment,Consumer Discretionary
+3652,Prerecorded Records and Tapes,Communication Services
+3661,Telephone and Telegraph Apparatus,Information Technology
+3663,Radio and TV Broadcasting and Communications Equipment,Communication Services
+3669,Communications Equipment NEC,Information Technology
+3670,Electronic Components and Accessories,Information Technology
+3672,Printed Circuit Boards,Information Technology
+3674,Semiconductors and Related Devices,Information Technology
+3677,Electronic Coils Transformers and Other Inductors,Information Technology
+3678,Electronic Connectors,Information Technology
+3679,Electronic Components NEC,Information Technology
+3690,Miscellaneous Electrical Machinery and Equipment,Industrials
+3711,Motor Vehicles and Passenger Car Bodies,Consumer Discretionary
+3713,Truck and Bus Bodies,Industrials
+3714,Motor Vehicle Parts and Accessories,Consumer Discretionary
+3715,Truck Trailers,Industrials
+3716,Motor Homes,Consumer Discretionary
+3720,Aircraft and Parts,Industrials
+3721,Aircraft,Industrials
+3724,Aircraft Engines and Engine Parts,Industrials
+3728,Aircraft Parts and Auxiliary Equipment NEC,Industrials
+3730,Ship and Boat Building and Repairing,Industrials
+3743,Railroad Equipment,Industrials
+3751,Motorcycles Bicycles and Parts,Consumer Discretionary
+3760,Guided Missiles Space Vehicles and Parts,Industrials
+3812,Search Detection Navigation Guidance,Industrials
+3821,Laboratory Apparatus and Furniture,Industrials
+3822,Industrial Instruments for Measurement,Industrials
+3823,Industrial Instruments for Measurement Display and Control,Industrials
+3824,Totalizing Fluid Meters and Counting Devices,Industrials
+3825,Instruments for Measuring and Testing of Electricity,Industrials
+3826,Laboratory Analytical Instruments,Health Care
+3827,Optical Instruments and Lenses,Information Technology
+3829,Measuring and Controlling Devices NEC,Industrials
+3841,Surgical and Medical Instruments and Apparatus,Health Care
+3842,Orthopedic Surgical and Medical Instruments,Health Care
+3843,Dental Equipment and Supplies,Health Care
+3844,X-Ray Apparatus and Tubes,Health Care
+3845,Electromedical and Electrotherapeutic Apparatus,Health Care
+3851,Ophthalmic Goods,Health Care
+3861,Photographic Equipment and Supplies,Consumer Discretionary
+3873,Watches Clocks Clockwork Operated Devices and Parts,Consumer Discretionary
+3911,Jewelry Precious Metals,Consumer Discretionary
+3931,Musical Instruments,Consumer Discretionary
+3942,Dolls and Stuffed Toys,Consumer Discretionary
+3944,Games Toys and Children's Vehicles,Consumer Discretionary
+3949,Sporting and Athletic Goods NEC,Consumer Discretionary
+3950,Pens Pencils and Other Artists Materials,Consumer Discretionary
+3960,Costume Jewelry and Notions,Consumer Discretionary
+3990,Miscellaneous Manufacturing Industries,Consumer Discretionary
+4011,Railroads Line-Haul Operating,Industrials
+4013,Railroad Switching and Terminal Establishments,Industrials
+4100,Local and Suburban Transit and Interurban Highway Passenger Transportation,Industrials
+4210,Trucking and Courier Services Except Air,Industrials
+4213,Trucking Except Local,Industrials
+4220,Public Warehousing and Storage,Industrials
+4231,Terminal and Joint Terminal Maintenance Facilities,Industrials
+4400,Water Transportation,Industrials
+4412,Deep Sea Foreign Transportation of Freight,Industrials
+4512,Air Transportation Scheduled,Industrials
+4513,Air Courier Services,Industrials
+4522,Air Transportation Nonscheduled,Industrials
+4581,Airports Flying Fields and Airport Terminal Services,Industrials
+4610,Pipelines Except Natural Gas,Energy
+4700,Transportation Services,Industrials
+4731,Arrangement of Transportation of Freight and Cargo,Industrials
+4812,Radiotelephone Communications,Communication Services
+4813,Telephone Communications,Communication Services
+4822,Telegraph and Other Message Communications,Communication Services
+4832,Radio Broadcasting Stations,Communication Services
+4833,Television Broadcasting Stations,Communication Services
+4841,Cable and Other Pay Television Services,Communication Services
+4899,Communications Services NEC,Communication Services
+4900,Electric Gas and Sanitary Services,Utilities
+4911,Electric Services,Utilities
+4922,Natural Gas Transmission,Utilities
+4923,Natural Gas Transmission and Distribution,Utilities
+4924,Natural Gas Distribution,Utilities
+4931,Electric and Other Services Combined,Utilities
+4932,Gas and Other Services Combined,Utilities
+4941,Water Supply,Utilities
+4950,Hazardous Waste Management,Industrials
+4953,Refuse Systems,Industrials
+4955,Hazardous Waste Management,Industrials
+4961,Steam and Air-Conditioning Supply,Utilities
+4991,Cogeneration Services and Small Power Producers,Utilities
+5000,Wholesale-Durable Goods,Industrials
+5040,Wholesale-Professional and Commercial Equipment,Industrials
+5045,Wholesale-Computers and Computer Peripheral Equipment,Information Technology
+5047,Wholesale-Medical Dental and Hospital Equipment and Supplies,Health Care
+5050,Wholesale-Metals and Minerals Except Petroleum,Materials
+5063,Wholesale-Electrical Apparatus and Equipment,Industrials
+5065,Wholesale-Electronic Parts and Equipment NEC,Information Technology
+5072,Wholesale-Hardware,Industrials
+5080,Wholesale-Machinery Equipment and Supplies,Industrials
+5090,Wholesale-Misc Durable Goods,Industrials
+5099,Wholesale-Durable Goods NEC,Industrials
+5110,Wholesale-Paper and Paper Products,Materials
+5122,Wholesale-Drugs Proprietaries and Druggists Sundries,Health Care
+5140,Wholesale-Groceries and Related Products,Consumer Staples
+5150,Wholesale-Farm Product Raw Materials,Consumer Staples
+5160,Wholesale-Chemicals and Allied Products,Materials
+5171,Wholesale-Petroleum Bulk Stations,Energy
+5172,Wholesale-Petroleum and Petroleum Products,Energy
+5180,Wholesale-Beer Wine and Distilled Alcoholic Beverages,Consumer Staples
+5190,Wholesale-Misc Nondurable Goods,Consumer Staples
+5200,Retail-Building Materials Hardware Garden Supply,Consumer Discretionary
+5211,Retail-Lumber and Other Building Materials Dealers,Consumer Discretionary
+5311,Retail-Department Stores,Consumer Discretionary
+5331,Retail-Variety Stores,Consumer Discretionary
+5399,Retail-Misc General Merchandise Stores,Consumer Discretionary
+5400,Retail-Food Stores,Consumer Staples
+5411,Retail-Grocery Stores,Consumer Staples
+5412,Retail-Convenience Stores,Consumer Staples
+5500,Retail-Auto Dealers and Gasoline Service Stations,Consumer Discretionary
+5531,Retail-Auto and Home Supply Stores,Consumer Discretionary
+5600,Retail-Apparel and Accessory Stores,Consumer Discretionary
+5621,Retail-Womens Clothing Stores,Consumer Discretionary
+5651,Retail-Family Clothing Stores,Consumer Discretionary
+5661,Retail-Shoe Stores,Consumer Discretionary
+5700,Retail-Home Furniture Furnishings and Equipment Stores,Consumer Discretionary
+5712,Retail-Furniture Stores,Consumer Discretionary
+5731,Retail-Radio TV Consumer Electronics Stores,Consumer Discretionary
+5734,Retail-Computer and Computer Software Stores,Information Technology
+5735,Retail-Record and Prerecorded Tape Stores,Consumer Discretionary
+5810,Retail-Eating and Drinking Places,Consumer Discretionary
+5812,Retail-Eating Places,Consumer Discretionary
+5900,Retail-Misc Retail,Consumer Discretionary
+5912,Retail-Drug Stores and Proprietary Stores,Consumer Staples
+5940,Retail-Misc Shopping Goods Stores,Consumer Discretionary
+5944,Retail-Jewelry Stores,Consumer Discretionary
+5945,Retail-Hobby Toy and Game Shops,Consumer Discretionary
+5960,Retail-Nonstore Retailers,Consumer Discretionary
+5961,Retail-Catalog Mail-Order Houses,Consumer Discretionary
+5990,Retail-Retail Stores NEC,Consumer Discretionary
+6020,State Commercial Banks,Financials
+6021,National Commercial Banks,Financials
+6022,State Commercial Banks,Financials
+6029,Commercial Banks NEC,Financials
+6035,Savings Institution Federally Chartered,Financials
+6036,Savings Institutions State-Chartered,Financials
+6099,Functions Related to Depository Banking NEC,Financials
+6111,Federal and Federally-Sponsored Credit Agencies,Financials
+6141,Personal Credit Institutions,Financials
+6153,Short-Term Business Credit Institutions,Financials
+6159,Federal and Federally-Sponsored Credit Agencies NEC,Financials
+6162,Mortgage Bankers and Loan Correspondents,Financials
+6172,Finance Services,Financials
+6189,Asset-Backed Securities,Financials
+6199,Finance Services,Financials
+6200,Security and Commodity Brokers Dealers Exchanges and Services,Financials
+6211,Security Brokers Dealers and Flotation Companies,Financials
+6221,Commodity Contracts Brokers and Dealers,Financials
+6282,Investment Advice,Financials
+6311,Life Insurance,Financials
+6321,Accident and Health Insurance,Financials
+6331,Fire Marine and Casualty Insurance,Financials
+6351,Surety Insurance,Financials
+6361,Title Insurance,Financials
+6411,Insurance Agents Brokers and Service,Financials
+6500,Real Estate,Real Estate
+6510,Real Estate Operators,Real Estate
+6512,Operators of Apartment Buildings,Real Estate
+6513,Operators of Apartment Buildings,Real Estate
+6519,Lessors of Real Property NEC,Real Estate
+6531,Real Estate Agents and Managers,Real Estate
+6552,Land Subdividers and Developers Except Cemeteries,Real Estate
+6770,Blank Checks,Financials
+6792,Oil Royalty Traders,Energy
+6794,Patent Owners and Lessors,Industrials
+6795,Mineral Royalty Traders,Materials
+6798,Real Estate Investment Trusts,Real Estate
+6799,Investors NEC,Financials
+7000,Hotels Rooming Houses Camps and Other Lodging Places,Consumer Discretionary
+7011,Hotels and Motels,Consumer Discretionary
+7200,Services-Personal Services,Consumer Discretionary
+7310,Services-Advertising,Communication Services
+7311,Services-Advertising Agencies,Communication Services
+7320,Services-Consumer Credit Reporting,Industrials
+7330,Services-Mailing Reproduction Commercial Art and Photography,Industrials
+7340,Services-To Dwellings and Other Buildings,Industrials
+7350,Services-Misc Equipment Rental and Leasing,Industrials
+7359,Services-Equipment Rental and Leasing NEC,Industrials
+7361,Services-Employment Agencies,Industrials
+7363,Services-Help Supply Services,Industrials
+7370,Services-Computer Services,Information Technology
+7371,Services-Computer Services,Information Technology
+7372,Services-Prepackaged Software,Information Technology
+7373,Services-Computer Integrated Systems Design,Information Technology
+7374,Services-Computer Processing and Data Preparation,Information Technology
+7377,Services-Computer Rental and Leasing,Information Technology
+7380,Services-Misc Business Services,Industrials
+7381,Services-Detective Guard and Armored Car Services,Industrials
+7384,Services-Photofinishing Laboratories,Industrials
+7385,Services-Telephone Interconnect Systems,Communication Services
+7389,Services-Business Services NEC,Industrials
+7510,Services-Auto Rental and Leasing,Consumer Discretionary
+7812,Services-Motion Picture and Video Tape Production,Communication Services
+7819,Services-Allied to Motion Picture Production,Communication Services
+7822,Services-Motion Picture and Video Distribution,Communication Services
+7829,Services-Allied to Motion Picture Distribution,Communication Services
+7830,Services-Motion Picture Theaters,Communication Services
+7841,Services-Video Tape Rental,Communication Services
+7900,Services-Amusement and Recreation Services,Communication Services
+7948,Services-Racing Including Track Operation,Communication Services
+7990,Services-Amusement and Recreation Services NEC,Communication Services
+7997,Services-Membership Sports and Recreation Clubs,Communication Services
+8000,Services-Health Services,Health Care
+8011,Services-Offices and Clinics of Doctors of Medicine,Health Care
+8050,Services-Nursing and Personal Care Facilities,Health Care
+8051,Services-Skilled Nursing Care Facilities,Health Care
+8060,Services-Hospitals,Health Care
+8062,Services-General Medical and Surgical Hospitals NEC,Health Care
+8071,Services-Medical Laboratories,Health Care
+8082,Services-Home Health Care Services,Health Care
+8090,Services-Health Services,Health Care
+8093,Services-Specialty Outpatient Facilities NEC,Health Care
+8200,Services-Educational Services,Consumer Discretionary
+8300,Services-Social Services,Health Care
+8700,Services-Engineering Accounting Research Management Services,Industrials
+8711,Services-Engineering Services,Industrials
+8731,Services-Commercial Physical and Biological Research,Health Care
+8734,Services-Testing Laboratories,Industrials
+8741,Services-Management Services,Industrials
+8742,Services-Management Consulting Services,Industrials
+8744,Services-Facilities Support Management Services,Industrials
+8880,American Depositary Receipts,Financials
+8888,Foreign Governments,Financials
+8900,Services-Services NEC,Industrials
+9721,International Affairs,Financials
+9995,Non-Classifiable Establishments,Unclassified

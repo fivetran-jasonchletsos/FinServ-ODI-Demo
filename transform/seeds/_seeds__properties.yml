@@ -1,0 +1,39 @@
+version: 2
+
+seeds:
+    - name: sic_to_sector
+      description: |
+          Maps SEC SIC industry codes to the 11 GICS sectors (plus
+          'Unclassified'). Used by dim_companies, fct_filings, and
+          fct_complaints to attach a sector to every CIK.
+      config:
+          column_types:
+              sic_code: varchar(4)
+              sic_description: varchar(255)
+              sector: varchar(64)
+      columns:
+          - name: sic_code
+            description: SIC code as a zero-padded four-character string.
+            data_tests:
+                - not_null
+                - unique
+          - name: sic_description
+            description: SIC industry label.
+          - name: sector
+            description: GICS sector label.
+            data_tests:
+                - not_null
+                - accepted_values:
+                      values:
+                          - Energy
+                          - Materials
+                          - Industrials
+                          - Consumer Discretionary
+                          - Consumer Staples
+                          - Health Care
+                          - Financials
+                          - Information Technology
+                          - Communication Services
+                          - Utilities
+                          - Real Estate
+                          - Unclassified

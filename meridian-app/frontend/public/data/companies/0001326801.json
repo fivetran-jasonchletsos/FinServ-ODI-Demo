@@ -1,0 +1,465 @@
+{
+  "company": {
+    "cik": "0001326801",
+    "ticker": "META",
+    "name": "Meta Platforms, Inc.",
+    "sector": "Technology",
+    "industry": "Internet Content",
+    "exchange": "NASDAQ",
+    "market_cap": 1300000000000,
+    "employees": 74000,
+    "hq_city": "Menlo Park",
+    "hq_state": "CA",
+    "description": "Meta Platforms, Inc. is a internet content company headquartered in Menlo Park, CA.",
+    "revenue_ttm": 142000000000,
+    "net_income_ttm": 35019783908,
+    "total_assets": 88731928154,
+    "total_liabilities": 61543687302,
+    "revenue_growth_yoy": -0.0582,
+    "net_margin": 0.2466,
+    "risk_score": 33.32,
+    "risk_bucket": "elevated",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 13,
+    "last_filing_date": "2026-05-08",
+    "last_complaint_date": "2025-01-08",
+    "filings": [
+      {
+        "accession_no": "0001326801-26-522015",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2026-05-08",
+        "period_of_report": "2026-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 29012
+      },
+      {
+        "accession_no": "0001326801-26-669761",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-16",
+        "period_of_report": "2026-04-16",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1684
+      },
+      {
+        "accession_no": "0001326801-26-874693",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-08",
+        "period_of_report": "2026-04-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1807
+      },
+      {
+        "accession_no": "0001326801-26-410021",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-03-31",
+        "period_of_report": "2026-03-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4218
+      },
+      {
+        "accession_no": "0001326801-26-691397",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-02-28",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 94282
+      },
+      {
+        "accession_no": "0001326801-25-488970",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-01",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 50312
+      },
+      {
+        "accession_no": "0001326801-25-510473",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-09-25",
+        "period_of_report": "2025-09-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3161
+      },
+      {
+        "accession_no": "0001326801-25-263648",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-08-09",
+        "period_of_report": "2025-08-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 1928
+      },
+      {
+        "accession_no": "0001326801-25-523163",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-07-28",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 50463
+      },
+      {
+        "accession_no": "0001326801-25-747842",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-06-29",
+        "period_of_report": "2025-06-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3017
+      },
+      {
+        "accession_no": "0001326801-25-496163",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-29",
+        "period_of_report": "2025-05-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3705
+      },
+      {
+        "accession_no": "0001326801-25-320678",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-25",
+        "period_of_report": "2025-05-25",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.02 Results of Operations and Financial Condition",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 841
+      },
+      {
+        "accession_no": "0001326801-25-591300",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-14",
+        "period_of_report": "2025-05-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4370
+      },
+      {
+        "accession_no": "0001326801-25-302419",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-08",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31610
+      },
+      {
+        "accession_no": "0001326801-25-948084",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-05-08",
+        "period_of_report": "2025-05-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 1603
+      },
+      {
+        "accession_no": "0001326801-25-831024",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-03-22",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 136926
+      },
+      {
+        "accession_no": "0001326801-25-962866",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-03-15",
+        "period_of_report": "2025-03-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 1461
+      },
+      {
+        "accession_no": "0001326801-25-042943",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-02-03",
+        "period_of_report": "2025-02-03",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2580
+      },
+      {
+        "accession_no": "0001326801-24-846706",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-12-09",
+        "period_of_report": "2024-12-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5043
+      },
+      {
+        "accession_no": "0001326801-24-623211",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-11-28",
+        "period_of_report": "2024-11-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 1597
+      },
+      {
+        "accession_no": "0001326801-24-820412",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-11-17",
+        "period_of_report": "2024-11-17",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 4379
+      },
+      {
+        "accession_no": "0001326801-24-142283",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-05",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 41641
+      },
+      {
+        "accession_no": "0001326801-24-938531",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-10-14",
+        "period_of_report": "2024-10-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 2067
+      },
+      {
+        "accession_no": "0001326801-24-448444",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-09-14",
+        "period_of_report": "2024-09-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "8.01 Other Events",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4621
+      },
+      {
+        "accession_no": "0001326801-24-057350",
+        "cik": "0001326801",
+        "ticker": "META",
+        "company_name": "Meta Platforms, Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-08-23",
+        "period_of_report": "2024-08-23",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 3013
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402906",
+        "date_received": "2025-01-08",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "Written notification about debt",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "Meta Platforms, Inc.",
+        "company_normalized": "META PLATFORMS, INC.",
+        "cik": "0001326801",
+        "state": "VA",
+        "zip_prefix": "663xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Account was charged off despite ongoing modification negotiations.",
+        "resolution": "Closed with explanation",
+        "timely_response": true,
+        "consumer_disputed": false,
+        "topic_cluster": "debt-collection-tactics"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Antitrust scrutiny in App Store / advertising business",
+      "AI-related capex outpacing operating cash flow growth",
+      "Talent retention costs rising with stock-based comp inflation",
+      "FX headwind from strengthening USD vs. EUR/JPY",
+      "Supply chain dependency on Taiwan-based foundry capacity"
+    ],
+    "ai_summary": "Meta Platforms, Inc. screens as Elevated risk: a softening top-line and 0 normalized complaints/quarter suggest customer-facing friction is compounding. The 3-event 8-K cadence over 90 days warrants close monitoring around the upcoming filing window."
+  }
+}

@@ -1,0 +1,18 @@
+# Copy to terraform.tfvars and fill in.
+
+aws_region = "us-east-1"
+
+# Leave empty to auto-generate a random 8-char suffix for the lake bucket,
+# or pin a value for reproducible deploys.
+# suffix = "demo01"
+
+# Fivetran's AWS account — defaulted, no need to change unless Fivetran
+# tells you otherwise.
+# fivetran_aws_account_id = "834469178297"
+
+# External ID from Fivetran's destination setup screen.
+fivetran_external_id = "REPLACE_WITH_FIVETRAN_GENERATED_EXTERNAL_ID"
+
+# IAM user (created manually) that the dbt runner authenticates as before
+# assuming the meridian-odi-dbt role.
+dbt_iam_user_arn = "arn:aws:iam::123456789012:user/dbt-runner"

@@ -1,0 +1,146 @@
+{
+  "tables": [
+    {
+      "database": "bronze",
+      "table": "sec_edgar_submissions_raw",
+      "rows": 389,
+      "bytes": 206096568,
+      "partitions": [
+        "ingest_date"
+      ],
+      "source_system": "sec_edgar",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 28
+    },
+    {
+      "database": "bronze",
+      "table": "sec_edgar_filings_raw",
+      "rows": 3501,
+      "bytes": 1498922830,
+      "partitions": [
+        "filing_year",
+        "form_type"
+      ],
+      "source_system": "sec_edgar",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 19
+    },
+    {
+      "database": "bronze",
+      "table": "fred_observations_raw",
+      "rows": 7812,
+      "bytes": 95449345,
+      "partitions": [
+        "series_id"
+      ],
+      "source_system": "fred",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 6
+    },
+    {
+      "database": "bronze",
+      "table": "cfpb_complaints_raw",
+      "rows": 58663,
+      "bytes": 643171329,
+      "partitions": [
+        "received_year",
+        "product"
+      ],
+      "source_system": "cfpb",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 23
+    },
+    {
+      "database": "silver",
+      "table": "stg_companies",
+      "rows": 60,
+      "bytes": 3653002,
+      "partitions": [],
+      "source_system": "sec_edgar",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 24
+    },
+    {
+      "database": "silver",
+      "table": "stg_filings",
+      "rows": 2375,
+      "bytes": 59725822,
+      "partitions": [
+        "filing_year"
+      ],
+      "source_system": "sec_edgar",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 14
+    },
+    {
+      "database": "silver",
+      "table": "stg_complaints",
+      "rows": 2995,
+      "bytes": 234633062,
+      "partitions": [
+        "received_year"
+      ],
+      "source_system": "cfpb",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 19
+    },
+    {
+      "database": "gold",
+      "table": "dim_companies",
+      "rows": 60,
+      "bytes": 970260,
+      "partitions": [],
+      "source_system": "derived",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 27
+    },
+    {
+      "database": "gold",
+      "table": "fct_filings",
+      "rows": 2375,
+      "bytes": 26661983,
+      "partitions": [
+        "filing_year",
+        "form_type"
+      ],
+      "source_system": "derived",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 11
+    },
+    {
+      "database": "gold",
+      "table": "fct_macro_observations",
+      "rows": 5360,
+      "bytes": 16591518,
+      "partitions": [
+        "series_id"
+      ],
+      "source_system": "derived",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 5
+    },
+    {
+      "database": "gold",
+      "table": "fct_complaints",
+      "rows": 2995,
+      "bytes": 97081102,
+      "partitions": [
+        "received_year",
+        "topic_cluster"
+      ],
+      "source_system": "derived",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 18
+    },
+    {
+      "database": "gold",
+      "table": "fct_company_risk_signal",
+      "rows": 60,
+      "bytes": 1156174,
+      "partitions": [],
+      "source_system": "derived",
+      "last_updated_at": "2026-05-14",
+      "schema_columns": 14
+    }
+  ]
+}

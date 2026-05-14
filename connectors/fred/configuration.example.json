@@ -1,0 +1,4 @@
+{
+  "api_key": "your_fred_api_key_here",
+  "series_seed": "DGS10,DGS2,FEDFUNDS,CPIAUCSL,UNRATE,GDP"
+}

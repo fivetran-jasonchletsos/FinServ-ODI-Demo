@@ -1,0 +1,392 @@
+version: 2
+
+models:
+    - name: dim_companies
+      description: |
+          Company dimension. One row per CIK with latest fundamentals,
+          sector classification (from sic_to_sector seed), and identity
+          metadata. The primary join key for risk and filings marts.
+      columns:
+          - name: cik
+            description: Filer CIK (zero-padded).
+            data_tests:
+                - not_null
+                - unique
+          - name: ticker
+            description: Primary ticker symbol.
+          - name: company_name
+            description: Legal company name.
+            data_tests:
+                - not_null
+          - name: sic_code
+            description: SIC industry code.
+          - name: sic_description
+            description: SIC industry label.
+          - name: sector
+            description: GICS sector (mapped from SIC via the seed).
+            data_tests:
+                - not_null
+                - accepted_values:
+                      values:
+                          - Energy
+                          - Materials
+                          - Industrials
+                          - Consumer Discretionary
+                          - Consumer Staples
+                          - Health Care
+                          - Financials
+                          - Information Technology
+                          - Communication Services
+                          - Utilities
+                          - Real Estate
+                          - Unclassified
+          - name: state_of_incorporation
+            description: Jurisdiction of incorporation.
+          - name: fiscal_year_end
+            description: MMDD fiscal-year-end marker.
+          - name: ein
+            description: Employer Identification Number.
+          - name: exchange
+            description: Primary listing exchange.
+          - name: latest_period_end
+            description: Period-end date for the most recent fundamentals row.
+          - name: latest_revenue
+            description: Revenue for the most recent reported period.
+          - name: latest_net_income
+            description: Net income for the most recent reported period.
+          - name: latest_total_assets
+            description: Total assets at most recent period.
+          - name: latest_stockholders_equity
+            description: Stockholders' equity at most recent period.
+          - name: latest_gross_margin
+            description: Gross margin (latest).
+          - name: latest_operating_margin
+            description: Operating margin (latest).
+          - name: latest_net_margin
+            description: Net margin (latest).
+          - name: latest_debt_to_equity
+            description: Debt-to-equity ratio (latest).
+          - name: latest_revenue_growth
+            description: Period-over-period revenue growth (latest).
+          - name: latest_net_income_growth
+            description: Period-over-period net-income growth (latest).
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: dim_dates
+      description: Date spine 2000-01-01 through 2035-12-31 for time-series joins.
+      columns:
+          - name: date_day
+            description: The calendar date.
+            data_tests:
+                - not_null
+                - unique
+          - name: year
+            description: Calendar year.
+          - name: quarter
+            description: Calendar quarter (1-4).
+          - name: month
+            description: Calendar month (1-12).
+          - name: day_of_month
+            description: Day of month (1-31).
+          - name: day_of_week
+            description: ISO day of week (1=Mon, 7=Sun).
+          - name: day_of_year
+            description: Day of year (1-366).
+          - name: iso_week
+            description: ISO week number.
+          - name: month_name
+            description: Full month name.
+          - name: day_name
+            description: Full weekday name.
+          - name: is_weekday
+            description: True if Monday-Friday.
+          - name: year_month_key
+            description: Integer key YYYYMM.
+          - name: year_quarter_key
+            description: Integer key YYYYQ.
+
+    - name: fct_filings
+      description: One row per SEC filing event with company and sector context.
+      columns:
+          - name: filing_key
+            description: Surrogate key.
+            data_tests:
+                - not_null
+                - unique
+          - name: accession_number
+            description: SEC accession number.
+            data_tests:
+                - not_null
+                - unique
+          - name: cik
+            description: Filer CIK.
+            data_tests:
+                - not_null
+                - relationships:
+                      to: ref('dim_companies')
+                      field: cik
+          - name: ticker
+            description: Filer ticker.
+          - name: company_name
+            description: Filer name.
+          - name: sector
+            description: GICS sector for the filer.
+          - name: form_type
+            description: SEC form type.
+            data_tests:
+                - not_null
+          - name: filing_category
+            description: Coarse category derived from form_type.
+            data_tests:
+                - accepted_values:
+                      values:
+                          - annual_report
+                          - quarterly_report
+                          - current_event
+                          - registration
+                          - prospectus
+                          - insider_transaction
+                          - beneficial_ownership
+                          - proxy
+                          - other
+          - name: filing_date
+            description: Date the filing was accepted by EDGAR.
+            data_tests:
+                - not_null
+          - name: period_of_report
+            description: Period the filing covers.
+          - name: filing_year
+            description: Year of filing_date.
+          - name: filing_quarter
+            description: Quarter of filing_date.
+          - name: filing_month
+            description: Month of filing_date.
+          - name: filing_url
+            description: Link to the filing on sec.gov.
+          - name: primary_document
+            description: Primary document filename.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: fct_macro_observations
+      description: One row per (FRED series, observation_date) with YoY/MoM deltas.
+      columns:
+          - name: observation_key
+            description: Surrogate key.
+            data_tests:
+                - not_null
+                - unique
+          - name: series_id
+            description: FRED series identifier.
+            data_tests:
+                - not_null
+          - name: series_title
+            description: Series title.
+          - name: series_frequency
+            description: Native release frequency.
+          - name: series_units
+            description: Units of measure.
+          - name: seasonal_adjustment
+            description: Seasonal-adjustment flag.
+          - name: observation_date
+            description: Observation date.
+            data_tests:
+                - not_null
+          - name: observation_year
+            description: Year of observation_date.
+          - name: observation_quarter
+            description: Quarter of observation_date.
+          - name: observation_month
+            description: Month of observation_date.
+          - name: value
+            description: Observed numeric value.
+          - name: prior_value
+            description: Prior observation's value.
+          - name: prior_observation_date
+            description: Date of the prior observation.
+          - name: yoy_prior_value
+            description: Value 12 months prior.
+          - name: yoy_prior_date
+            description: Date 12 months prior.
+          - name: mom_change_abs
+            description: Absolute MoM change.
+          - name: mom_change_pct
+            description: Percent MoM change.
+          - name: yoy_change_abs
+            description: Absolute YoY change.
+          - name: yoy_change_pct
+            description: Percent YoY change.
+
+    - name: fct_complaints
+      description: |
+          One row per CFPB consumer complaint with derived topic cluster
+          (10 buckets), entity-resolved CIK, and sector. The bronze→gold
+          step that the demo's Architecture page highlights.
+      columns:
+          - name: complaint_key
+            description: Surrogate key.
+            data_tests:
+                - not_null
+                - unique
+          - name: complaint_id
+            description: CFPB complaint identifier.
+            data_tests:
+                - not_null
+                - unique
+          - name: date_received
+            description: Date CFPB received the complaint.
+            data_tests:
+                - not_null
+          - name: product
+            description: CFPB product label (raw).
+          - name: sub_product
+            description: CFPB sub-product label (raw).
+          - name: issue
+            description: CFPB issue label (raw).
+          - name: sub_issue
+            description: CFPB sub-issue label (raw).
+          - name: topic_cluster
+            description: Derived 10-bucket topic cluster.
+            data_tests:
+                - not_null
+                - accepted_values:
+                      values:
+                          - credit_reporting
+                          - debt_collection
+                          - mortgage_servicing
+                          - student_loan
+                          - auto_loan
+                          - credit_card
+                          - deposit_account
+                          - payments_transfers
+                          - consumer_lending
+                          - fraud_and_identity
+                          - other
+          - name: company_name
+            description: Company name as submitted (uppercased).
+          - name: cik
+            description: Resolved SEC CIK (nullable when no match).
+          - name: ticker
+            description: Resolved ticker (nullable).
+          - name: sector
+            description: Resolved sector.
+          - name: company_match_method
+            description: Which rule resolved the company.
+          - name: company_match_confidence
+            description: Confidence score of the resolution.
+          - name: state
+            description: Consumer state.
+          - name: zip_code
+            description: 3-digit ZIP prefix.
+          - name: consumer_consent_provided
+            description: Narrative-consent flag.
+          - name: submitted_via
+            description: Submission channel.
+          - name: date_sent_to_company
+            description: Date forwarded to the company.
+          - name: company_response
+            description: Structured company response.
+          - name: timely_response
+            description: Boolean — responded within 15 days.
+          - name: consumer_disputed
+            description: Boolean — consumer disputed the resolution.
+          - name: loaded_at
+            description: Fivetran sync timestamp.
+
+    - name: fct_company_risk_signal
+      description: |
+          Headline cross-source risk model. One row per CIK with a 0-100
+          risk_score blending: financial deterioration, complaint
+          velocity, recent 8-K event volume, and sector macro stress.
+      columns:
+          - name: cik
+            description: Filer CIK.
+            data_tests:
+                - not_null
+                - unique
+                - relationships:
+                      to: ref('dim_companies')
+                      field: cik
+          - name: ticker
+            description: Filer ticker.
+          - name: company_name
+            description: Filer name.
+          - name: sector
+            description: GICS sector.
+          - name: risk_score
+            description: Composite risk score, 0-100.
+            data_tests:
+                - not_null
+                - dbt_expectations.expect_column_values_to_be_between:
+                      min_value: 0
+                      max_value: 100
+          - name: risk_bucket
+            description: low | moderate | elevated | high.
+            data_tests:
+                - not_null
+                - accepted_values:
+                      values:
+                          - low
+                          - moderate
+                          - elevated
+                          - high
+          - name: financial_score
+            description: Financial-deterioration component (0-25).
+          - name: filing_score
+            description: 8-K event-volume component (0-25).
+          - name: complaint_score
+            description: Complaint-velocity component (0-25).
+          - name: sector_score
+            description: Sector-macro-stress component (0-25).
+          - name: recent_8k_count
+            description: 8-K filings in the last 90 days.
+          - name: recent_complaint_count
+            description: CFPB complaints in the last 90 days.
+          - name: sector_stress_score
+            description: Sector stress score (from mart_sector_health).
+          - name: built_at
+            description: Build timestamp.
+
+    - name: mart_sector_health
+      description: |
+          Sector roll-up combining median company fundamentals, recent
+          filing volume, and recent complaint volume into a 0-100
+          sector_stress_score. One row per sector.
+      columns:
+          - name: sector
+            description: GICS sector.
+            data_tests:
+                - not_null
+                - unique
+          - name: companies_in_sector
+            description: Count of distinct companies in the sector.
+          - name: median_revenue_growth
+            description: Median latest revenue-growth across companies.
+          - name: median_net_margin
+            description: Median latest net margin.
+          - name: median_debt_to_equity
+            description: Median latest debt-to-equity.
+          - name: pct_companies_revenue_declining
+            description: Share of companies with negative revenue growth.
+          - name: recent_8k_count
+            description: 8-K filings in the last 90 days.
+          - name: recent_financial_filings
+            description: 10-K + 10-Q filings in the last 90 days.
+          - name: total_recent_filings
+            description: All filings in the last 90 days.
+          - name: recent_complaint_count
+            description: CFPB complaints in the last 90 days.
+          - name: recent_timely_response_rate
+            description: Share of complaints with timely_response=true.
+          - name: recent_dispute_rate
+            description: Share of complaints where consumer disputed.
+          - name: sector_stress_score
+            description: Composite sector stress score, 0-100.
+            data_tests:
+                - not_null
+                - dbt_expectations.expect_column_values_to_be_between:
+                      min_value: 0
+                      max_value: 100
+          - name: built_at
+            description: Build timestamp.

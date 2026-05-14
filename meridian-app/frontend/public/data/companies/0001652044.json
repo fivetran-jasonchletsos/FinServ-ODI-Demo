@@ -1,0 +1,452 @@
+{
+  "company": {
+    "cik": "0001652044",
+    "ticker": "GOOG",
+    "name": "Alphabet Inc.",
+    "sector": "Technology",
+    "industry": "Internet Content",
+    "exchange": "NASDAQ",
+    "market_cap": 2000000000000,
+    "employees": 182000,
+    "hq_city": "Mountain View",
+    "hq_state": "CA",
+    "description": "Alphabet Inc. is a internet content company headquartered in Mountain View, CA.",
+    "revenue_ttm": 318000000000,
+    "net_income_ttm": 33815672783,
+    "total_assets": 416143614812,
+    "total_liabilities": 232330230032,
+    "revenue_growth_yoy": 0.1558,
+    "net_margin": 0.1063,
+    "risk_score": 12.44,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.25,
+    "filings_count_ttm": 9,
+    "last_filing_date": "2026-04-14",
+    "last_complaint_date": "2025-09-14",
+    "filings": [
+      {
+        "accession_no": "0001652044-26-291335",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-14",
+        "period_of_report": "2026-04-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4265
+      },
+      {
+        "accession_no": "0001652044-26-404306",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-03-08",
+        "period_of_report": "2026-03-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 4506
+      },
+      {
+        "accession_no": "0001652044-26-742930",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-03-05",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 114754
+      },
+      {
+        "accession_no": "0001652044-25-124075",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-12-05",
+        "period_of_report": "2025-12-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "1.01 Entry into a Material Definitive Agreement",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5308
+      },
+      {
+        "accession_no": "0001652044-25-115553",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-20",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 35882
+      },
+      {
+        "accession_no": "0001652044-25-462780",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-09-15",
+        "period_of_report": "2025-09-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Unregistered Sales of Equity Securities",
+        "word_count": 3033
+      },
+      {
+        "accession_no": "0001652044-25-029975",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-08-24",
+        "period_of_report": "2025-08-24",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4701
+      },
+      {
+        "accession_no": "0001652044-25-483346",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31511
+      },
+      {
+        "accession_no": "0001652044-25-679879",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-15",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 31344
+      },
+      {
+        "accession_no": "0001652044-25-719603",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-02-24",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 105129
+      },
+      {
+        "accession_no": "0001652044-25-157937",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-02-13",
+        "period_of_report": "2025-02-13",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 4051
+      },
+      {
+        "accession_no": "0001652044-24-230247",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-11-26",
+        "period_of_report": "2024-11-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1743
+      },
+      {
+        "accession_no": "0001652044-24-422254",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-11-03",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 33788
+      },
+      {
+        "accession_no": "0001652044-24-237466",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-09-29",
+        "period_of_report": "2024-09-29",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 4114
+      },
+      {
+        "accession_no": "0001652044-24-823896",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-09-10",
+        "period_of_report": "2024-09-10",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 2467
+      },
+      {
+        "accession_no": "0001652044-24-203353",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-10",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 37633
+      },
+      {
+        "accession_no": "0001652044-24-769576",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-07-19",
+        "period_of_report": "2024-07-19",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2997
+      },
+      {
+        "accession_no": "0001652044-24-301968",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-06-26",
+        "period_of_report": "2024-06-26",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "3.02 Unregistered Sales of Equity Securities",
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 825
+      },
+      {
+        "accession_no": "0001652044-24-114489",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-05-21",
+        "period_of_report": "2024-05-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "7.01 Regulation FD Disclosure",
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1208
+      },
+      {
+        "accession_no": "0001652044-24-401104",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-05-17",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 51986
+      },
+      {
+        "accession_no": "0001652044-24-102565",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-K",
+        "filing_date": "2024-03-08",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 88220
+      },
+      {
+        "accession_no": "0001652044-24-774993",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-02-18",
+        "period_of_report": "2024-02-18",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 3301
+      },
+      {
+        "accession_no": "0001652044-24-250366",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-01-28",
+        "period_of_report": "2024-01-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1339
+      },
+      {
+        "accession_no": "0001652044-23-719097",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-12-06",
+        "period_of_report": "2023-12-06",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "2.02 Results of Operations and Financial Condition",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 5054
+      },
+      {
+        "accession_no": "0001652044-23-148724",
+        "cik": "0001652044",
+        "ticker": "GOOG",
+        "company_name": "Alphabet Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2023-11-11",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28417
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402905",
+        "date_received": "2025-09-14",
+        "product": "Credit card or prepaid card",
+        "sub_product": "General-purpose credit card",
+        "issue": "Getting a credit card",
+        "sub_issue": "Was not notified of investigation",
+        "company": "Alphabet Inc.",
+        "company_normalized": "ALPHABET INC.",
+        "cik": "0001652044",
+        "state": "FL",
+        "zip_prefix": "550xx",
+        "consumer_consent": true,
+        "has_narrative": true,
+        "narrative_summary": "Collection attempt on a debt that consumer believes was previously settled.",
+        "resolution": "Closed with explanation",
+        "timely_response": true,
+        "consumer_disputed": false,
+        "topic_cluster": "billing-disputes"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "UMCSENT",
+        "title": "University of Michigan Consumer Sentiment",
+        "units": "Index 1966:Q1=100",
+        "frequency": "Monthly",
+        "category": "other",
+        "latest_value": 60.9634,
+        "latest_date": "2026-05-01",
+        "prior_value": 56.3594,
+        "yoy_change": 0.0078,
+        "observations_count": 60
+      },
+      {
+        "series_id": "DGS10",
+        "title": "10-Year Treasury Constant Maturity Rate",
+        "units": "Percent",
+        "frequency": "Daily",
+        "category": "rates",
+        "latest_value": 1.1758,
+        "latest_date": "2026-05-14",
+        "prior_value": 1.0521,
+        "yoy_change": -0.157,
+        "observations_count": 1260
+      }
+    ],
+    "risk_factors": [
+      "Customer concentration risk \u2014 top 10 customers > 30% of revenue",
+      "Supply chain dependency on Taiwan-based foundry capacity",
+      "FX headwind from strengthening USD vs. EUR/JPY",
+      "AI-related capex outpacing operating cash flow growth",
+      "Antitrust scrutiny in App Store / advertising business"
+    ],
+    "ai_summary": "Alphabet Inc. screens cleanly across our cross-source signal set \u2014 double-digit revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Technology."
+  }
+}

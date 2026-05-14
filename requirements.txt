@@ -1,0 +1,17 @@
+# Core
+python-dotenv==1.0.0
+Faker==20.1.0
+
+# Database drivers
+pyodbc==5.0.1
+snowflake-connector-python>=3.7
+
+# API
+requests==2.31.0
+
+# dbt — Snowflake adapter (no more DuckDB)
+dbt-core==1.7.4
+dbt-snowflake==1.7.1
+
+# Fivetran SDK (in case we add a custom connector)
+fivetran-connector-sdk>=2.8

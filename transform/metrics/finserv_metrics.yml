@@ -1,0 +1,243 @@
+version: 2
+
+# ============================================================
+# FinServ ODI semantic layer.
+#
+# Six reusable metrics covering the demo themes: revenue growth,
+# consumer-protection signal, risk concentration, macro spreads,
+# event-driven filings, and operational quality.
+# ============================================================
+
+semantic_models:
+    - name: company_financials
+      description: Company fundamentals from XBRL, joined to the date spine.
+      model: ref('int_company_financials')
+      defaults:
+          agg_time_dimension: period_end_date
+      entities:
+          - name: company
+            type: primary
+            expr: cik
+      dimensions:
+          - name: period_end_date
+            type: time
+            type_params:
+                time_granularity: day
+          - name: source_form_type
+            type: categorical
+      measures:
+          - name: revenue_total
+            description: Sum of revenue across reported periods.
+            agg: sum
+            expr: revenue
+          - name: net_income_total
+            description: Sum of net income across reported periods.
+            agg: sum
+            expr: net_income
+          - name: revenue_growth_period_avg
+            description: Average period-over-period revenue growth fraction.
+            agg: average
+            expr: revenue_growth_period
+          - name: filings_in_facts
+            description: Distinct filings represented in the fact rows.
+            agg: count_distinct
+            expr: filing_date
+
+    - name: filings
+      description: SEC filing events.
+      model: ref('fct_filings')
+      defaults:
+          agg_time_dimension: filing_date
+      entities:
+          - name: filing
+            type: primary
+            expr: accession_number
+          - name: company
+            type: foreign
+            expr: cik
+      dimensions:
+          - name: filing_date
+            type: time
+            type_params:
+                time_granularity: day
+          - name: form_type
+            type: categorical
+          - name: filing_category
+            type: categorical
+          - name: sector
+            type: categorical
+      measures:
+          - name: filing_count
+            description: Count of filing events.
+            agg: count
+            expr: accession_number
+          - name: filing_count_8k
+            description: Count of 8-K filings.
+            agg: sum
+            expr: case when form_type like '8-K%' then 1 else 0 end
+
+    - name: complaints
+      description: CFPB consumer complaints with derived topic cluster.
+      model: ref('fct_complaints')
+      defaults:
+          agg_time_dimension: date_received
+      entities:
+          - name: complaint
+            type: primary
+            expr: complaint_id
+          - name: company
+            type: foreign
+            expr: cik
+      dimensions:
+          - name: date_received
+            type: time
+            type_params:
+                time_granularity: day
+          - name: topic_cluster
+            type: categorical
+          - name: sector
+            type: categorical
+          - name: state
+            type: categorical
+      measures:
+          - name: complaint_count
+            description: Count of complaints.
+            agg: count
+            expr: complaint_id
+          - name: timely_response_count
+            description: Count of complaints with a timely response.
+            agg: sum
+            expr: case when timely_response then 1 else 0 end
+
+    - name: risk
+      description: Company cross-source risk signal.
+      model: ref('fct_company_risk_signal')
+      defaults:
+          agg_time_dimension: built_at
+      entities:
+          - name: company
+            type: primary
+            expr: cik
+      dimensions:
+          - name: built_at
+            type: time
+            type_params:
+                time_granularity: day
+          - name: sector
+            type: categorical
+          - name: risk_bucket
+            type: categorical
+      measures:
+          - name: risk_score_total
+            description: Sum of risk_score (used with average aggregation).
+            agg: sum
+            expr: risk_score
+          - name: company_count
+            description: Distinct companies scored.
+            agg: count_distinct
+            expr: cik
+
+    - name: macro
+      description: FRED macroeconomic observations.
+      model: ref('fct_macro_observations')
+      defaults:
+          agg_time_dimension: observation_date
+      entities:
+          - name: observation
+            type: primary
+            expr: observation_key
+      dimensions:
+          - name: observation_date
+            type: time
+            type_params:
+                time_granularity: day
+          - name: series_id
+            type: categorical
+      measures:
+          - name: value_dgs10
+            description: DGS10 (10-year Treasury constant maturity) value.
+            agg: average
+            expr: case when series_id = 'DGS10' then value end
+          - name: value_dgs2
+            description: DGS2 (2-year Treasury constant maturity) value.
+            agg: average
+            expr: case when series_id = 'DGS2' then value end
+
+metrics:
+    - name: revenue_growth_yoy
+      label: Revenue Growth (YoY)
+      description: |
+          Average period-over-period revenue-growth fraction across
+          companies, computed from XBRL facts. Used by the executive
+          dashboard to track top-line momentum.
+      type: simple
+      type_params:
+          measure: revenue_growth_period_avg
+
+    - name: complaint_velocity
+      label: Complaint Velocity
+      description: |
+          Number of CFPB consumer complaints received per period.
+          Operational early-warning signal for consumer-protection risk.
+      type: simple
+      type_params:
+          measure: complaint_count
+
+    - name: risk_score_avg
+      label: Average Risk Score
+      description: |
+          Mean composite risk score (0-100) across scored companies.
+          Blends financial deterioration, 8-K volume, complaint velocity,
+          and sector macro stress.
+      type: ratio
+      type_params:
+          numerator: risk_score_total
+          denominator: company_count
+
+    - name: yield_curve_spread
+      label: Yield-Curve Spread (10Y - 2Y)
+      description: |
+          DGS10 minus DGS2 from FRED — the canonical recession-signal
+          term spread.
+      type: derived
+      type_params:
+          expr: value_dgs10 - value_dgs2
+          metrics:
+              - name: value_dgs10_metric
+                alias: value_dgs10
+              - name: value_dgs2_metric
+                alias: value_dgs2
+
+    - name: value_dgs10_metric
+      label: DGS10 Value
+      description: Helper metric exposing the average DGS10 value.
+      type: simple
+      type_params:
+          measure: value_dgs10
+
+    - name: value_dgs2_metric
+      label: DGS2 Value
+      description: Helper metric exposing the average DGS2 value.
+      type: simple
+      type_params:
+          measure: value_dgs2
+
+    - name: eight_k_event_count_ttm
+      label: 8-K Event Count (TTM)
+      description: |
+          Count of 8-K filings in the trailing twelve months — proxy for
+          material-event volume and management-disclosed volatility.
+      type: cumulative
+      type_params:
+          measure: filing_count_8k
+          window: 12 months
+
+    - name: timely_response_rate
+      label: Timely Response Rate
+      description: |
+          Share of CFPB complaints the company responded to within the
+          15-day SLA. Operational quality signal.
+      type: ratio
+      type_params:
+          numerator: timely_response_count
+          denominator: complaint_count

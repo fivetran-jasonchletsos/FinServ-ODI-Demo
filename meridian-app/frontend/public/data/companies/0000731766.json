@@ -1,0 +1,456 @@
+{
+  "company": {
+    "cik": "0000731766",
+    "ticker": "UNH",
+    "name": "UnitedHealth Group Inc.",
+    "sector": "Healthcare",
+    "industry": "Healthcare Plans",
+    "exchange": "NYSE",
+    "market_cap": 460000000000,
+    "employees": 440000,
+    "hq_city": "Minnetonka",
+    "hq_state": "MN",
+    "description": "UnitedHealth Group Inc. is a healthcare plans company headquartered in Minnetonka, MN.",
+    "revenue_ttm": 372000000000,
+    "net_income_ttm": 114009869961,
+    "total_assets": 629724973977,
+    "total_liabilities": 371065188547,
+    "revenue_growth_yoy": 0.0544,
+    "net_margin": 0.3065,
+    "risk_score": 16.08,
+    "risk_bucket": "low",
+    "complaint_velocity": 0.0,
+    "filings_count_ttm": 10,
+    "last_filing_date": "2026-04-01",
+    "last_complaint_date": "2024-08-17",
+    "filings": [
+      {
+        "accession_no": "0000731766-26-243546",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-04-01",
+        "period_of_report": "2026-04-01",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 3235
+      },
+      {
+        "accession_no": "0000731766-26-734123",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-K",
+        "filing_date": "2026-03-16",
+        "period_of_report": "2025-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 93821
+      },
+      {
+        "accession_no": "0000731766-26-622386",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2026-02-12",
+        "period_of_report": "2026-02-12",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3830
+      },
+      {
+        "accession_no": "0000731766-25-698807",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-11-07",
+        "period_of_report": "2025-11-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 3082
+      },
+      {
+        "accession_no": "0000731766-25-338481",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-11-06",
+        "period_of_report": "2025-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 40585
+      },
+      {
+        "accession_no": "0000731766-25-302492",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-09-07",
+        "period_of_report": "2025-09-07",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "8.01 Other Events",
+          "5.02 Departure of Directors or Certain Officers"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 2925
+      },
+      {
+        "accession_no": "0000731766-25-532916",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-08-15",
+        "period_of_report": "2025-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 41981
+      },
+      {
+        "accession_no": "0000731766-25-329639",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-08-09",
+        "period_of_report": "2025-08-09",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1614
+      },
+      {
+        "accession_no": "0000731766-25-301826",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-06-27",
+        "period_of_report": "2025-06-27",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3043
+      },
+      {
+        "accession_no": "0000731766-25-542825",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2025-05-15",
+        "period_of_report": "2025-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 45209
+      },
+      {
+        "accession_no": "0000731766-25-853528",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-04-02",
+        "period_of_report": "2025-04-02",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 2525
+      },
+      {
+        "accession_no": "0000731766-25-357688",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-K",
+        "filing_date": "2025-03-17",
+        "period_of_report": "2024-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 88164
+      },
+      {
+        "accession_no": "0000731766-25-578986",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2025-03-14",
+        "period_of_report": "2025-03-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "8.01 Other Events"
+        ],
+        "primary_topic": "Other Events",
+        "word_count": 4967
+      },
+      {
+        "accession_no": "0000731766-24-512089",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-10-28",
+        "period_of_report": "2024-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 28844
+      },
+      {
+        "accession_no": "0000731766-24-330103",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-08-20",
+        "period_of_report": "2024-08-20",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "3.02 Unregistered Sales of Equity Securities",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 1114
+      },
+      {
+        "accession_no": "0000731766-24-091084",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-08-15",
+        "period_of_report": "2024-08-15",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "2.05 Costs Associated with Exit or Disposal Activities",
+          "1.01 Entry into a Material Definitive Agreement"
+        ],
+        "primary_topic": "Costs Associated with Exit or Disposal Activities",
+        "word_count": 1920
+      },
+      {
+        "accession_no": "0000731766-24-837804",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-08-14",
+        "period_of_report": "2024-06-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 34394
+      },
+      {
+        "accession_no": "0000731766-24-780432",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-05-22",
+        "period_of_report": "2024-05-22",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "5.02 Departure of Directors or Certain Officers",
+          "1.01 Entry into a Material Definitive Agreement",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Departure of Directors or Certain Officers",
+        "word_count": 2622
+      },
+      {
+        "accession_no": "0000731766-24-933909",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2024-04-28",
+        "period_of_report": "2024-03-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 45689
+      },
+      {
+        "accession_no": "0000731766-24-466433",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-04-14",
+        "period_of_report": "2024-04-14",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "5.07 Submission of Matters to a Vote of Security Holders",
+          "3.02 Unregistered Sales of Equity Securities"
+        ],
+        "primary_topic": "Submission of Matters to a Vote of Security Holders",
+        "word_count": 5067
+      },
+      {
+        "accession_no": "0000731766-24-751044",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-03-05",
+        "period_of_report": "2024-03-05",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "7.01 Regulation FD Disclosure",
+          "2.02 Results of Operations and Financial Condition"
+        ],
+        "primary_topic": "Regulation FD Disclosure",
+        "word_count": 1782
+      },
+      {
+        "accession_no": "0000731766-24-028679",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-K",
+        "filing_date": "2024-02-24",
+        "period_of_report": "2023-12-31",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-K",
+        "items": null,
+        "primary_topic": "Annual Report",
+        "word_count": 124216
+      },
+      {
+        "accession_no": "0000731766-24-351627",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2024-02-08",
+        "period_of_report": "2024-02-08",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "1.01 Entry into a Material Definitive Agreement",
+          "7.01 Regulation FD Disclosure"
+        ],
+        "primary_topic": "Entry into a Material Definitive Agreement",
+        "word_count": 3061
+      },
+      {
+        "accession_no": "0000731766-23-614826",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "8-K",
+        "filing_date": "2023-11-21",
+        "period_of_report": "2023-11-21",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=8-K",
+        "items": [
+          "2.02 Results of Operations and Financial Condition",
+          "5.02 Departure of Directors or Certain Officers",
+          "5.07 Submission of Matters to a Vote of Security Holders"
+        ],
+        "primary_topic": "Results of Operations and Financial Condition",
+        "word_count": 3881
+      },
+      {
+        "accession_no": "0000731766-23-878324",
+        "cik": "0000731766",
+        "ticker": "UNH",
+        "company_name": "UnitedHealth Group Inc.",
+        "form_type": "10-Q",
+        "filing_date": "2023-11-18",
+        "period_of_report": "2023-09-28",
+        "filing_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766&type=10-Q",
+        "items": null,
+        "primary_topic": "Quarterly Report",
+        "word_count": 48515
+      }
+    ],
+    "complaints": [
+      {
+        "complaint_id": "CFPB-08402937",
+        "date_received": "2024-08-17",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit repair",
+        "issue": "Incorrect information on your report",
+        "sub_issue": "Their investigation did not fix an error",
+        "company": "UnitedHealth Group Inc.",
+        "company_normalized": "UNITEDHEALTH GROUP INC.",
+        "cik": "0000731766",
+        "state": "CA",
+        "zip_prefix": "911xx",
+        "consumer_consent": false,
+        "has_narrative": false,
+        "narrative_summary": null,
+        "resolution": "In progress",
+        "timely_response": true,
+        "consumer_disputed": null,
+        "topic_cluster": "credit-reporting-errors"
+      }
+    ],
+    "related_macro_series": [
+      {
+        "series_id": "CPIAUCSL",
+        "title": "Consumer Price Index for All Urban Consumers",
+        "units": "Index 1982-84=100",
+        "frequency": "Monthly",
+        "category": "inflation",
+        "latest_value": 272.85,
+        "latest_date": "2026-05-01",
+        "prior_value": 273.02,
+        "yoy_change": 0.0045,
+        "observations_count": 60
+      },
+      {
+        "series_id": "UNRATE",
+        "title": "Unemployment Rate",
+        "units": "Percent",
+        "frequency": "Monthly",
+        "category": "employment",
+        "latest_value": 4.4842,
+        "latest_date": "2026-05-01",
+        "prior_value": 4.4868,
+        "yoy_change": 0.0268,
+        "observations_count": 60
+      }
+    ],
+    "risk_factors": [
+      "Provider-network adequacy regulatory exposure",
+      "Cybersecurity event impacting claims-processing platform",
+      "Drug pricing reform (IRA Part D redesign) margin pressure",
+      "Medicare Advantage star-rating downgrade risk",
+      "Patent cliff on legacy biologic franchise"
+    ],
+    "ai_summary": "UnitedHealth Group Inc. screens cleanly across our cross-source signal set \u2014 modest positive revenue, complaint velocity below peer median, and a benign 8-K profile. We maintain an overweight bias subject to macro conditions in Healthcare."
+  }
+}
