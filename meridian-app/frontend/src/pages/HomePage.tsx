@@ -2,17 +2,37 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api, formatBytes, formatCurrencyShort, formatNumber } from '../api/queries';
 import type { SummaryStats, Company } from '../types';
+import Sparkline from '../components/Sparkline';
+
+function monthlyCounts(dates: (string | null | undefined)[], months = 12): number[] {
+  const buckets = new Map<string, number>();
+  for (const d of dates) {
+    if (!d) continue;
+    const key = d.slice(0, 7);
+    buckets.set(key, (buckets.get(key) ?? 0) + 1);
+  }
+  const keys = Array.from(buckets.keys()).sort();
+  return keys.slice(-months).map((k) => buckets.get(k)!);
+}
 
 export default function HomePage() {
   const navigate = useNavigate();
   const [stats, setStats] = useState<SummaryStats | null>(null);
   const [topCompanies, setTopCompanies] = useState<Company[]>([]);
+  const [filingsSpark, setFilingsSpark] = useState<number[]>([]);
+  const [complaintsSpark, setComplaintsSpark] = useState<number[]>([]);
 
   useEffect(() => {
     api.getSummary().then(setStats).catch(() => {});
     api.searchCompanies({ limit: 200000 }).then((r) => {
       const sorted = [...r.results].sort((a, b) => b.risk_score - a.risk_score).slice(0, 6);
       setTopCompanies(sorted);
+    }).catch(() => {});
+    api.getFilings().then((r) => {
+      setFilingsSpark(monthlyCounts(r.filings.map((f) => f.filing_date)));
+    }).catch(() => {});
+    api.getComplaints().then((r) => {
+      setComplaintsSpark(monthlyCounts(r.complaints.map((c) => c.date_received)));
     }).catch(() => {});
   }, []);
 
@@ -63,9 +83,9 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-y divide-[var(--hairline-soft)] tabular">
                   <Stat label="Companies" value={stats ? formatNumber(stats.total_companies) : '—'} hint="From SEC EDGAR XBRL" />
-                  <Stat label="Filings" value={stats ? formatNumber(stats.total_filings) : '—'} hint="10-K / 10-Q / 8-K" />
+                  <Stat label="Filings" value={stats ? formatNumber(stats.total_filings) : '—'} hint="10-K / 10-Q / 8-K" sparkValues={filingsSpark} sparkStroke="var(--navy-deep)" />
                   <Stat label="Macro series" value={stats ? formatNumber(stats.total_macro_series) : '—'} hint="From FRED" />
-                  <Stat label="Complaints" value={stats ? formatNumber(stats.total_complaints) : '—'} hint="From CFPB consumer database" />
+                  <Stat label="Complaints" value={stats ? formatNumber(stats.total_complaints) : '—'} hint="From CFPB consumer database" sparkValues={complaintsSpark} sparkStroke="var(--gold-dim)" />
                 </div>
                 <div className="px-5 py-3 border-t border-[var(--hairline)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep)]">
                   <span className="inline-flex items-center gap-1.5">
@@ -200,11 +220,16 @@ export default function HomePage() {
   );
 }
 
-function Stat({ label, value, hint }: { label: string; value: string; hint: string }) {
+function Stat({ label, value, hint, sparkValues, sparkStroke }: { label: string; value: string; hint: string; sparkValues?: number[]; sparkStroke?: string }) {
   return (
     <div className="px-5 py-4">
       <div className="text-[10.5px] font-semibold text-[var(--ink-soft)] uppercase tracking-[0.08em]">{label}</div>
       <div className="mt-1 font-serif text-2xl font-semibold text-[var(--ink-strong)] leading-none">{value}</div>
+      {sparkValues && sparkValues.length >= 2 && (
+        <div className="mt-1.5">
+          <Sparkline values={sparkValues} width={100} height={18} stroke={sparkStroke ?? 'var(--gold)'} fill={sparkStroke ?? 'var(--gold)'} strokeWidth={1.25} />
+        </div>
+      )}
       <div className="mt-1 text-[11px] text-[var(--ink-soft)]">{hint}</div>
     </div>
   );

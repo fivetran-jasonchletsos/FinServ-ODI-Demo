@@ -5,6 +5,7 @@ import {
 } from 'recharts';
 import { api, formatNumber } from '../api/queries';
 import type { Complaint } from '../types';
+import Sparkline from '../components/Sparkline';
 
 export default function ComplaintsPage() {
   const [complaints, setComplaints] = useState<Complaint[]>([]);
@@ -59,6 +60,27 @@ export default function ComplaintsPage() {
     return { total, timelyRate, topProduct, medianDays };
   }, [filtered]);
 
+  // Last-12-months series derived from date_received for sparklines.
+  const monthlySeries = useMemo(() => {
+    const counts = new Map<string, { total: number; timely: number }>();
+    for (const c of filtered) {
+      if (!c.date_received) continue;
+      const key = c.date_received.slice(0, 7); // YYYY-MM
+      const bucket = counts.get(key) ?? { total: 0, timely: 0 };
+      bucket.total += 1;
+      if (c.timely_response === true) bucket.timely += 1;
+      counts.set(key, bucket);
+    }
+    const keys = Array.from(counts.keys()).sort();
+    const tail = keys.slice(-12);
+    const totals = tail.map((k) => counts.get(k)!.total);
+    const timelyRates = tail.map((k) => {
+      const b = counts.get(k)!;
+      return b.total ? (b.timely / b.total) * 100 : 0;
+    });
+    return { totals, timelyRates };
+  }, [filtered]);
+
   const recent = useMemo(() => {
     return [...filtered]
       .sort((a, b) => (b.date_received ?? '').localeCompare(a.date_received ?? ''))
@@ -81,8 +103,19 @@ export default function ComplaintsPage() {
       </header>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-        <Tile label="Total complaints" value={formatNumber(summary.total)} />
-        <Tile label="Timely response" value={`${summary.timelyRate.toFixed(1)}%`} tone={summary.timelyRate >= 95 ? 'bull' : summary.timelyRate >= 85 ? 'caution' : 'bear'} />
+        <Tile
+          label="Total complaints"
+          value={formatNumber(summary.total)}
+          sparkValues={monthlySeries.totals}
+          sparkStroke="var(--navy-deep)"
+        />
+        <Tile
+          label="Timely response"
+          value={`${summary.timelyRate.toFixed(1)}%`}
+          tone={summary.timelyRate >= 95 ? 'bull' : summary.timelyRate >= 85 ? 'caution' : 'bear'}
+          sparkValues={monthlySeries.timelyRates}
+          sparkStroke={summary.timelyRate >= 95 ? 'var(--bull)' : summary.timelyRate >= 85 ? 'var(--gold)' : 'var(--bear)'}
+        />
         <Tile label="Median resolution" value={`${summary.medianDays}d`} />
         <Tile label="Top product" value={summary.topProduct} small />
       </div>
@@ -189,12 +222,17 @@ export default function ComplaintsPage() {
   );
 }
 
-function Tile({ label, value, tone, small }: { label: string; value: string; tone?: 'bull' | 'bear' | 'caution'; small?: boolean }) {
+function Tile({ label, value, tone, small, sparkValues, sparkStroke }: { label: string; value: string; tone?: 'bull' | 'bear' | 'caution'; small?: boolean; sparkValues?: number[]; sparkStroke?: string }) {
   const color = tone === 'bull' ? 'var(--bull)' : tone === 'bear' ? 'var(--bear)' : tone === 'caution' ? 'var(--caution)' : 'var(--ink-strong)';
   return (
     <div className="quote-tile">
       <div className="quote-tile-label">{label}</div>
       <div className={`quote-tile-value ${small ? 'text-base' : ''}`} style={{ color }}>{value}</div>
+      {sparkValues && sparkValues.length >= 2 && (
+        <div className="mt-1">
+          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke ?? 'var(--gold)'} fill={sparkStroke ?? 'var(--gold)'} strokeWidth={1.25} />
+        </div>
+      )}
     </div>
   );
 }

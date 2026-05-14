@@ -4,6 +4,7 @@ import {
 } from 'recharts';
 import { api, formatNumber, formatPercent } from '../api/queries';
 import type { MacroSeries, MacroObservation } from '../types';
+import Sparkline from '../components/Sparkline';
 
 const HIGHLIGHTS = ['DGS10', 'T10Y2Y', 'CPIAUCSL', 'FEDFUNDS'];
 
@@ -24,6 +25,7 @@ export default function MacroPage() {
   const [observations, setObservations] = useState<MacroObservation[]>([]);
   const [loadingSeries, setLoadingSeries] = useState(true);
   const [loadingObs, setLoadingObs] = useState(false);
+  const [highlightSparks, setHighlightSparks] = useState<Record<string, number[]>>({});
 
   useEffect(() => {
     api.getMacro().then((r) => {
@@ -31,6 +33,32 @@ export default function MacroPage() {
       const preferred = r.series.find((s) => s.series_id === 'DGS10') ?? r.series[0];
       if (preferred) setSelectedId(preferred.series_id);
     }).finally(() => setLoadingSeries(false));
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all(
+      HIGHLIGHTS.map((id) =>
+        api.getMacroSeries(id)
+          .then((d) => {
+            // Downsample last 60 obs to 24 evenly-spaced points
+            const obs = d.observations.slice(-60);
+            if (obs.length === 0) return [id, [] as number[]] as const;
+            const stride = Math.max(1, Math.floor(obs.length / 24));
+            const vals: number[] = [];
+            for (let i = 0; i < obs.length; i += stride) vals.push(obs[i].value);
+            if (vals[vals.length - 1] !== obs[obs.length - 1].value) vals.push(obs[obs.length - 1].value);
+            return [id, vals] as const;
+          })
+          .catch(() => [id, [] as number[]] as const),
+      ),
+    ).then((pairs) => {
+      if (cancelled) return;
+      const next: Record<string, number[]> = {};
+      for (const [id, vals] of pairs) next[id] = vals;
+      setHighlightSparks(next);
+    });
+    return () => { cancelled = true; };
   }, []);
 
   useEffect(() => {
@@ -73,7 +101,7 @@ export default function MacroPage() {
                 <div className="quote-tile-value text-[var(--ink-soft)]">—</div>
               </div>
             ))
-          : highlights.map((s) => <HighlightTile key={s.series_id} series={s} onSelect={() => setSelectedId(s.series_id)} active={s.series_id === selectedId} />)}
+          : highlights.map((s) => <HighlightTile key={s.series_id} series={s} sparkValues={highlightSparks[s.series_id] ?? []} onSelect={() => setSelectedId(s.series_id)} active={s.series_id === selectedId} />)}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -176,9 +204,10 @@ export default function MacroPage() {
   );
 }
 
-function HighlightTile({ series, onSelect, active }: { series: MacroSeries; onSelect: () => void; active: boolean }) {
+function HighlightTile({ series, sparkValues, onSelect, active }: { series: MacroSeries; sparkValues: number[]; onSelect: () => void; active: boolean }) {
   const yoy = series.yoy_change;
   const yoyClass = yoy === null ? 'text-[var(--ink-soft)]' : yoy >= 0 ? 'text-[var(--bull)]' : 'text-[var(--bear)]';
+  const sparkStroke = yoy === null ? 'var(--gold)' : yoy >= 0 ? 'var(--bull)' : 'var(--bear)';
   return (
     <button
       onClick={onSelect}
@@ -194,6 +223,11 @@ function HighlightTile({ series, onSelect, active }: { series: MacroSeries; onSe
         </span>
       </div>
       <div className="quote-tile-value">{series.latest_value.toFixed(2)}</div>
+      {sparkValues.length >= 2 && (
+        <div className="mt-1">
+          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke} fill={sparkStroke} strokeWidth={1.25} />
+        </div>
+      )}
       <div className="mt-1 flex items-center justify-between text-xs">
         <span className="text-[var(--ink-soft)] truncate">{series.title}</span>
         {yoy !== null && <span className={`font-semibold tabular ${yoyClass}`}>{formatPercent(yoy)}</span>}
