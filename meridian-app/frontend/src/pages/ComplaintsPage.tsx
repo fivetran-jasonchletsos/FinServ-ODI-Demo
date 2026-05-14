@@ -202,7 +202,7 @@ export default function ComplaintsPage() {
                   radius={[0, 2, 2, 0]}
                   onClick={(d: any) => setTopic(d?.topic ?? null)}
                   cursor="pointer"
-                  label={{ position: 'right', fill: '#4b5563', fontSize: 11, formatter: (v: number) => formatNumber(v) }}
+                  label={{ position: 'right', fill: '#4b5563', fontSize: 11, formatter: (v: any) => formatNumber(Number(v)) }}
                   barSize={18}
                 >
                   {topicData.map((d, i) => (

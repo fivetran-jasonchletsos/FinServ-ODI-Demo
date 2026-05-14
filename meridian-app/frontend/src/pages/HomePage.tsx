@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { api, formatBytes, formatCurrencyShort, formatNumber, formatPercent } from '../api/queries';
+import { api, formatBytes, formatCurrencyShort, formatNumber } from '../api/queries';
 import type { SummaryStats, Company } from '../types';
 import Sparkline from '../components/Sparkline';
 
