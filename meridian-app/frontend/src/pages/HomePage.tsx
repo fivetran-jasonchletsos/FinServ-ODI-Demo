@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { api, formatBytes, formatCurrencyShort, formatNumber } from '../api/queries';
+import { api, formatBytes, formatCurrencyShort, formatNumber, formatPercent } from '../api/queries';
 import type { SummaryStats, Company } from '../types';
 import Sparkline from '../components/Sparkline';
 
@@ -15,9 +15,20 @@ function monthlyCounts(dates: (string | null | undefined)[], months = 12): numbe
   return keys.slice(-months).map((k) => buckets.get(k)!);
 }
 
+// Period-over-period delta on the last bucket vs. the trailing average of the prior buckets.
+function pctDelta(values: number[]): number | null {
+  if (values.length < 4) return null;
+  const last = values[values.length - 1];
+  const prior = values.slice(0, -1);
+  const avg = prior.reduce((s, v) => s + v, 0) / prior.length;
+  if (!avg) return null;
+  return ((last - avg) / avg) * 100;
+}
+
 export default function HomePage() {
   const navigate = useNavigate();
   const [stats, setStats] = useState<SummaryStats | null>(null);
+  const [allCompanies, setAllCompanies] = useState<Company[]>([]);
   const [topCompanies, setTopCompanies] = useState<Company[]>([]);
   const [filingsSpark, setFilingsSpark] = useState<number[]>([]);
   const [complaintsSpark, setComplaintsSpark] = useState<number[]>([]);
@@ -25,6 +36,7 @@ export default function HomePage() {
   useEffect(() => {
     api.getSummary().then(setStats).catch(() => {});
     api.searchCompanies({ limit: 200000 }).then((r) => {
+      setAllCompanies(r.results);
       const sorted = [...r.results].sort((a, b) => b.risk_score - a.risk_score).slice(0, 6);
       setTopCompanies(sorted);
     }).catch(() => {});
@@ -35,6 +47,25 @@ export default function HomePage() {
       setComplaintsSpark(monthlyCounts(r.complaints.map((c) => c.date_received)));
     }).catch(() => {});
   }, []);
+
+  // CFO-level rollups
+  const exec = useMemo(() => {
+    if (allCompanies.length === 0) return null;
+    const aum = allCompanies.reduce((s, c) => s + (c.market_cap ?? 0), 0);
+    const high = allCompanies.filter((c) => c.risk_bucket === 'high').length;
+    const elevated = allCompanies.filter((c) => c.risk_bucket === 'elevated').length;
+    const sorted = [...allCompanies].sort((a, b) => (b.market_cap ?? 0) - (a.market_cap ?? 0));
+    const top10 = sorted.slice(0, 10);
+    const top10Cap = top10.reduce((s, c) => s + (c.market_cap ?? 0), 0);
+    const concentration = aum ? (top10Cap / aum) * 100 : 0;
+    const growers = allCompanies.filter((c) => (c.revenue_growth_yoy ?? 0) > 0).length;
+    const totalWithGrowth = allCompanies.filter((c) => c.revenue_growth_yoy != null).length;
+    const breadth = totalWithGrowth ? (growers / totalWithGrowth) * 100 : 0;
+    return { aum, high, elevated, concentration, breadth, top10Name: top10[0]?.ticker ?? '—', total: allCompanies.length };
+  }, [allCompanies]);
+
+  const filingsDelta = pctDelta(filingsSpark);
+  const complaintsDelta = pctDelta(complaintsSpark);
 
   return (
     <>
@@ -82,10 +113,24 @@ export default function HomePage() {
                   <div className="text-[10px] font-semibold text-[var(--ink-soft)] uppercase tracking-wider">Athena · Iceberg</div>
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-y divide-[var(--hairline-soft)] tabular">
-                  <Stat label="Companies" value={stats ? formatNumber(stats.total_companies) : '—'} hint="From SEC EDGAR XBRL" />
-                  <Stat label="Filings" value={stats ? formatNumber(stats.total_filings) : '—'} hint="10-K / 10-Q / 8-K" sparkValues={filingsSpark} sparkStroke="var(--navy-deep)" />
-                  <Stat label="Macro series" value={stats ? formatNumber(stats.total_macro_series) : '—'} hint="From FRED" />
-                  <Stat label="Complaints" value={stats ? formatNumber(stats.total_complaints) : '—'} hint="From CFPB consumer database" sparkValues={complaintsSpark} sparkStroke="var(--gold-dim)" />
+                  <Stat label="Coverage" value={stats ? formatNumber(stats.total_companies) : '—'} hint="public issuers" />
+                  <Stat
+                    label="Filings · MoM"
+                    value={stats ? formatNumber(stats.total_filings) : '—'}
+                    hint="vs. prior 11-mo avg"
+                    sparkValues={filingsSpark}
+                    sparkStroke="var(--navy-deep)"
+                    delta={filingsDelta}
+                  />
+                  <Stat label="Macro series" value={stats ? formatNumber(stats.total_macro_series) : '—'} hint="FRED" />
+                  <Stat
+                    label="Complaints · MoM"
+                    value={stats ? formatNumber(stats.total_complaints) : '—'}
+                    hint="vs. prior 11-mo avg"
+                    sparkValues={complaintsSpark}
+                    sparkStroke="var(--gold-dim)"
+                    delta={complaintsDelta}
+                  />
                 </div>
                 <div className="px-5 py-3 border-t border-[var(--hairline)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep)]">
                   <span className="inline-flex items-center gap-1.5">
@@ -102,8 +147,55 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Executive brief — CFO read of the panel in 30 seconds */}
+      <section className="mx-auto max-w-7xl px-4 pt-12 pb-2 sm:px-6 lg:px-8">
+        <div className="mb-5 flex items-end justify-between border-b border-[var(--hairline)] pb-3">
+          <div>
+            <div className="eyebrow mb-1">Executive Brief</div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[var(--ink-strong)] tracking-tight">
+              The panel in four numbers
+            </h2>
+            <p className="text-sm text-[var(--ink-muted)] mt-1">
+              Coverage AUM, top-10 concentration, breadth of revenue growers, and the count of issuers in the elevated/high risk tier.
+            </p>
+          </div>
+          <button
+            onClick={() => navigate('/holdings?risk=high')}
+            className="text-sm font-semibold text-[var(--gold-dim)] hover:text-[var(--ink-strong)] whitespace-nowrap"
+          >
+            Open high-risk list →
+          </button>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <ExecTile
+            label="Coverage AUM"
+            value={exec ? formatCurrencyShort(exec.aum) : '—'}
+            sub={exec ? `${formatNumber(exec.total)} issuers · market cap` : ''}
+          />
+          <ExecTile
+            label="Top-10 concentration"
+            value={exec ? `${exec.concentration.toFixed(0)}%` : '—'}
+            sub={exec ? `${exec.top10Name} leads` : ''}
+            tone={exec && exec.concentration > 35 ? 'caution' : 'neutral'}
+          />
+          <ExecTile
+            label="Revenue growers"
+            value={exec ? `${exec.breadth.toFixed(0)}%` : '—'}
+            sub={exec ? 'of issuers with positive YoY' : ''}
+            tone={exec && exec.breadth < 50 ? 'bear' : exec && exec.breadth >= 65 ? 'bull' : 'neutral'}
+          />
+          <ExecTile
+            label="Elevated / High risk"
+            value={exec ? `${exec.elevated + exec.high}` : '—'}
+            sub={exec ? `${exec.high} high · ${exec.elevated} elevated` : ''}
+            tone={exec && exec.high > 0 ? 'bear' : 'neutral'}
+            onClick={() => navigate('/holdings?risk=high')}
+          />
+        </div>
+      </section>
+
       {/* Three pillars */}
-      <section className="bg-[var(--paper)] border-y border-[var(--hairline)]">
+      <section className="bg-[var(--paper)] border-y border-[var(--hairline)] mt-10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <div className="eyebrow mb-2">The ODI Difference</div>
@@ -220,18 +312,45 @@ export default function HomePage() {
   );
 }
 
-function Stat({ label, value, hint, sparkValues, sparkStroke }: { label: string; value: string; hint: string; sparkValues?: number[]; sparkStroke?: string }) {
+function Stat({ label, value, hint, sparkValues, sparkStroke, delta }: { label: string; value: string; hint: string; sparkValues?: number[]; sparkStroke?: string; delta?: number | null }) {
+  const deltaColor = delta == null ? 'var(--ink-soft)' : delta >= 0 ? 'var(--bull)' : 'var(--bear)';
   return (
     <div className="px-5 py-4">
       <div className="text-[10.5px] font-semibold text-[var(--ink-soft)] uppercase tracking-[0.08em]">{label}</div>
-      <div className="mt-1 font-serif text-2xl font-semibold text-[var(--ink-strong)] leading-none">{value}</div>
+      <div className="mt-1 flex items-baseline gap-2">
+        <div className="font-serif text-2xl font-semibold text-[var(--ink-strong)] leading-none tabular">{value}</div>
+        {delta != null && (
+          <span className="text-[11px] font-semibold tabular" style={{ color: deltaColor }}>
+            {delta >= 0 ? '+' : ''}{delta.toFixed(0)}%
+          </span>
+        )}
+      </div>
       {sparkValues && sparkValues.length >= 2 && (
         <div className="mt-1.5">
-          <Sparkline values={sparkValues} width={100} height={18} stroke={sparkStroke ?? 'var(--gold)'} fill={sparkStroke ?? 'var(--gold)'} strokeWidth={1.25} />
+          <Sparkline values={sparkValues} width={100} height={18} stroke={sparkStroke ?? 'var(--gold)'} fill="none" strokeWidth={1.25} />
         </div>
       )}
       <div className="mt-1 text-[11px] text-[var(--ink-soft)]">{hint}</div>
     </div>
+  );
+}
+
+function ExecTile({ label, value, sub, tone, onClick }: { label: string; value: string; sub?: string; tone?: 'bull' | 'bear' | 'caution' | 'neutral'; onClick?: () => void }) {
+  const color =
+    tone === 'bull' ? 'var(--bull)' :
+    tone === 'bear' ? 'var(--bear)' :
+    tone === 'caution' ? 'var(--caution)' :
+    'var(--ink-strong)';
+  const Tag = onClick ? 'button' : 'div';
+  return (
+    <Tag
+      onClick={onClick}
+      className={`research-card px-5 py-4 text-left ${onClick ? 'hover:border-[var(--gold)] transition-colors cursor-pointer' : ''}`}
+    >
+      <div className="text-[10.5px] font-semibold text-[var(--ink-soft)] uppercase tracking-[0.08em]">{label}</div>
+      <div className="mt-1 font-serif text-3xl font-semibold leading-none tabular" style={{ color }}>{value}</div>
+      {sub && <div className="mt-1.5 text-[11px] text-[var(--ink-soft)]">{sub}</div>}
+    </Tag>
   );
 }
 

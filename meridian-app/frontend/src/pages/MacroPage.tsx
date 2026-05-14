@@ -162,17 +162,33 @@ export default function MacroPage() {
               </div>
             )}
           </header>
-          <div className="p-4 h-80">
+          <div className="px-4 pt-3 pb-1 text-xs text-[var(--ink-muted)]">
+            {selected ? `Trailing 60 observations · ${selected.units}` : ''}
+          </div>
+          <div className="p-4 pt-2 h-72">
             {loadingObs ? (
               <div className="h-full flex items-center justify-center text-sm text-[var(--ink-soft)]">Loading observations…</div>
             ) : observations.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={observations} margin={{ top: 4, right: 16, left: 0, bottom: 4 }}>
-                  <CartesianGrid stroke="#ebe6d8" />
-                  <XAxis dataKey="date" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
-                  <YAxis tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
+                  <CartesianGrid stroke="#ebe6d8" vertical={false} />
+                  <XAxis
+                    dataKey="date"
+                    tick={{ fill: '#6b7280', fontSize: 11 }}
+                    stroke="#d9d3c4"
+                    axisLine={false}
+                    tickLine={false}
+                    minTickGap={40}
+                  />
+                  <YAxis
+                    tick={{ fill: '#6b7280', fontSize: 11 }}
+                    stroke="#d9d3c4"
+                    axisLine={false}
+                    tickLine={false}
+                    width={44}
+                  />
                   <Tooltip contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
-                  <Line type="monotone" dataKey="value" stroke="#b8975c" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="value" stroke="#0b2545" strokeWidth={1.5} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             ) : (
@@ -206,8 +222,11 @@ export default function MacroPage() {
 
 function HighlightTile({ series, sparkValues, onSelect, active }: { series: MacroSeries; sparkValues: number[]; onSelect: () => void; active: boolean }) {
   const yoy = series.yoy_change;
+  // For T10Y2Y (curve), negative is inversion = bear signal regardless of direction.
+  // For other rate / inflation series, we display direction without coloring the value itself.
   const yoyClass = yoy === null ? 'text-[var(--ink-soft)]' : yoy >= 0 ? 'text-[var(--bull)]' : 'text-[var(--bear)]';
-  const sparkStroke = yoy === null ? 'var(--gold)' : yoy >= 0 ? 'var(--bull)' : 'var(--bear)';
+  const sparkStroke = yoy === null ? 'var(--ink-muted)' : yoy >= 0 ? 'var(--bull)' : 'var(--bear)';
+  const inverted = series.series_id === 'T10Y2Y' && series.latest_value < 0;
   return (
     <button
       onClick={onSelect}
@@ -222,16 +241,23 @@ function HighlightTile({ series, sparkValues, onSelect, active }: { series: Macr
           {series.category}
         </span>
       </div>
-      <div className="quote-tile-value">{series.latest_value.toFixed(2)}</div>
+      <div className="quote-tile-value" style={inverted ? { color: 'var(--bear)' } : undefined}>
+        {series.latest_value.toFixed(2)}
+      </div>
       {sparkValues.length >= 2 && (
         <div className="mt-1">
-          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke} fill={sparkStroke} strokeWidth={1.25} />
+          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke} fill="none" strokeWidth={1.25} />
         </div>
       )}
-      <div className="mt-1 flex items-center justify-between text-xs">
+      <div className="mt-1 flex items-center justify-between text-xs gap-2">
         <span className="text-[var(--ink-soft)] truncate">{series.title}</span>
-        {yoy !== null && <span className={`font-semibold tabular ${yoyClass}`}>{formatPercent(yoy)}</span>}
+        {yoy !== null && <span className={`font-semibold tabular shrink-0 ${yoyClass}`}>{formatPercent(yoy)}</span>}
       </div>
+      {inverted && (
+        <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-[var(--bear)]">
+          Curve inverted
+        </div>
+      )}
     </button>
   );
 }

@@ -47,19 +47,6 @@ export default function ComplaintsPage() {
       .slice(0, 12);
   }, [filtered]);
 
-  const summary = useMemo(() => {
-    const total = filtered.length;
-    const timely = filtered.filter((c) => c.timely_response === true).length;
-    const timelyRate = total ? (timely / total) * 100 : 0;
-    const byProduct = new Map<string, number>();
-    for (const c of filtered) byProduct.set(c.product, (byProduct.get(c.product) ?? 0) + 1);
-    const topProduct = Array.from(byProduct.entries()).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '—';
-    // synthetic median resolution: count days from received to (snapshot) for items with resolution
-    const withResolution = filtered.filter((c) => !!c.resolution).length;
-    const medianDays = withResolution ? Math.round(total / Math.max(1, withResolution) * 14) : 0;
-    return { total, timelyRate, topProduct, medianDays };
-  }, [filtered]);
-
   // Last-12-months series derived from date_received for sparklines.
   const monthlySeries = useMemo(() => {
     const counts = new Map<string, { total: number; timely: number }>();
@@ -80,6 +67,34 @@ export default function ComplaintsPage() {
     });
     return { totals, timelyRates };
   }, [filtered]);
+
+  const summary = useMemo(() => {
+    const total = filtered.length;
+    const timely = filtered.filter((c) => c.timely_response === true).length;
+    const timelyRate = total ? (timely / total) * 100 : 0;
+    const byProduct = new Map<string, number>();
+    for (const c of filtered) byProduct.set(c.product, (byProduct.get(c.product) ?? 0) + 1);
+    const topProductEntry = Array.from(byProduct.entries()).sort((a, b) => b[1] - a[1])[0];
+    const topProduct = topProductEntry?.[0] ?? '—';
+    const topProductShare = total && topProductEntry ? (topProductEntry[1] / total) * 100 : 0;
+    // Real QoQ delta: last 3 months vs prior 3 months from the monthly series
+    const m = monthlySeries.totals;
+    let qoq: number | null = null;
+    if (m.length >= 6) {
+      const recent = m.slice(-3).reduce((s, v) => s + v, 0);
+      const prior = m.slice(-6, -3).reduce((s, v) => s + v, 0);
+      if (prior > 0) qoq = ((recent - prior) / prior) * 100;
+    }
+    // Timely-response trend: last 3 months vs prior 3 months (pp)
+    const t = monthlySeries.timelyRates;
+    let timelyTrendPp: number | null = null;
+    if (t.length >= 6) {
+      const recent = t.slice(-3).reduce((s, v) => s + v, 0) / 3;
+      const prior = t.slice(-6, -3).reduce((s, v) => s + v, 0) / 3;
+      timelyTrendPp = recent - prior;
+    }
+    return { total, timelyRate, topProduct, topProductShare, qoq, timelyTrendPp };
+  }, [filtered, monthlySeries]);
 
   const recent = useMemo(() => {
     return [...filtered]
@@ -104,8 +119,12 @@ export default function ComplaintsPage() {
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
         <Tile
-          label="Total complaints"
+          label="Complaints · QoQ"
           value={formatNumber(summary.total)}
+          delta={summary.qoq}
+          deltaSuffix="%"
+          deltaInvert
+          hint="last 3-mo vs. prior 3-mo"
           sparkValues={monthlySeries.totals}
           sparkStroke="var(--navy-deep)"
         />
@@ -113,11 +132,23 @@ export default function ComplaintsPage() {
           label="Timely response"
           value={`${summary.timelyRate.toFixed(1)}%`}
           tone={summary.timelyRate >= 95 ? 'bull' : summary.timelyRate >= 85 ? 'caution' : 'bear'}
+          delta={summary.timelyTrendPp}
+          deltaSuffix="pp"
+          hint="trailing 3-mo trend"
           sparkValues={monthlySeries.timelyRates}
           sparkStroke={summary.timelyRate >= 95 ? 'var(--bull)' : summary.timelyRate >= 85 ? 'var(--gold)' : 'var(--bear)'}
         />
-        <Tile label="Median resolution" value={`${summary.medianDays}d`} />
-        <Tile label="Top product" value={summary.topProduct} small />
+        <Tile
+          label="Top product share"
+          value={`${summary.topProductShare.toFixed(0)}%`}
+          hint={summary.topProduct}
+          tone={summary.topProductShare >= 50 ? 'caution' : 'neutral'}
+        />
+        <Tile
+          label="Issuers in stream"
+          value={formatNumber(new Set(filtered.map((c) => c.cik).filter(Boolean)).size)}
+          hint="distinct CIKs attributed"
+        />
       </div>
 
       {/* Filter chips */}
@@ -139,21 +170,41 @@ export default function ComplaintsPage() {
         <header className="research-card-header flex items-center justify-between">
           <div>
             <div className="eyebrow">Distribution</div>
-            <h2 className="font-serif text-lg font-semibold text-[var(--ink-strong)] mt-0.5">Complaints by topic cluster</h2>
+            <h2 className="font-serif text-lg font-semibold text-[var(--ink-strong)] mt-0.5">Where the complaint volume concentrates</h2>
+            <p className="text-xs text-[var(--ink-muted)] mt-0.5">Topic clusters, ranked by count. Click a bar to filter the stream.</p>
           </div>
           <span className="text-xs text-[var(--ink-soft)] tabular">{topicData.length} clusters</span>
         </header>
-        <div className="p-4 h-72">
+        <div className="p-4" style={{ height: Math.max(180, topicData.length * 28 + 40) }}>
           {loading ? (
             <div className="h-full flex items-center justify-center text-sm text-[var(--ink-soft)]">Loading…</div>
           ) : topicData.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={topicData} margin={{ top: 4, right: 12, left: 0, bottom: 60 }}>
-                <CartesianGrid stroke="#ebe6d8" vertical={false} />
-                <XAxis dataKey="topic" tick={{ fill: '#6b7280', fontSize: 10 }} stroke="#d9d3c4" angle={-25} textAnchor="end" interval={0} height={70} />
-                <YAxis tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
-                <Tooltip contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
-                <Bar dataKey="count" radius={[2, 2, 0, 0]} onClick={(d: any) => setTopic(d?.topic ?? null)} cursor="pointer">
+              <BarChart
+                data={topicData}
+                layout="vertical"
+                margin={{ top: 4, right: 64, left: 8, bottom: 4 }}
+              >
+                <CartesianGrid stroke="#ebe6d8" horizontal={false} />
+                <XAxis type="number" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" axisLine={false} tickLine={false} />
+                <YAxis
+                  type="category"
+                  dataKey="topic"
+                  tick={{ fill: '#4b5563', fontSize: 11 }}
+                  stroke="#d9d3c4"
+                  axisLine={false}
+                  tickLine={false}
+                  width={170}
+                />
+                <Tooltip cursor={{ fill: 'rgba(11,37,69,0.04)' }} contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
+                <Bar
+                  dataKey="count"
+                  radius={[0, 2, 2, 0]}
+                  onClick={(d: any) => setTopic(d?.topic ?? null)}
+                  cursor="pointer"
+                  label={{ position: 'right', fill: '#4b5563', fontSize: 11, formatter: (v: number) => formatNumber(v) }}
+                  barSize={18}
+                >
                   {topicData.map((d, i) => (
                     <Cell key={i} fill={d.topic === topic ? '#b91c1c' : '#0b2545'} />
                   ))}
@@ -222,17 +273,35 @@ export default function ComplaintsPage() {
   );
 }
 
-function Tile({ label, value, tone, small, sparkValues, sparkStroke }: { label: string; value: string; tone?: 'bull' | 'bear' | 'caution'; small?: boolean; sparkValues?: number[]; sparkStroke?: string }) {
+function Tile({
+  label, value, tone, small, sparkValues, sparkStroke, delta, deltaSuffix = '%', deltaInvert, hint,
+}: {
+  label: string; value: string; tone?: 'bull' | 'bear' | 'caution' | 'neutral'; small?: boolean;
+  sparkValues?: number[]; sparkStroke?: string;
+  delta?: number | null; deltaSuffix?: string; deltaInvert?: boolean; hint?: string;
+}) {
   const color = tone === 'bull' ? 'var(--bull)' : tone === 'bear' ? 'var(--bear)' : tone === 'caution' ? 'var(--caution)' : 'var(--ink-strong)';
+  // For complaint counts, rising is bad: invert color.
+  const deltaUp = delta != null && delta >= 0;
+  const deltaGood = deltaInvert ? !deltaUp : deltaUp;
+  const deltaColor = delta == null ? 'var(--ink-soft)' : deltaGood ? 'var(--bull)' : 'var(--bear)';
   return (
     <div className="quote-tile">
       <div className="quote-tile-label">{label}</div>
-      <div className={`quote-tile-value ${small ? 'text-base' : ''}`} style={{ color }}>{value}</div>
+      <div className="mt-0.5 flex items-baseline gap-2">
+        <div className={`quote-tile-value ${small ? 'text-base' : ''}`} style={{ color, marginTop: 0 }}>{value}</div>
+        {delta != null && (
+          <span className="text-[11px] font-semibold tabular" style={{ color: deltaColor }}>
+            {delta >= 0 ? '+' : ''}{delta.toFixed(1)}{deltaSuffix}
+          </span>
+        )}
+      </div>
       {sparkValues && sparkValues.length >= 2 && (
         <div className="mt-1">
-          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke ?? 'var(--gold)'} fill={sparkStroke ?? 'var(--gold)'} strokeWidth={1.25} />
+          <Sparkline values={sparkValues} width={120} height={22} stroke={sparkStroke ?? 'var(--gold)'} fill="none" strokeWidth={1.25} />
         </div>
       )}
+      {hint && <div className="mt-1 text-[10.5px] text-[var(--ink-soft)] truncate">{hint}</div>}
     </div>
   );
 }

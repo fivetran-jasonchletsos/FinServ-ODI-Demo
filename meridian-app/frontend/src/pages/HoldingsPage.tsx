@@ -65,6 +65,21 @@ export default function HoldingsPage() {
     return copy;
   }, [results, sort]);
 
+  // CFO rollup over the current filter slice
+  const rollup = useMemo(() => {
+    if (results.length === 0) return null;
+    const mc = results.reduce((s, c) => s + (c.market_cap ?? 0), 0);
+    const withGrowth = results.filter((c) => c.revenue_growth_yoy != null);
+    const medianGrowth = withGrowth.length
+      ? [...withGrowth].sort((a, b) => (a.revenue_growth_yoy! - b.revenue_growth_yoy!))[
+          Math.floor(withGrowth.length / 2)
+        ].revenue_growth_yoy ?? 0
+      : null;
+    const high = results.filter((c) => c.risk_bucket === 'high' || c.risk_bucket === 'elevated').length;
+    const complaints = results.reduce((s, c) => s + c.complaint_velocity, 0);
+    return { mc, medianGrowth, high, complaints };
+  }, [results]);
+
   const applyFilters = (e: React.FormEvent) => {
     e.preventDefault();
     const next: Record<string, string> = {};
@@ -166,6 +181,23 @@ export default function HoldingsPage() {
         </div>
       </form>
 
+      {rollup && !loading && (
+        <div className="research-card px-4 py-3 mb-3 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm tabular">
+          <RollupCell label="Slice market cap" value={formatCurrencyShort(rollup.mc)} />
+          <RollupCell
+            label="Median rev YoY"
+            value={rollup.medianGrowth == null ? '—' : formatPercent(rollup.medianGrowth)}
+            tone={rollup.medianGrowth == null ? 'neutral' : rollup.medianGrowth >= 0 ? 'bull' : 'bear'}
+          />
+          <RollupCell
+            label="Elev. / high risk"
+            value={`${rollup.high}`}
+            tone={rollup.high > 0 ? 'caution' : 'neutral'}
+          />
+          <RollupCell label="Complaints / Q" value={formatNumber(rollup.complaints)} />
+        </div>
+      )}
+
       <div className="flex items-center justify-between mb-3">
         <div className="text-[10px] font-semibold text-[var(--ink-soft)] uppercase tracking-wider">Sort by</div>
         <div className="inline-flex gap-0.5 rounded-sm border border-[var(--hairline)] bg-white p-0.5 text-xs">
@@ -251,5 +283,19 @@ function Th({ children, align = 'left' }: { children: React.ReactNode; align?: '
     <th className={`px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--ink-soft)] ${align === 'right' ? 'text-right' : 'text-left'}`}>
       {children}
     </th>
+  );
+}
+
+function RollupCell({ label, value, tone }: { label: string; value: string; tone?: 'bull' | 'bear' | 'caution' | 'neutral' }) {
+  const color =
+    tone === 'bull' ? 'var(--bull)' :
+    tone === 'bear' ? 'var(--bear)' :
+    tone === 'caution' ? 'var(--caution)' :
+    'var(--ink-strong)';
+  return (
+    <div>
+      <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--ink-soft)]">{label}</div>
+      <div className="mt-0.5 font-serif font-semibold text-lg leading-none" style={{ color }}>{value}</div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
-  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
+  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import { api, formatCurrencyShort, formatNumber, formatPercent } from '../api/queries';
 import type { CompanyDetail, RiskBucket, MacroObservation } from '../types';
@@ -224,12 +224,12 @@ export default function CompanyDetailPage() {
             <div className="p-4">
               <div className="h-56">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={complaintsByTopic} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 4 }}>
+                  <BarChart data={complaintsByTopic} layout="vertical" margin={{ top: 4, right: 36, left: 8, bottom: 4 }}>
                     <CartesianGrid stroke="#ebe6d8" horizontal={false} />
-                    <XAxis type="number" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
-                    <YAxis type="category" dataKey="topic" tick={{ fill: '#4b5563', fontSize: 11 }} stroke="#d9d3c4" width={120} />
-                    <Tooltip contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
-                    <Bar dataKey="count" fill="#b8975c" radius={[0, 2, 2, 0]} />
+                    <XAxis type="number" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" axisLine={false} tickLine={false} />
+                    <YAxis type="category" dataKey="topic" tick={{ fill: '#4b5563', fontSize: 11 }} stroke="#d9d3c4" axisLine={false} tickLine={false} width={130} />
+                    <Tooltip cursor={{ fill: 'rgba(11,37,69,0.04)' }} contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
+                    <Bar dataKey="count" fill="#0b2545" radius={[0, 2, 2, 0]} barSize={14} label={{ position: 'right', fill: '#4b5563', fontSize: 10 }} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -267,12 +267,11 @@ export default function CompanyDetailPage() {
             <div className="p-4 h-64">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={macroObs} margin={{ top: 4, right: 16, left: 0, bottom: 4 }}>
-                  <CartesianGrid stroke="#ebe6d8" />
-                  <XAxis dataKey="date" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
-                  <YAxis tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" />
+                  <CartesianGrid stroke="#ebe6d8" vertical={false} />
+                  <XAxis dataKey="date" tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" axisLine={false} tickLine={false} minTickGap={40} />
+                  <YAxis tick={{ fill: '#6b7280', fontSize: 11 }} stroke="#d9d3c4" axisLine={false} tickLine={false} width={44} />
                   <Tooltip contentStyle={{ background: '#fff', border: '1px solid #d9d3c4', fontSize: 12 }} />
-                  <Legend wrapperStyle={{ fontSize: 11 }} />
-                  <Line type="monotone" dataKey="value" name={company.related_macro_series?.[0]?.series_id ?? 'value'} stroke="#0b2545" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="value" name={company.related_macro_series?.[0]?.series_id ?? 'value'} stroke="#0b2545" strokeWidth={1.5} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
