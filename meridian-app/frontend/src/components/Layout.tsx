@@ -18,6 +18,14 @@ const NAV_ITEMS: [string, string][] = [
   ['/about', 'About'],
 ];
 
+const DEMOS = [
+  { key: 'healthcare', name: 'Epic Clarity', industry: 'Healthcare · Clinical analytics', url: 'https://fivetran-jasonchletsos.github.io/Healthcare-EPIC-Snowflake-Demo/', accent: '#0d9488' },
+  { key: 'sheetz',     name: 'Allegheny County Tax', industry: 'Public sector · Property assessment', url: 'https://fivetran-jasonchletsos.github.io/fivetran-sheetz-demo/', accent: '#dc2626' },
+  { key: 'finserv',    name: 'Meridian', industry: 'Financial Services · Wealth & banking', url: 'https://fivetran-jasonchletsos.github.io/FinServ-ODI-Demo/', accent: '#1d4ed8' },
+  { key: 'media',      name: 'Lighthouse', industry: 'Media · Audience & content intel', url: 'https://fivetran-jasonchletsos.github.io/Media-ODI-Demo/', accent: '#7c3aed' },
+];
+const CURRENT_DEMO = 'finserv';
+
 export default function Layout() {
   const [source, setSource] = useState<DataSource>('demo');
   const [snapshotAt, setSnapshotAt] = useState<string | null>(null);
@@ -137,7 +145,7 @@ export default function Layout() {
                   </span>
                 )}
               </button>
-              <SourceBadge source={source} snapshotAt={snapshotAt} />
+              <DemoSwitcher source={source} snapshotAt={snapshotAt} />
               <button
                 type="button"
                 onClick={() => setMobileOpen((o) => !o)}
@@ -183,6 +191,43 @@ export default function Layout() {
                   </NavLink>
                 ))}
               </nav>
+              <div className="pt-3 border-t border-white/10">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--gold-bright)] mb-2">
+                  Switch demo
+                </div>
+                <div className="grid grid-cols-1 gap-1">
+                  {DEMOS.map((d) => {
+                    const current = d.key === CURRENT_DEMO;
+                    const inner = (
+                      <div className="flex items-center gap-2.5">
+                        <span className="h-2 w-2 rounded-full shrink-0" style={{ background: d.accent }} />
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[13px] font-semibold text-white truncate">{d.name}</div>
+                          <div className="text-[11px] text-white/55 truncate">{d.industry}</div>
+                        </div>
+                        {current && (
+                          <span className="text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-sm bg-[var(--gold)]/20 text-[var(--gold-bright)] border border-[var(--gold)]/40">
+                            Current
+                          </span>
+                        )}
+                      </div>
+                    );
+                    return current ? (
+                      <div key={d.key} className="px-3 py-2 rounded-sm border border-white/15 opacity-70">
+                        {inner}
+                      </div>
+                    ) : (
+                      <a
+                        key={d.key}
+                        href={d.url}
+                        className="px-3 py-2 rounded-sm border border-white/15 hover:bg-white/10"
+                      >
+                        {inner}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -234,19 +279,86 @@ export default function Layout() {
   );
 }
 
-function SourceBadge({ source }: { source: DataSource; snapshotAt: string | null }) {
+function DemoSwitcher({ source }: { source: DataSource; snapshotAt: string | null }) {
   const live = source === 'live';
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
   return (
-    <div
-      title={live ? 'Live Athena query on Iceberg gold layer' : 'Static snapshot — run scripts/build_snapshot.py for live'}
-      className={`hidden sm:inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider border ${
-        live
-          ? 'bg-emerald-500/15 text-emerald-200 border-emerald-400/30'
-          : 'bg-[var(--gold)]/20 text-[var(--gold-bright)] border-[var(--gold)]/40'
-      }`}
-    >
-      <span className={`h-1.5 w-1.5 rounded-full ${live ? 'bg-emerald-300' : 'bg-[var(--gold-bright)]'} animate-pulse`} />
-      {live ? 'Athena · live' : 'Snapshot'}
+    <div ref={wrapRef} className="relative hidden sm:block">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        title={live ? 'Live Athena query on Iceberg gold layer · Switch demo' : 'Static snapshot · Switch demo'}
+        className={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider border transition-colors ${
+          live
+            ? 'bg-emerald-500/15 text-emerald-200 border-emerald-400/30 hover:bg-emerald-500/25'
+            : 'bg-[var(--gold)]/20 text-[var(--gold-bright)] border-[var(--gold)]/40 hover:bg-[var(--gold)]/30'
+        }`}
+      >
+        <span className={`h-1.5 w-1.5 rounded-full ${live ? 'bg-emerald-300' : 'bg-[var(--gold-bright)]'} animate-pulse`} />
+        {live ? 'Athena · live' : 'Snapshot'}
+        <svg viewBox="0 0 24 24" className={`h-3 w-3 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 top-full mt-2 w-[280px] rounded-sm border border-[var(--hairline)] bg-white shadow-xl z-40 overflow-hidden"
+        >
+          <div className="px-3 pt-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--ink-muted,#64748b)] border-b border-[var(--hairline)]">
+            Switch demo
+          </div>
+          <div className="py-1">
+            {DEMOS.map((d) => {
+              const current = d.key === CURRENT_DEMO;
+              const inner = (
+                <div className="flex items-center gap-2.5 px-3 py-2">
+                  <span className="h-2.5 w-2.5 rounded-full shrink-0" style={{ background: d.accent }} />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[13px] font-semibold text-[var(--ink,#0f172a)] truncate">{d.name}</div>
+                    <div className="text-[11px] text-slate-500 truncate">{d.industry}</div>
+                  </div>
+                  {current && (
+                    <span className="text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-sm bg-slate-100 text-slate-600 border border-slate-200">
+                      Current
+                    </span>
+                  )}
+                </div>
+              );
+              return current ? (
+                <div key={d.key} className="opacity-60 cursor-default">{inner}</div>
+              ) : (
+                <a
+                  key={d.key}
+                  href={d.url}
+                  className="block hover:bg-slate-50 transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  {inner}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
