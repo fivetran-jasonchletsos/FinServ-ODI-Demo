@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import ReplicationPipelinesCard, { type PipelineRow } from '../components/ReplicationPipelinesCard';
 
 type FailureKey = 'connectors' | 's3_iceberg' | 'dbt' | 'athena';
 
@@ -40,6 +41,76 @@ export default function PipelinePage() {
 
   const demoMode = failures.size > 0;
   const anyDown = !Object.values(layers).every((l) => l.ok);
+
+  // Synthesize per-connector replication rows for the dark monitoring console.
+  // The real Meridian pipeline runs 3 Fivetran custom connectors; throughput +
+  // lag values here are illustrative — they walk a presenter through the
+  // observability surface without requiring the Fivetran Platform Connector.
+  const connectorsDown = failures.has('connectors');
+  const pipelineRows: PipelineRow[] = useMemo(() => {
+    const mkSeries = (base: number, jitter: number, trend: number) => {
+      const points: number[] = [];
+      for (let i = 0; i < 24; i++) {
+        const seasonal = Math.sin((i / 24) * Math.PI * 2) * jitter * 0.5;
+        const drift = trend * (i / 23);
+        const noise = ((i * 9301 + 49297) % 233280) / 233280 - 0.5; // deterministic
+        points.push(Math.max(0, base + seasonal + drift + noise * jitter));
+      }
+      return {
+        points,
+        current: points[points.length - 1],
+        min: Math.min(...points),
+        max: Math.max(...points),
+      };
+    };
+    return [
+      {
+        id: 'sec_edgar_filings',
+        name: 'SEC EDGAR filings',
+        schema: 'sec_edgar_filings',
+        service: 'connector_sdk',
+        sync_state: 'scheduled',
+        failed_at: null,
+        paused: false,
+        dashboard_url: 'https://fivetran.com/dashboard',
+        destination: 'S3 Iceberg',
+        source_db: 'SEC EDGAR REST',
+        rows_synced_total: 84210,
+        throughput_24h: mkSeries(420, 180, 60),
+        lag_24h: mkSeries(45, 25, -5),
+      },
+      {
+        id: 'fred_macro_series',
+        name: 'FRED macro series',
+        schema: 'fred_macro_series',
+        service: 'connector_sdk',
+        sync_state: connectorsDown ? 'failed' : 'scheduled',
+        failed_at: connectorsDown ? new Date().toISOString() : null,
+        paused: false,
+        dashboard_url: 'https://fivetran.com/dashboard',
+        destination: 'S3 Iceberg',
+        source_db: 'FRED API',
+        rows_synced_total: 13455,
+        throughput_24h: mkSeries(95, 40, connectorsDown ? -70 : 10),
+        lag_24h: mkSeries(connectorsDown ? 320 : 30, 20, connectorsDown ? 600 : 0),
+      },
+      {
+        id: 'cfpb_complaints',
+        name: 'CFPB consumer complaints',
+        schema: 'cfpb_complaints',
+        service: 'connector_sdk',
+        sync_state: 'scheduled',
+        failed_at: null,
+        paused: false,
+        dashboard_url: 'https://fivetran.com/dashboard',
+        destination: 'S3 Iceberg',
+        source_db: 'CFPB API',
+        rows_synced_total: 9770,
+        throughput_24h: mkSeries(140, 50, 20),
+        lag_24h: mkSeries(60, 30, 5),
+      },
+    ];
+  }, [connectorsDown]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -87,6 +158,12 @@ export default function PipelinePage() {
           </button>
         </div>
       )}
+
+      {/* Replication pipelines monitoring console — at-a-glance summary of
+          every Fivetran connector with throughput + lag sparklines. */}
+      <div className="mt-6 p-1.5 rounded-2xl bg-gradient-to-br from-slate-900 to-neutral-900 shadow-xl">
+        <ReplicationPipelinesCard pipelines={pipelineRows} />
+      </div>
 
       <Section n={1} title="Fivetran custom connectors" layer={layers.connectors} sim={failures.has('connectors')} onSim={() => toggle('connectors')}>
         <KV k="Connectors" v="sec_edgar_filings · fred_macro_series · cfpb_complaints" mono />
