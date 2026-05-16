@@ -13,6 +13,7 @@ const NAV_ITEMS: [string, string][] = [
   ['/holdings', 'Holdings'],
   ['/macro', 'Macro'],
   ['/complaints', 'Complaint Radar'],
+  ['/geography', 'Geographic'],
   ['/agent', 'Research AI'],
   ['/architecture', 'ODI Architecture'],
   ['/pipeline', 'Pipeline'],

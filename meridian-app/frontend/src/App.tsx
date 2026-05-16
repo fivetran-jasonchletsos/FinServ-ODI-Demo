@@ -6,6 +6,7 @@ import HoldingsPage from './pages/HoldingsPage';
 import CompanyDetailPage from './pages/CompanyDetailPage';
 import MacroPage from './pages/MacroPage';
 import ComplaintsPage from './pages/ComplaintsPage';
+import GeographicPage from './pages/GeographicPage';
 import AgentPage from './pages/AgentPage';
 import AboutAgentPage from './pages/AboutAgentPage';
 import ArchitecturePage from './pages/ArchitecturePage';
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/macro" element={<MacroPage />} />
             <Route path="/macro/:seriesId" element={<MacroPage />} />
             <Route path="/complaints" element={<ComplaintsPage />} />
+            <Route path="/geography" element={<GeographicPage />} />
             <Route path="/agent" element={<AgentPage />} />
             <Route path="/about-agent" element={<AboutAgentPage />} />
             <Route path="/architecture" element={<ArchitecturePage />} />
