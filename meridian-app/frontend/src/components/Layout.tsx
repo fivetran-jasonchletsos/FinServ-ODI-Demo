@@ -15,6 +15,7 @@ const NAV_ITEMS: [string, string][] = [
   ['/complaints', 'Complaint Radar'],
   ['/geography', 'Geographic'],
   ['/agent', 'Research AI'],
+  ['/ask', 'Ask (Cortex)'],
   ['/architecture', 'ODI Architecture'],
   ['/pipeline', 'Pipeline'],
   ['/about', 'About'],
