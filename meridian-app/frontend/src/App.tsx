@@ -9,6 +9,7 @@ import ComplaintsPage from './pages/ComplaintsPage';
 import GeographicPage from './pages/GeographicPage';
 import AgentPage from './pages/AgentPage';
 import AboutAgentPage from './pages/AboutAgentPage';
+import AskPage from './pages/AskPage';
 import ArchitecturePage from './pages/ArchitecturePage';
 import PipelinePage from './pages/PipelinePage';
 import WatchlistPage from './pages/WatchlistPage';
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/geography" element={<GeographicPage />} />
             <Route path="/agent" element={<AgentPage />} />
             <Route path="/about-agent" element={<AboutAgentPage />} />
+            <Route path="/ask" element={<AskPage />} />
             <Route path="/architecture" element={<ArchitecturePage />} />
             <Route path="/pipeline" element={<PipelinePage />} />
             <Route path="/watchlist" element={<WatchlistPage />} />

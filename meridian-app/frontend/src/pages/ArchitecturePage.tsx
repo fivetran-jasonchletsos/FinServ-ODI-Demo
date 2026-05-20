@@ -227,6 +227,179 @@ export default function ArchitecturePage() {
         </div>
       </section>
 
+      {/* Data Quality — powered by dbt Labs */}
+      <section className="research-card overflow-hidden mt-8">
+        <header className="research-card-header flex items-start justify-between gap-4">
+          <div>
+            <div className="eyebrow" style={{ color: '#FF694A' }}>Data Quality · dbt Labs</div>
+            <h2 className="font-serif text-xl font-semibold text-[var(--ink-strong)] mt-0.5">
+              Every filing tested. Every macro release. Same lake.
+            </h2>
+            <p className="text-sm text-[var(--ink-muted)] mt-1">
+              Tests defined in dbt Labs run on every build, against the same Iceberg tables every
+              analyst and AI agent reads. Failures block promotion to the next layer — bad data
+              never reaches the watchlist.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shrink-0" style={{ background: '#FF694A' }}>
+            dbt Labs
+          </div>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--hairline-soft)]">
+          {[
+            { layer: 'bronze', tests: 22, passing: 22, monitors: ['freshness · SEC 8-K window', 'volume · CFPB daily intake', 'schema drift · XBRL taxonomy'], color: '#b45309' },
+            { layer: 'silver', tests: 54, passing: 53, monitors: ['nulls · CIK joins', 'uniqueness · filing_id', 'referential · ticker→CIK', 'accepted values · FRED series_id'], color: '#6b7280' },
+            { layer: 'gold',   tests: 29, passing: 29, monitors: ['business rules · macro regimes', 'complaint volume reconciliation', 'sum-to-source · holdings'], color: '#b8975c' },
+          ].map((q) => {
+            const ok = q.passing === q.tests;
+            return (
+              <div key={q.layer} className="p-5">
+                <div className="flex items-center justify-between">
+                  <span className={`layer-chip ${q.layer}`}>{q.layer}</span>
+                  <span className={`text-[10px] font-bold uppercase tracking-wider ${ok ? 'text-[var(--bull)]' : 'text-[var(--bear)]'}`}>
+                    {ok ? '● all passing' : `● ${q.tests - q.passing} failing`}
+                  </span>
+                </div>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <div className="font-serif text-3xl font-semibold text-[var(--ink-strong)] tabular">{q.passing}<span className="text-[var(--ink-soft)]">/{q.tests}</span></div>
+                  <div className="text-xs text-[var(--ink-muted)]">tests · last run 8m ago</div>
+                </div>
+                <ul className="mt-3 space-y-1.5 text-xs text-[var(--ink-muted)]">
+                  {q.monitors.map((m) => (
+                    <li key={m} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: q.color }} />
+                      {m}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+        <div className="px-5 py-3 border-t border-[var(--hairline-soft)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep)]">
+          <span className="font-mono">105 tests · 104 passing · 1 warn · 0 errors</span>
+          <span className="uppercase tracking-wider font-semibold">dbt build · merged into Fivetran</span>
+        </div>
+      </section>
+
+      {/* Lineage — source to consumer */}
+      <section className="research-card overflow-hidden mt-8">
+        <header className="research-card-header">
+          <div className="eyebrow" style={{ color: '#FF694A' }}>Lineage · dbt Labs</div>
+          <h2 className="font-serif text-xl font-semibold text-[var(--ink-strong)] mt-0.5">
+            Filing to thesis. Audited at every hop.
+          </h2>
+          <p className="text-sm text-[var(--ink-muted)] mt-1">
+            Column-level lineage from SEC EDGAR, FRED, and CFPB through every dbt transformation,
+            into every downstream consumer — research notebooks, AI agents, regulatory artifacts.
+            PII markers on every edge that touches complainant identifiers.
+          </p>
+        </header>
+        <div className="p-5 overflow-x-auto">
+          <svg viewBox="0 0 980 220" className="w-full" style={{ minWidth: 820 }}>
+            <defs>
+              <marker id="lineageArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#6b7280" />
+              </marker>
+              <marker id="piiArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#b45309" />
+              </marker>
+            </defs>
+
+            {/* Sources */}
+            {[
+              { x: 10, y: 30,  label: 'SEC EDGAR · filings', pii: false },
+              { x: 10, y: 110, label: 'CFPB · complaints', pii: true },
+            ].map((s, i) => (
+              <g key={i}>
+                <rect x={s.x} y={s.y} width="180" height="56" rx="4" fill="#ffffff" stroke="#d9d3c4" />
+                <text x={s.x + 12} y={s.y + 18} fontSize="9" fontWeight="800" fill="#826b3f" letterSpacing="1.4">SOURCE</text>
+                <text x={s.x + 12} y={s.y + 36} fontSize="11" fontWeight="700" fill="#0b1220">{s.label}</text>
+                {s.pii && (
+                  <g transform={`translate(${s.x + 130}, ${s.y + 8})`}>
+                    <rect x="0" y="0" width="36" height="14" rx="2" fill="#fef3c7" stroke="#b45309" />
+                    <text x="18" y="10" fontSize="8" fontWeight="800" fill="#b45309" textAnchor="middle" letterSpacing="0.5">PII</text>
+                  </g>
+                )}
+              </g>
+            ))}
+
+            {/* Bronze */}
+            {[
+              { y: 30,  label: 'bronze.sec_filings' },
+              { y: 110, label: 'bronze.cfpb_complaints' },
+            ].map((b, i) => (
+              <g key={i}>
+                <rect x="220" y={b.y} width="140" height="56" rx="4" fill="#fef3c7" stroke="#b45309" />
+                <text x="290" y={b.y + 22} fontSize="9" fontWeight="800" fill="#826b3f" textAnchor="middle" letterSpacing="1.4">BRONZE</text>
+                <text x="290" y={b.y + 40} fontSize="11" fontWeight="700" fill="#0b1220" textAnchor="middle">{b.label}</text>
+              </g>
+            ))}
+
+            {/* Silver */}
+            <g>
+              <rect x="400" y="70" width="160" height="76" rx="4" fill="#f3f4f6" stroke="#6b7280" />
+              <text x="480" y="92" fontSize="9" fontWeight="800" fill="#374151" textAnchor="middle" letterSpacing="1.4">SILVER</text>
+              <text x="480" y="112" fontSize="11" fontWeight="700" fill="#0b1220" textAnchor="middle">int_company_signals</text>
+              <text x="480" y="128" fontSize="9" fill="#6b7280" textAnchor="middle">deduped · joined · conformed</text>
+            </g>
+
+            {/* Gold */}
+            <g>
+              <rect x="600" y="70" width="170" height="76" rx="4" fill="#faf3e1" stroke="#b8975c" />
+              <text x="685" y="92" fontSize="9" fontWeight="800" fill="#826b3f" textAnchor="middle" letterSpacing="1.4">GOLD</text>
+              <text x="685" y="112" fontSize="11" fontWeight="700" fill="#0b1220" textAnchor="middle">fct_watchlist_signal</text>
+              <text x="685" y="128" fontSize="9" fill="#826b3f" textAnchor="middle">business-ready · semantic</text>
+            </g>
+
+            {/* Consumers */}
+            {[
+              { y: 26,  label: 'Athena (research)' },
+              { y: 78,  label: 'DuckDB notebook' },
+              { y: 130, label: 'AI Analyst' },
+              { y: 182, label: 'SEC artifact' },
+            ].map((c, i) => (
+              <g key={i}>
+                <rect x="810" y={c.y} width="160" height="36" rx="4" fill="#ffffff" stroke="#0b2545" />
+                <text x="890" y={c.y + 22} fontSize="11" fontWeight="700" fill="#0b2545" textAnchor="middle">{c.label}</text>
+              </g>
+            ))}
+
+            {/* Arrows source → bronze (PII on CFPB only) */}
+            <line x1="190" y1="58" x2="220" y2="58" stroke="#6b7280" strokeWidth="1.8" markerEnd="url(#lineageArrow)" />
+            <line x1="190" y1="138" x2="220" y2="138" stroke="#b45309" strokeWidth="1.8" markerEnd="url(#piiArrow)" />
+
+            {/* bronze → silver (dbt labs) */}
+            <line x1="360" y1="58" x2="400" y2="100" stroke="#FF694A" strokeWidth="2" markerEnd="url(#lineageArrow)" />
+            <line x1="360" y1="138" x2="400" y2="115" stroke="#FF694A" strokeWidth="2" markerEnd="url(#lineageArrow)" />
+            <g transform="translate(362, 80)">
+              <rect x="0" y="0" width="44" height="13" rx="2" fill="#FF694A" />
+              <text x="22" y="10" fontSize="8.5" fontWeight="800" fill="#ffffff" textAnchor="middle" letterSpacing="0.3">dbt labs</text>
+            </g>
+
+            {/* silver → gold (dbt labs) */}
+            <line x1="560" y1="108" x2="600" y2="108" stroke="#FF694A" strokeWidth="2" markerEnd="url(#lineageArrow)" />
+            <g transform="translate(563, 96)">
+              <rect x="0" y="0" width="44" height="13" rx="2" fill="#FF694A" />
+              <text x="22" y="10" fontSize="8.5" fontWeight="800" fill="#ffffff" textAnchor="middle" letterSpacing="0.3">dbt labs</text>
+            </g>
+
+            {/* gold → consumers */}
+            {[44, 96, 148, 200].map((cy, i) => (
+              <line key={i} x1="770" y1="108" x2="810" y2={cy} stroke="#b8975c" strokeWidth="1.5" markerEnd="url(#lineageArrow)" />
+            ))}
+          </svg>
+        </div>
+        <div className="px-5 py-3 border-t border-[var(--hairline-soft)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep)]">
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-block w-3 h-0.5" style={{ background: '#b45309' }} /> PII edge
+            <span className="ml-3 inline-block w-3 h-0.5" style={{ background: '#FF694A' }} /> dbt Labs transformation
+            <span className="ml-3 inline-block w-3 h-0.5" style={{ background: '#b8975c' }} /> Iceberg read
+          </span>
+          <span className="uppercase tracking-wider font-semibold font-mono">column-level · auto-emitted by dbt Labs</span>
+        </div>
+      </section>
+
       {/* ODI vs MDS comparison */}
       <section className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="research-card p-6 border-l-4" style={{ borderLeftColor: 'var(--ink-soft)' }}>
@@ -385,13 +558,19 @@ function ArchitectureDiagram({
 
         {/* Arrows between layers */}
         <line x1="310" y1="154" x2="340" y2="154" stroke="#6b7280" strokeWidth="1.5" markerEnd="url(#arrow)" />
-        <line x1="490" y1="154" x2="510" y2="154" stroke="#6b7280" strokeWidth="1.5" markerEnd="url(#arrow)" />
-        <line x1="660" y1="154" x2="680" y2="154" stroke="#6b7280" strokeWidth="1.5" markerEnd="url(#arrow)" />
+        <line x1="490" y1="154" x2="510" y2="154" stroke="#FF694A" strokeWidth="1.8" markerEnd="url(#arrow)" />
+        <line x1="660" y1="154" x2="680" y2="154" stroke="#FF694A" strokeWidth="1.8" markerEnd="url(#arrow)" />
 
-        {/* dbt label on the silver→gold arrow */}
+        {/* dbt labs label on the bronze→silver arrow */}
+        <g transform="translate(495, 145)">
+          <rect x="-2" y="-12" width="48" height="14" rx="3" fill="#FF694A" stroke="#FF694A" />
+          <text x="22" y="-1" textAnchor="middle" fontSize="9" fontWeight="800" fill="#ffffff" letterSpacing="0.5">dbt labs</text>
+        </g>
+
+        {/* dbt labs label on the silver→gold arrow */}
         <g transform="translate(665, 145)">
-          <rect x="-2" y="-12" width="34" height="14" rx="3" fill="#ffffff" stroke="#d9d3c4" />
-          <text x="15" y="-1" textAnchor="middle" fontSize="9" fontWeight="800" fill="#826b3f" letterSpacing="1">DBT</text>
+          <rect x="-2" y="-12" width="48" height="14" rx="3" fill="#FF694A" stroke="#FF694A" />
+          <text x="22" y="-1" textAnchor="middle" fontSize="9" fontWeight="800" fill="#ffffff" letterSpacing="0.5">dbt labs</text>
         </g>
 
         {/* Engines fan out from gold */}
