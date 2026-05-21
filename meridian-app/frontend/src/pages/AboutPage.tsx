@@ -1,6 +1,29 @@
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="research-card p-6 mb-10" style={{ borderColor: 'var(--gold)' }}>
+        <div className="eyebrow mb-2" style={{ color: 'var(--gold-dim)' }}>The ODI Story</div>
+        <h2 className="font-serif text-2xl font-semibold tracking-tight text-[var(--ink-strong)]">
+          Data infrastructure for agents you trust.
+        </h2>
+        <p className="mt-3 text-[var(--ink-muted)] leading-relaxed">
+          <em>"MDS was optimized for humans. ODI is designed for a future with humans and
+          production agents at scale."</em> This demo is one instance of that architecture:
+          Fivetran's 750+ connectors and Managed Data Lake Service (MDLS) land data into open
+          table formats; dbt transformations build the governed semantic layer; multiple compute
+          engines and AI agents read the same gold tables.
+        </p>
+        <a
+          href="https://fivetran-jasonchletsos.github.io/Fivetran-Demo-Repository/story/"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--ink-strong)] hover:underline"
+          style={{ color: 'var(--gold-dim)' }}
+        >
+          Read the full ODI Story →
+        </a>
+      </section>
+
       <header className="mb-8">
         <div className="eyebrow mb-1">ODI Reference Architecture</div>
         <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">About Meridian Capital</h1>
