@@ -20,6 +20,7 @@ export interface PipelineRow {
   sync_state: string | null;
   failed_at: string | null;
   paused: boolean | null;
+  fivetran_id?: string;
   dashboard_url: string;
   // Destination this connector replicates into.
   destination: string;

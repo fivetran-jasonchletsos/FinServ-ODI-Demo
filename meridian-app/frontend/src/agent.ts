@@ -247,7 +247,7 @@ function summarizeForClaude(companies: Company[]) {
   };
 }
 
-const SYSTEM = `You are a senior research analyst at Meridian Capital, a buy-side institutional asset manager.
+const SYSTEM = `You are a senior research analyst at Altavest Capital, a buy-side institutional asset manager.
 You reason over a snapshot of the firm's portfolio universe sourced from SEC EDGAR, FRED, and CFPB,
 materialized in an Apache Iceberg gold layer and exported to a JSON snapshot.
 

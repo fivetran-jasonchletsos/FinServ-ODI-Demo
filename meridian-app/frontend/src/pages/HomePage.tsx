@@ -78,18 +78,18 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-7">
-              <div className="eyebrow-light mb-4">Meridian Capital · Open Data Infrastructure</div>
-              <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white leading-[0.98] tracking-tight">
+              <div className="eyebrow-light mb-4 animate-fade-up">Altavest Capital · Open Data Infrastructure</div>
+              <h1 className="font-serif text-4xl sm:text-6xl font-semibold text-white leading-[0.98] tracking-tight animate-fade-up-1">
                 One lake.<br />
                 <span className="text-[var(--gold-bright)]">Every engine.</span><br />
                 Full control.
               </h1>
-              <p className="mt-6 text-base sm:text-lg text-white/75 max-w-2xl leading-relaxed">
+              <p className="mt-6 text-base sm:text-lg text-white/75 max-w-2xl leading-relaxed animate-fade-up-2">
                 Research-desk intelligence that no longer lives behind a warehouse. Public filings,
                 macroeconomic context, and consumer signals — landed once in open Iceberg tables on S3,
                 queried by Athena, governed in Glue, ready for AI agents the moment they arrive.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3 animate-fade-up-3">
                 <button
                   onClick={() => navigate('/holdings')}
                   className="inline-flex items-center gap-2 rounded-sm font-semibold text-sm text-[var(--navy-deep)] px-5 py-3 shadow-lg hover:opacity-95 transition-opacity"
@@ -243,7 +243,7 @@ export default function HomePage() {
             </h2>
             <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-2xl">
               Risk score derived from{' '}
-              <span className="layer-chip gold ml-0.5">gold.fct_company_risk_signal</span>{' '}
+              <span className="layer-chip gold ml-0.5">gold mart</span>{' '}
               — a single dbt model that blends complaint velocity, financial deterioration, recent 8-K
               activity, and sector macro stress.
             </p>
@@ -302,7 +302,7 @@ export default function HomePage() {
             <span className="text-[var(--gold-bright)]">So is openness.</span>"
           </p>
           <p className="mt-4 text-sm text-white/70 max-w-2xl mx-auto">
-            Meridian Capital chose ODI because it gives the desk control over storage, compute,
+            Altavest Capital chose ODI because it gives the desk control over storage, compute,
             cost, and shared context — and because the AI agents that come next will demand
             governed access to the lake, not a serial-port pipe through the warehouse.
           </p>

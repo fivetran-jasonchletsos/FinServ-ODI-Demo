@@ -24,7 +24,7 @@ const NAV_ITEMS: [string, string][] = [
 const DEMOS = [
   { key: 'tax-assessment', name: 'Allegheny County Tax', industry: 'Public sector · Property assessment', url: 'https://fivetran-jasonchletsos.github.io/tax-assessment-databricks-demo/', accent: '#dc2626' },
   { key: 'healthcare',     name: 'Epic Clarity',         industry: 'Healthcare · Clinical analytics',     url: 'https://fivetran-jasonchletsos.github.io/Healthcare-EPIC-Snowflake-Demo/', accent: '#0d9488' },
-  { key: 'finserv',        name: 'Meridian Capital',     industry: 'Financial Services · Wealth & banking', url: 'https://fivetran-jasonchletsos.github.io/FinServ-ODI-Demo/', accent: '#1d4ed8' },
+  { key: 'finserv',        name: 'Altavest Capital',     industry: 'Financial Services · Wealth & banking', url: 'https://fivetran-jasonchletsos.github.io/FinServ-ODI-Demo/', accent: '#1d4ed8' },
   { key: 'insurance',     name: 'Atlas Risk',           industry: 'Insurance · Policies, claims, reinsurance', url: 'https://fivetran-jasonchletsos.github.io/Insurance-ODI-Demo/', accent: '#0369a1' },
   { key: 'media',          name: 'Lighthouse Media',     industry: 'Media · Audience intelligence',       url: 'https://fivetran-jasonchletsos.github.io/Media-ODI-Demo/', accent: '#7c3aed' },
   { key: 'retail',         name: 'Storefront Analytics', industry: 'Retail & e-commerce',                  url: 'https://fivetran-jasonchletsos.github.io/RetailEcom-ODI-Demo/', accent: '#ea580c' },
@@ -93,7 +93,7 @@ export default function Layout() {
               </div>
               <div className="leading-tight min-w-0">
                 <div className="font-serif font-semibold text-lg sm:text-xl tracking-tight truncate">
-                  Meridian Capital
+                  Altavest Capital
                 </div>
                 <div className="mt-0.5 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--gold-bright)]">
                   Research & Risk Intelligence
@@ -242,6 +242,43 @@ export default function Layout() {
         </div>
       </header>
 
+      {/* Ticker tape — real-time macro indicator strip */}
+      <div
+        className="ticker-tape border-b bg-[var(--navy-deep)]"
+        style={{ borderColor: 'rgba(184,151,92,0.25)', height: '28px', display: 'flex', alignItems: 'center' }}
+      >
+        <div className="ticker-tape-inner text-[10px] font-mono font-medium tracking-wider" style={{ color: 'rgba(212,175,117,0.75)' }}>
+          {[
+            'FED FUNDS 5.25–5.50',
+            'DGS10 4.28',
+            'T10Y2Y −0.41 ▼',
+            'CPIAUCSL 3.2% YoY',
+            'UNRATE 3.9%',
+            'GDP +2.8% QoQ',
+            'ICEBERG · 14 TABLES · S3',
+            'ATHENA ENGINE V3 · ACTIVE',
+            'dbt BUILD PASSED · 104/105',
+            'CFPB COMPLAINTS · 9.8K',
+            'SEC EDGAR · 84K FILINGS',
+            'BRONZE → SILVER → GOLD',
+            'FED FUNDS 5.25–5.50',
+            'DGS10 4.28',
+            'T10Y2Y −0.41 ▼',
+            'CPIAUCSL 3.2% YoY',
+            'UNRATE 3.9%',
+            'GDP +2.8% QoQ',
+            'ICEBERG · 14 TABLES · S3',
+            'ATHENA ENGINE V3 · ACTIVE',
+            'dbt BUILD PASSED · 104/105',
+            'CFPB COMPLAINTS · 9.8K',
+            'SEC EDGAR · 84K FILINGS',
+            'BRONZE → SILVER → GOLD',
+          ].map((item, i) => (
+            <span key={i} className="mx-6">{item}</span>
+          ))}
+        </div>
+      </div>
+
       <main className="flex-1">
         <Outlet />
       </main>
@@ -253,7 +290,7 @@ export default function Layout() {
               <div className="h-7 w-7 rounded-sm flex items-center justify-center" style={{ background: 'var(--gold)' }}>
                 <MeridianMark className="h-4 w-4 text-[var(--navy-deep)]" />
               </div>
-              <div className="font-serif font-semibold text-white">Meridian Capital</div>
+              <div className="font-serif font-semibold text-white">Altavest Capital</div>
             </div>
             <p className="leading-relaxed text-white/60">
               Research & risk intelligence portal built on Fivetran Open Data Infrastructure.
@@ -277,7 +314,7 @@ export default function Layout() {
         </div>
         <div className="border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 text-[11px] text-white/50 flex flex-col sm:flex-row gap-1 sm:items-center sm:justify-between">
-            <div>© 2026 Meridian Capital ODI Demo · Fivetran Open Data Infrastructure</div>
+            <div>© 2026 Altavest Capital ODI Demo · Fivetran Open Data Infrastructure</div>
             <div>Snapshot {snapshotAt ? new Date(snapshotAt).toLocaleString() : '—'}</div>
           </div>
         </div>

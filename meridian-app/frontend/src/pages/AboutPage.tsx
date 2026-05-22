@@ -26,9 +26,9 @@ export default function AboutPage() {
 
       <header className="mb-8">
         <div className="eyebrow mb-1">ODI Reference Architecture</div>
-        <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">About Meridian Capital</h1>
+        <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">About Altavest Capital</h1>
         <p className="mt-3 text-[var(--ink-muted)] leading-relaxed">
-          Meridian Capital is a reference build that demonstrates how a buy-side research desk can be
+          Altavest Capital is a reference build that demonstrates how a buy-side research desk can be
           powered entirely by Fivetran's Open Data Infrastructure — Fivetran custom connectors landing
           public-domain finance data directly into a customer-owned Apache Iceberg lake on S3, with dbt
           building the analytics layer and AWS Athena serving the query workload.
@@ -117,7 +117,7 @@ export default function AboutPage() {
         <div className="eyebrow mb-2" style={{ color: 'var(--caution)' }}>Disclaimer</div>
         <p className="text-[var(--ink-muted)] leading-relaxed">
           <strong className="text-[var(--ink-strong)]">All data shown is synthetic or sampled from public sources</strong>{' '}
-          (SEC EDGAR, FRED, CFPB) and aggregated for demonstration purposes. Meridian Capital is a fictional
+          (SEC EDGAR, FRED, CFPB) and aggregated for demonstration purposes. Altavest Capital is a fictional
           asset manager. No portion of this site constitutes investment advice or a recommendation.
         </p>
       </section>
@@ -145,7 +145,7 @@ const PILLARS = [
 
 const STACK = [
   { layer: 'Ingest',     name: 'Fivetran custom connectors', note: 'SEC EDGAR · FRED · CFPB · built with the Connector SDK.' },
-  { layer: 'Storage',    name: 'Amazon S3',                  note: 'meridian-odi-lake bucket holds bronze · silver · gold prefixes.' },
+  { layer: 'Storage',    name: 'Amazon S3',                  note: 'altavest-odi-lake bucket holds bronze · silver · gold prefixes.' },
   { layer: 'Format',     name: 'Apache Iceberg v2',          note: 'Parquet files, ZSTD-compressed, Glue catalog.' },
   { layer: 'Catalog',    name: 'AWS Glue Data Catalog',      note: 'Iceberg REST + table-level access control.' },
   { layer: 'Transform',  name: 'dbt-athena',                 note: 'Iceberg-native materializations · 18 tested models.' },

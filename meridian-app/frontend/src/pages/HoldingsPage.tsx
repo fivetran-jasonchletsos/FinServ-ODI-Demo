@@ -102,11 +102,7 @@ export default function HoldingsPage() {
           <div className="eyebrow mb-1">Equity Universe</div>
           <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">Holdings</h1>
           <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-2xl">
-            Search the{' '}
-            <code className="font-mono text-xs bg-[var(--paper-deep)] px-1.5 py-0.5 rounded border border-[var(--hairline)]">gold.dim_companies</code>{' '}
-            mart joined with{' '}
-            <code className="font-mono text-xs bg-[var(--paper-deep)] px-1.5 py-0.5 rounded border border-[var(--hairline)]">gold.fct_company_risk_signal</code>{' '}
-            for cross-source risk and growth metrics.
+            Search the gold layer company mart joined with the risk signal mart for cross-source risk and growth metrics.
           </p>
         </div>
         <div className="text-sm text-[var(--ink-soft)] tabular shrink-0">

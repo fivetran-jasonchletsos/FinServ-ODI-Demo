@@ -29,13 +29,13 @@ export default function PipelinePage() {
         : { ok: true, status: 'on schedule', detail: '3 Fivetran custom connectors (SEC EDGAR · FRED · CFPB). Last sync 4h ago. Next sync in 2h.' },
       s3_iceberg: f.has('s3_iceberg')
         ? { ok: false, status: 'commit failed', detail: 'S3 + AWS Glue Iceberg catalog', failureDetail: 'Simulated: Glue catalog returned 503 during last Iceberg commit. Table snapshot uncommitted.' }
-        : { ok: true, status: 'committed', detail: 'meridian-odi-lake bucket + AWS Glue Iceberg catalog. 14 tables across bronze · silver · gold.' },
+        : { ok: true, status: 'committed', detail: 'altavest-odi-lake bucket + AWS Glue Iceberg catalog. 14 tables across bronze · silver · gold.' },
       dbt: f.has('dbt')
-        ? { ok: false, status: 'run failed', detail: 'dbt build — model gold.fct_company_risk_signal', failureDetail: 'Simulated: model compilation failed. Test "unique_cik" returned 4 failures in silver.companies.' }
+        ? { ok: false, status: 'run failed', detail: 'dbt build — risk signal model in the gold layer', failureDetail: 'Simulated: model compilation failed. Test "unique_cik" returned 4 failures in the silver companies table.' }
         : { ok: true, status: 'last run passed', detail: 'dbt build completed 3h ago. 8 staging + 4 silver + 6 gold models passed all tests.' },
       athena: f.has('athena')
         ? { ok: false, status: 'query failed', detail: 'AWS Athena query engine', failureDetail: 'Simulated: workgroup query quota exceeded. Retry after quota window resets at top of hour.' }
-        : { ok: true, status: 'operational', detail: 'AWS Athena workgroup meridian-odi. Iceberg-aware engine v3. Avg query 1.4s.' },
+        : { ok: true, status: 'operational', detail: 'AWS Athena workgroup altavest-odi. Iceberg-aware engine v3. Avg query 1.4s.' },
     };
   }, [failures]);
 
@@ -43,7 +43,7 @@ export default function PipelinePage() {
   const anyDown = !Object.values(layers).every((l) => l.ok);
 
   // Synthesize per-connector replication rows for the dark monitoring console.
-  // The real Meridian pipeline runs 3 Fivetran custom connectors; throughput +
+  // The real Altavest pipeline runs 3 Fivetran custom connectors; throughput +
   // lag values here are illustrative — they walk a presenter through the
   // observability surface without requiring the Fivetran Platform Connector.
   const connectorsDown = failures.has('connectors');
@@ -72,7 +72,8 @@ export default function PipelinePage() {
         sync_state: 'scheduled',
         failed_at: null,
         paused: false,
-        dashboard_url: 'https://fivetran.com/dashboard',
+        fivetran_id: 'sec_edgar',
+        dashboard_url: 'https://fivetran.com/dashboard/connectors/sec_edgar',
         destination: 'S3 Iceberg',
         source_db: 'SEC EDGAR REST',
         rows_synced_total: 84210,
@@ -87,7 +88,8 @@ export default function PipelinePage() {
         sync_state: connectorsDown ? 'failed' : 'scheduled',
         failed_at: connectorsDown ? new Date().toISOString() : null,
         paused: false,
-        dashboard_url: 'https://fivetran.com/dashboard',
+        fivetran_id: 'fred_economic_data',
+        dashboard_url: 'https://fivetran.com/dashboard/connectors/fred_economic_data',
         destination: 'S3 Iceberg',
         source_db: 'FRED API',
         rows_synced_total: 13455,
@@ -102,7 +104,8 @@ export default function PipelinePage() {
         sync_state: 'scheduled',
         failed_at: null,
         paused: false,
-        dashboard_url: 'https://fivetran.com/dashboard',
+        fivetran_id: 'cfpb_consumer_complaints',
+        dashboard_url: 'https://fivetran.com/dashboard/connectors/cfpb_consumer_complaints',
         destination: 'S3 Iceberg',
         source_db: 'CFPB API',
         rows_synced_total: 9770,
@@ -115,13 +118,30 @@ export default function PipelinePage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <header className="mb-6 border-b border-[var(--hairline)] pb-4">
-        <div className="eyebrow mb-1">Pipeline Health</div>
-        <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">End-to-end status</h1>
-        <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-3xl leading-relaxed">
-          Live posture of every layer that produces the Meridian research surface: Fivetran custom connectors,
-          the S3-backed Apache Iceberg lake, dbt medallion transformations, and the AWS Athena query engine.
-          Toggle <em>Simulate failure</em> on any layer to walk through observability and incident response patterns.
-        </p>
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <div className="eyebrow mb-1">Pipeline Health</div>
+            <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">End-to-end status</h1>
+            <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-3xl leading-relaxed">
+              Live posture of every layer that produces the Altavest research surface: Fivetran custom connectors,
+              the S3-backed Apache Iceberg lake, dbt medallion transformations, and the AWS Athena query engine.
+              Toggle <em>Simulate failure</em> on any layer to walk through observability and incident response patterns.
+            </p>
+          </div>
+          <a
+            href="https://fivetran.com/dashboard/connectors"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-2 rounded-sm border border-[var(--gold)] bg-[var(--gold-bg)] px-4 py-2 text-[12px] font-semibold uppercase tracking-wider text-[var(--gold-dim)] hover:bg-[var(--gold)] hover:text-[var(--navy-deep)] transition-colors"
+          >
+            Open in Fivetran
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
       </header>
 
       <div
@@ -166,28 +186,45 @@ export default function PipelinePage() {
       </div>
 
       <Section n={1} title="Fivetran custom connectors" layer={layers.connectors} sim={failures.has('connectors')} onSim={() => toggle('connectors')}>
-        <KV k="Connectors" v="sec_edgar_filings · fred_macro_series · cfpb_complaints" mono />
+        <dt className="text-[10px] uppercase tracking-[0.08em] text-[var(--ink-soft)] font-semibold">Connectors</dt>
+        <dd className="font-mono text-xs flex flex-wrap gap-2">
+          {[
+            { label: 'sec_edgar_filings',     id: 'sec_edgar' },
+            { label: 'fred_macro_series',     id: 'fred_economic_data' },
+            { label: 'cfpb_complaints',       id: 'cfpb_consumer_complaints' },
+          ].map(({ label, id }) => (
+            <a
+              key={id}
+              href={`https://fivetran.com/dashboard/connectors/${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--gold-dim)] hover:text-[var(--navy-deep)] hover:underline"
+            >
+              {label}
+            </a>
+          ))}
+        </dd>
         <KV k="Runtime" v="Fivetran Connector SDK (Python)" />
         <KV k="Frequency" v="Every 6 hours" />
         <KV k="Destination" v="S3 bucket (Iceberg-managed)" />
       </Section>
 
       <Section n={2} title="S3 + Iceberg lake" layer={layers.s3_iceberg} sim={failures.has('s3_iceberg')} onSim={() => toggle('s3_iceberg')}>
-        <KV k="Bucket" v="s3://meridian-odi-lake/" mono />
+        <KV k="Bucket" v="s3://altavest-odi-lake/" mono />
         <KV k="Catalog" v="AWS Glue Data Catalog (Iceberg REST)" />
         <KV k="Tables" v="14 across bronze · silver · gold" />
         <KV k="Format" v="Apache Iceberg v2 · Parquet files · ZSTD compression" />
       </Section>
 
       <Section n={3} title="dbt medallion build" layer={layers.dbt} sim={failures.has('dbt')} onSim={() => toggle('dbt')}>
-        <KV k="Project" v="meridian_odi" mono />
+        <KV k="Project" v="altavest_odi" mono />
         <KV k="Adapter" v="dbt-athena (Iceberg-native)" mono />
         <KV k="Models" v="8 staging · 4 silver · 6 gold" />
         <KV k="Trigger" v="Cron 04:00, 10:00, 16:00, 22:00 UTC — post-connector-sync" />
       </Section>
 
       <Section n={4} title="AWS Athena query engine" layer={layers.athena} sim={failures.has('athena')} onSim={() => toggle('athena')}>
-        <KV k="Workgroup" v="meridian-odi" mono />
+        <KV k="Workgroup" v="altavest-odi" mono />
         <KV k="Engine" v="Athena engine v3 (Trino) — Iceberg-aware" />
         <KV k="Snapshot export" v="scripts/build_snapshot.py → /public/data/*.json" />
         <KV k="Auth" v="IAM role with Glue:GetTable + S3:GetObject" />

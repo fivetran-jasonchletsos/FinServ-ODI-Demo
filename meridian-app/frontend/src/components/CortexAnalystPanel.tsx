@@ -197,7 +197,7 @@ SELECT
 FROM   ranked
 WHERE  rank_n <= 20
 ORDER  BY rank_n ASC;`,
-    narrative: `The top 4 banks hold 41% of all deposits in the tracked set, top 20 hold 67%. Concentration is up 320 bps from three years ago — a structural shift Meridian's research team watches as a leading indicator of regulatory pressure.`,
+    narrative: `The top 4 banks hold 41% of all deposits in the tracked set, top 20 hold 67%. Concentration is up 320 bps from three years ago — a structural shift Altavest's research team watches as a leading indicator of regulatory pressure.`,
     data: [
       { label: 'Top-4 deposit share',  value: '41%' },
       { label: 'Top-20 deposit share', value: '67%' },
@@ -223,7 +223,7 @@ export default function CortexAnalystPanel() {
         </div>
         <p className="max-w-md text-sm leading-relaxed italic md:text-right" style={{ color: 'var(--ink-muted)' }}>
           Natural-language questions resolved to SQL against the dbt-modeled gold layer —
-          the same Iceberg tables Meridian's research dashboards read.
+          the same Iceberg tables Altavest's research dashboards read.
         </p>
       </div>
 

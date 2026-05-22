@@ -21,7 +21,7 @@ LIMIT 25;`,
 LOAD iceberg;
 
 SELECT *
-FROM iceberg_scan('s3://meridian-finserv-odi-lake/gold/fct_complaints/')
+FROM iceberg_scan('s3://altavest-finserv-odi-lake/gold/fct_complaints/')
 WHERE topic_cluster = 'credit-reporting-errors'
 LIMIT 100;`,
   },
@@ -86,7 +86,7 @@ export default function ArchitecturePage() {
           One lake. Every engine. Full control.
         </h1>
         <p className="mt-3 text-[var(--ink-muted)] max-w-3xl leading-relaxed">
-          Meridian's data plane treats <em>storage</em>, <em>catalog</em>, and <em>compute</em> as
+          Altavest's data plane treats <em>storage</em>, <em>catalog</em>, and <em>compute</em> as
           three independently swappable layers. Iceberg is the storage spec. Glue is the catalog.
           Athena, DuckDB, Trino, Spark, and even Snowflake can all read the same tables — no copy,
           no extract, no proprietary format in the way.

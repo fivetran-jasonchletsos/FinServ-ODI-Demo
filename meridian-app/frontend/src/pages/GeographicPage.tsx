@@ -863,7 +863,7 @@ function DefaultPanel({ branches, onPick, outlier }: { branches: Branch[]; onPic
 function ProvenanceStrip({ branches, households }: { branches: number; households: number }) {
   return (
     <div className="research-card px-4 py-2.5 flex flex-wrap items-center gap-x-5 gap-y-1 text-[11px] tabular">
-      <span className="layer-chip gold">Gold · branch_geo_mart</span>
+      <span className="layer-chip gold">gold layer</span>
       <span className="text-[var(--ink-soft)]">
         <span className="font-semibold text-[var(--ink-strong)]">Fivetran</span> · core-banking + wealth CRM CDC
       </span>
