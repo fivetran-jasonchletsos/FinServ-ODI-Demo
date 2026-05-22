@@ -11,6 +11,7 @@ const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'ar
 const NAV_ITEMS: [string, string][] = [
   ['/', 'Home'],
   ['/holdings', 'Holdings'],
+  ['/related', 'Related'],
   ['/macro', 'Macro'],
   ['/complaints', 'Complaint Radar'],
   ['/geography', 'Geographic'],

@@ -6,6 +6,7 @@ import {
 import { api, formatCurrencyShort, formatNumber, formatPercent } from '../api/queries';
 import type { CompanyDetail, RiskBucket, MacroObservation } from '../types';
 import WatchlistButton from '../components/WatchlistButton';
+import { seedCompanies, relatedFor, type RelatedNeighbor } from '../lib/related';
 
 function riskTone(bucket: RiskBucket): { cls: string; label: string; color: string } {
   switch (bucket) {
@@ -52,6 +53,7 @@ export default function CompanyDetailPage() {
   const [company, setCompany] = useState<CompanyDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [macroObs, setMacroObs] = useState<MacroObservation[]>([]);
+  const [related, setRelated] = useState<RelatedNeighbor[]>([]);
 
   useEffect(() => {
     setLoading(true);
@@ -69,6 +71,14 @@ export default function CompanyDetailPage() {
       })
       .catch(() => setCompany(null))
       .finally(() => setLoading(false));
+  }, [cik]);
+
+  // Seed the related engine with the full company catalog (idempotent).
+  useEffect(() => {
+    api.searchCompanies({ limit: 1000 }).then((r) => {
+      seedCompanies(r.results);
+      setRelated(relatedFor(cik));
+    });
   }, [cik]);
 
   const complaintsByTopic = useMemo(() => {
@@ -318,6 +328,65 @@ export default function CompanyDetailPage() {
                   </div>
                 </div>
               )}
+            </div>
+          </section>
+        )}
+
+        {/* Section F — Related Holdings */}
+        {related.length > 0 && (
+          <section className="research-card overflow-hidden lg:col-span-2">
+            <header className="research-card-header flex items-center justify-between">
+              <div>
+                <div className="eyebrow">Section F</div>
+                <h2 className="font-serif text-lg font-semibold text-[var(--ink-strong)] mt-0.5">Related holdings</h2>
+                <p className="text-xs text-[var(--ink-muted)] mt-1">
+                  Most similar companies by GICS sector, sub-industry, market-cap band, and factor exposure.
+                </p>
+              </div>
+              <Link
+                to="/related"
+                className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--gold-dim)] border px-3 py-1.5 rounded-sm hover:bg-[var(--gold-bg)] transition-colors shrink-0"
+                style={{ borderColor: 'rgba(184,151,92,0.4)' }}
+              >
+                Full network map
+              </Link>
+            </header>
+            <div className="p-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {related.map((nb) => (
+                  <Link
+                    key={nb.cik}
+                    to={`/companies/${nb.cik}`}
+                    className="block border rounded-sm px-3 py-3 hover:border-[var(--gold)] hover:bg-[var(--gold-bg)] transition-colors"
+                    style={{ borderColor: 'var(--hairline)' }}
+                  >
+                    <div className="flex items-baseline justify-between gap-2 mb-0.5">
+                      <span className="ticker text-base font-bold text-[var(--ink-strong)]">
+                        {nb.company.ticker}
+                      </span>
+                      <span
+                        className="text-[9px] font-mono tabular shrink-0"
+                        style={{ color: 'var(--gold-dim)' }}
+                      >
+                        {Math.round(nb.score * 100)}%
+                      </span>
+                    </div>
+                    <p className="text-xs text-[var(--ink)] font-medium truncate">{nb.company.name}</p>
+                    <p className="text-[10px] text-[var(--ink-muted)] mt-0.5 truncate">{nb.why}</p>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {nb.sharedDimensions.slice(0, 2).map((dim) => (
+                        <span
+                          key={dim}
+                          className="text-[8px] font-mono uppercase tracking-[0.15em] px-1.5 py-0.5 border rounded-sm"
+                          style={{ borderColor: 'var(--hairline)', color: 'var(--ink-muted)', background: 'var(--paper-deep)' }}
+                        >
+                          {dim}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </section>
         )}
