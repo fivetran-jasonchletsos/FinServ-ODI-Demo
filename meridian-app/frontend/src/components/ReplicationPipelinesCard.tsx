@@ -243,17 +243,25 @@ export default function ReplicationPipelinesCard({
             >
               {/* Pipeline */}
               <div className="min-w-0">
-                <a
-                  href={row.dashboard_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-[15px] font-semibold leading-tight hover:underline"
-                  style={{ color: '#f5f5f4' }}
-                >
-                  <span className="truncate">{row.schema || row.id}</span>
-                  <DestinationGlyph name={row.destination} />
-                  <span style={{ color: '#a3a3a3' }} className="truncate">{row.destination.toLowerCase()}</span>
-                </a>
+                {row.dashboard_url ? (
+                  <a
+                    href={row.dashboard_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-[15px] font-semibold leading-tight hover:underline"
+                    style={{ color: '#f5f5f4' }}
+                  >
+                    <span className="truncate">{row.schema || row.id}</span>
+                    <DestinationGlyph name={row.destination} />
+                    <span style={{ color: '#a3a3a3' }} className="truncate">{row.destination.toLowerCase()}</span>
+                  </a>
+                ) : (
+                  <div className="flex items-center text-[15px] font-semibold leading-tight" style={{ color: '#f5f5f4' }}>
+                    <span className="truncate">{row.schema || row.id}</span>
+                    <DestinationGlyph name={row.destination} />
+                    <span style={{ color: '#a3a3a3' }} className="truncate">{row.destination.toLowerCase()}</span>
+                  </div>
+                )}
                 <div className="text-[12px] mt-1" style={{ color: '#737373' }}>
                   {sourceDb} · {rowsTotal}
                 </div>

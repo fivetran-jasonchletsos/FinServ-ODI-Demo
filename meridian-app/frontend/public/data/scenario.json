@@ -1,0 +1,46 @@
+{
+  "company": "Altavest Capital",
+  "request_id": "BLD-2026-05-23-0014",
+  "requested_by": "Head of Research",
+  "requested_at": "2026-05-23T07:12:00-05:00",
+  "timezone_label": "Friday 07:12 CST",
+  "question": "Why did our regional-bank holdings underperform yesterday relative to the macro CPI print?",
+  "metric_label": "Regional-bank macro attribution by holding, daily",
+  "metric_code": "gold.fct_regional_bank_macro_attribution_daily",
+  "sop_meeting_at": "2026-05-24T08:00:00-05:00",
+  "sop_meeting_label": "Monday 08:00 CST · Investment Committee",
+  "target_schema": "gold",
+  "target_model": "fct_regional_bank_macro_attribution_daily",
+  "target_grain": "one row per (holding_id, observation_date)",
+  "prior_crisis_id": "INC-2026-05-09-0022",
+  "firm_name": "Altavest Capital",
+  "desk": "Equity Research — Financials",
+  "upstream_models": [
+    {
+      "model": "gold.fct_holdings",
+      "layer": "gold",
+      "grain": "holding_id · report_date",
+      "description": "Daily position book from 13F and internal trade records. Includes ticker, sector classification, position size in USD, and weight in the book."
+    },
+    {
+      "model": "gold.fct_macro_signal",
+      "layer": "gold",
+      "grain": "series_id · observation_date",
+      "description": "FRED macro series at daily grain. Includes CPIAUCSL, DGS10, FEDFUNDS, UNRATE. Joined on observation_date to isolate the CPI surprise day."
+    },
+    {
+      "model": "gold.dim_company",
+      "layer": "gold",
+      "grain": "cik (SCD-2)",
+      "description": "Issuer master with SIC code, sector, and regional-bank flag (SIC 6020–6029). Maps holdings to the regional-bank sub-universe for filtering."
+    },
+    {
+      "model": "gold.fct_consumer_complaint",
+      "layer": "gold",
+      "grain": "complaint_id",
+      "description": "CFPB consumer complaints at institution level. Used to derive complaint-sentiment ratio per issuer — a leading indicator of fundamental gap vs. market price gap."
+    }
+  ],
+  "manual_time_days": "3 to 5 days",
+  "build_room_seconds": 90
+}

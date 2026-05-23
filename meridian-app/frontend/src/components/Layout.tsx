@@ -10,13 +10,15 @@ const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'ar
 
 const NAV_ITEMS: [string, string][] = [
   ['/', 'Home'],
+  ['/scenario', 'Scenario'],
+  ['/wizard-live', 'Live'],
+  ['/outcome', 'Outcome'],
   ['/holdings', 'Holdings'],
   ['/related', 'Related'],
   ['/macro', 'Macro'],
   ['/complaints', 'Complaint Radar'],
   ['/geography', 'Geographic'],
   ['/agent', 'Research AI'],
-  ['/ask', 'Ask (Cortex)'],
   ['/architecture', 'ODI Architecture'],
   ['/pipeline', 'Pipeline'],
   ['/about', 'About'],
@@ -122,7 +124,7 @@ export default function Layout() {
                   to={to}
                   end={to === '/'}
                   className={({ isActive }) =>
-                    `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] ${
+                    `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap ${
                       isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
                     }`
                   }
@@ -294,21 +296,33 @@ export default function Layout() {
               <div className="font-serif font-semibold text-white">Altavest Capital</div>
             </div>
             <p className="leading-relaxed text-white/60">
-              Research & risk intelligence portal built on Fivetran Open Data Infrastructure.
+              Research &amp; risk intelligence portal built on Fivetran Open Data Infrastructure.
               Synthetic data — for ODI architecture demonstration only.
             </p>
+            <a
+              href={`${import.meta.env.BASE_URL || '/'}Altavest-Capital-3min-Demo-Runbook.pdf`}
+              download
+              className="mt-3 inline-flex items-center gap-2 rounded-sm border border-white/20 bg-white/5 px-2.5 py-1.5 text-[11px] font-semibold text-white/80 hover:border-[var(--gold)] hover:text-white transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <path d="M14 2v6h6" />
+                <path d="M12 18v-6" /><path d="M9 15l3 3 3-3" />
+              </svg>
+              3-min demo runbook (PDF)
+            </a>
           </div>
           <div>
             <div className="eyebrow-light mb-2">Data Pipeline</div>
             <p className="leading-relaxed text-white/70">
               SEC EDGAR · FRED · CFPB → Fivetran connectors → S3 + Apache Iceberg → dbt
-              (bronze / silver / gold) → AWS Athena → static JSON snapshot
+              (bronze / silver / gold) → Snowflake → static JSON snapshot
             </p>
           </div>
           <div>
             <div className="eyebrow-light mb-2">Open Standards</div>
             <p className="leading-relaxed text-white/70">
-              Apache Iceberg · AWS Glue Data Catalog · ANSI SQL · dbt semantic layer.
+              Apache Iceberg · Snowflake Open Catalog · ANSI SQL · dbt semantic layer.
               Any compute engine. No lock-in.
             </p>
           </div>

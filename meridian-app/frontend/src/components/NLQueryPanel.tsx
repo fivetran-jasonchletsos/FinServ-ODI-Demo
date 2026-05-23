@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// Cortex Analyst panel — Meridian Capital edition (light navy/gold).
+// Natural-language query panel — Altavest Capital edition (light navy/gold).
 
 type Token = { text: string; color?: string };
 
@@ -74,7 +74,7 @@ JOIN   gold.dim_company       c ON c.cik = h.cik
 WHERE  h.report_period = (SELECT MAX(report_period) FROM gold.fct_13f_holdings)
 ORDER  BY h.position_value_usd DESC
 LIMIT  10;`,
-    narrative: `The top 10 positions are dominated by mega-cap tech — five of ten are Apple, Microsoft, Nvidia, Alphabet, and Meta. The aggregate position is $1.2T across the largest holders. Cortex reads the same fct_13f_holdings that backs /holdings, no copy in between.`,
+    narrative: `The top 10 positions are dominated by mega-cap tech — five of ten are Apple, Microsoft, Nvidia, Alphabet, and Meta. The aggregate position is $1.2T across the largest holders. dbt-wizard reads the same fct_13f_holdings that backs /holdings, no copy in between.`,
     data: [
       { label: 'Top 10 aggregate value', value: '$1.2T' },
       { label: 'Mega-cap tech share',    value: '50%' },
@@ -94,7 +94,7 @@ FROM   gold.fct_macro
 WHERE  observation_date >= CURRENT_DATE - INTERVAL '24 months'
 GROUP  BY 1
 ORDER  BY 1 ASC;`,
-    narrative: `The term spread inverted between months 9 and 18 of the window and has since re-steepened to +52 bps. Cortex picks out the inversion duration and current spread — the same data that backs /macro charts, but answering the question in one shot.`,
+    narrative: `The term spread inverted between months 9 and 18 of the window and has since re-steepened to +52 bps. dbt-wizard picks out the inversion duration and current spread — the same data that backs /macro charts, but answering the question in one shot.`,
     data: [
       { label: 'Months inverted',  value: '9' },
       { label: 'Current spread',   value: '+52 bps' },
@@ -170,7 +170,7 @@ SELECT
 FROM   cur
 FULL OUTER JOIN prev ON prev.holder_name = cur.holder_name AND prev.cik = cur.cik
 GROUP  BY 1;`,
-    narrative: `1,847 net new positions opened quarter-over-quarter; 1,612 positions exited. The new-position surge clusters in semiconductor and AI-infrastructure names — Cortex picks the cohort shape and the next question naturally pivots into ticker-level breakdown.`,
+    narrative: `1,847 net new positions opened quarter-over-quarter; 1,612 positions exited. The new-position surge clusters in semiconductor and AI-infrastructure names — dbt-wizard picks the cohort shape and the next question naturally pivots into ticker-level breakdown.`,
     data: [
       { label: 'New positions (Q/Q)', value: '1,847' },
       { label: 'Exited positions',    value: '1,612' },
@@ -208,7 +208,7 @@ ORDER  BY rank_n ASC;`,
 
 const KICKER = 'font-mono text-[10px] uppercase tracking-[0.3em]';
 
-export default function CortexAnalystPanel() {
+export default function NLQueryPanel() {
   const [activeId, setActiveId] = useState<string>(QUESTIONS[0].id);
   const active = QUESTIONS.find((q) => q.id === activeId) ?? QUESTIONS[0];
 
@@ -216,7 +216,7 @@ export default function CortexAnalystPanel() {
     <section className="mx-auto max-w-6xl">
       <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className={`${KICKER}`} style={{ color: 'var(--gold)' }}>Snowflake · Cortex Analyst</p>
+          <p className={`${KICKER}`} style={{ color: 'var(--gold)' }}>Snowflake · dbt-wizard NL query</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl" style={{ color: 'var(--navy-deep)' }}>
             Ask the lake.
           </h2>
@@ -266,7 +266,7 @@ export default function CortexAnalystPanel() {
           </div>
 
           <div className="flex-1 px-5 py-5">
-            <p className={`${KICKER} mb-4`} style={{ color: 'var(--ink-muted)' }}>Cortex Analyst response</p>
+            <p className={`${KICKER} mb-4`} style={{ color: 'var(--ink-muted)' }}>dbt-wizard response</p>
             <div className="p-4 mb-4" style={{ background: 'var(--paper-deep)', border: '1px solid var(--hairline)' }}>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>{active.narrative}</p>
             </div>
@@ -287,7 +287,7 @@ export default function CortexAnalystPanel() {
               <line x1="4.93"  y1="4.93"  x2="19.07" y2="19.07" stroke="#29b5e8" strokeWidth="2" strokeLinecap="round" />
               <line x1="19.07" y1="4.93"  x2="4.93"  y2="19.07" stroke="#29b5e8" strokeWidth="2" strokeLinecap="round" />
             </svg>
-            <p className={`${KICKER}`} style={{ color: 'var(--ink-soft)' }}>Powered by Snowflake Cortex Analyst</p>
+            <p className={`${KICKER}`} style={{ color: 'var(--ink-soft)' }}>Powered by Snowflake · dbt-wizard</p>
           </div>
         </div>
       </div>

@@ -228,7 +228,7 @@ export default function GeographicPage() {
           <div className="flex items-start gap-4 flex-wrap">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="status-pill gold">Cortex · auto-summary</span>
+                <span className="status-pill gold">dbt-wizard · auto-summary</span>
                 <span className="text-[10px] uppercase tracking-wider text-[var(--ink-soft)] font-semibold">
                   Refreshed {loaded ? 'just now' : '…'}
                 </span>
@@ -463,7 +463,7 @@ export default function GeographicPage() {
           <div className="research-card-header">
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div>
-                <div className="eyebrow">Cortex · regional opportunities & risks</div>
+                <div className="eyebrow">dbt-wizard · regional opportunities &amp; risks</div>
                 <div className="font-serif text-lg font-semibold text-[var(--ink-strong)] mt-0.5">
                   Top regional levers — sized by dollars at stake
                 </div>

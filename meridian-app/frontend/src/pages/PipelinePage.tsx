@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import ReplicationPipelinesCard, { type PipelineRow } from '../components/ReplicationPipelinesCard';
 
-type FailureKey = 'connectors' | 's3_iceberg' | 'dbt' | 'athena';
+type FailureKey = 'connectors' | 'snowflake_iceberg' | 'dbt' | 'snowflake';
 
 interface LayerState {
   ok: boolean;
@@ -25,17 +25,17 @@ export default function PipelinePage() {
     const f = failures;
     return {
       connectors: f.has('connectors')
-        ? { ok: false, status: 'sync failed', detail: 'Fivetran custom connectors — SEC EDGAR · FRED · CFPB.', failureDetail: 'Simulated: FRED API rate-limit hit on macro_observations sync. Retry scheduled in 15m.' }
-        : { ok: true, status: 'on schedule', detail: '3 Fivetran custom connectors (SEC EDGAR · FRED · CFPB). Last sync 4h ago. Next sync in 2h.' },
-      s3_iceberg: f.has('s3_iceberg')
-        ? { ok: false, status: 'commit failed', detail: 'S3 + AWS Glue Iceberg catalog', failureDetail: 'Simulated: Glue catalog returned 503 during last Iceberg commit. Table snapshot uncommitted.' }
-        : { ok: true, status: 'committed', detail: 'altavest-odi-lake bucket + AWS Glue Iceberg catalog. 14 tables across bronze · silver · gold.' },
+        ? { ok: false, status: 'sync failed', detail: 'Fivetran custom connectors — SEC EDGAR, FRED, CFPB.', failureDetail: 'Simulated: FRED API rate-limit hit on macro_observations sync. Retry scheduled in 15m.' }
+        : { ok: true, status: 'on schedule', detail: '3 Fivetran custom connectors (SEC EDGAR, FRED, CFPB). Last sync 4h ago. Next sync in 2h.' },
+      snowflake_iceberg: f.has('snowflake_iceberg')
+        ? { ok: false, status: 'commit failed', detail: 'Snowflake Open Catalog — Iceberg REST endpoint', failureDetail: 'Simulated: Snowflake Open Catalog returned 503 during last Iceberg commit. Table snapshot uncommitted.' }
+        : { ok: true, status: 'committed', detail: 'Snowflake Open Catalog (Iceberg REST). 14 tables across bronze · silver · gold.' },
       dbt: f.has('dbt')
         ? { ok: false, status: 'run failed', detail: 'dbt build — risk signal model in the gold layer', failureDetail: 'Simulated: model compilation failed. Test "unique_cik" returned 4 failures in the silver companies table.' }
         : { ok: true, status: 'last run passed', detail: 'dbt build completed 3h ago. 8 staging + 4 silver + 6 gold models passed all tests.' },
-      athena: f.has('athena')
-        ? { ok: false, status: 'query failed', detail: 'AWS Athena query engine', failureDetail: 'Simulated: workgroup query quota exceeded. Retry after quota window resets at top of hour.' }
-        : { ok: true, status: 'operational', detail: 'AWS Athena workgroup altavest-odi. Iceberg-aware engine v3. Avg query 1.4s.' },
+      snowflake: f.has('snowflake')
+        ? { ok: false, status: 'query failed', detail: 'Snowflake compute — XS warehouse', failureDetail: 'Simulated: warehouse suspend/resume cycle exceeded timeout. Retry after warehouse resumes.' }
+        : { ok: true, status: 'operational', detail: 'Snowflake XS warehouse altavest_odi. Iceberg external table reads. Avg query 1.2s.' },
     };
   }, [failures]);
 
@@ -72,9 +72,8 @@ export default function PipelinePage() {
         sync_state: 'scheduled',
         failed_at: null,
         paused: false,
-        fivetran_id: 'sec_edgar',
-        dashboard_url: 'https://fivetran.com/dashboard/connectors/sec_edgar',
-        destination: 'S3 Iceberg',
+        dashboard_url: '',
+        destination: 'Snowflake',
         source_db: 'SEC EDGAR REST',
         rows_synced_total: 84210,
         throughput_24h: mkSeries(420, 180, 60),
@@ -88,9 +87,8 @@ export default function PipelinePage() {
         sync_state: connectorsDown ? 'failed' : 'scheduled',
         failed_at: connectorsDown ? new Date().toISOString() : null,
         paused: false,
-        fivetran_id: 'fred_economic_data',
-        dashboard_url: 'https://fivetran.com/dashboard/connectors/fred_economic_data',
-        destination: 'S3 Iceberg',
+        dashboard_url: '',
+        destination: 'Snowflake',
         source_db: 'FRED API',
         rows_synced_total: 13455,
         throughput_24h: mkSeries(95, 40, connectorsDown ? -70 : 10),
@@ -104,9 +102,8 @@ export default function PipelinePage() {
         sync_state: 'scheduled',
         failed_at: null,
         paused: false,
-        fivetran_id: 'cfpb_consumer_complaints',
-        dashboard_url: 'https://fivetran.com/dashboard/connectors/cfpb_consumer_complaints',
-        destination: 'S3 Iceberg',
+        dashboard_url: '',
+        destination: 'Snowflake',
         source_db: 'CFPB API',
         rows_synced_total: 9770,
         throughput_24h: mkSeries(140, 50, 20),
@@ -124,7 +121,7 @@ export default function PipelinePage() {
             <h1 className="font-serif text-3xl font-semibold tracking-tight text-[var(--ink-strong)]">End-to-end status</h1>
             <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-3xl leading-relaxed">
               Live posture of every layer that produces the Altavest research surface: Fivetran custom connectors,
-              the S3-backed Apache Iceberg lake, dbt medallion transformations, and the AWS Athena query engine.
+              the Snowflake Open Catalog Iceberg lake, dbt medallion transformations, and the Snowflake query engine.
               Toggle <em>Simulate failure</em> on any layer to walk through observability and incident response patterns.
             </p>
           </div>
@@ -189,51 +186,48 @@ export default function PipelinePage() {
         <dt className="text-[10px] uppercase tracking-[0.08em] text-[var(--ink-soft)] font-semibold">Connectors</dt>
         <dd className="font-mono text-xs flex flex-wrap gap-2">
           {[
-            { label: 'sec_edgar_filings',     id: 'sec_edgar' },
-            { label: 'fred_macro_series',     id: 'fred_economic_data' },
-            { label: 'cfpb_complaints',       id: 'cfpb_consumer_complaints' },
-          ].map(({ label, id }) => (
-            <a
-              key={id}
-              href={`https://fivetran.com/dashboard/connectors/${id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--gold-dim)] hover:text-[var(--navy-deep)] hover:underline"
+            'sec_edgar_filings',
+            'fred_macro_series',
+            'cfpb_complaints',
+          ].map((label) => (
+            <span
+              key={label}
+              className="text-[var(--gold-dim)]"
             >
               {label}
-            </a>
+            </span>
           ))}
         </dd>
         <KV k="Runtime" v="Fivetran Connector SDK (Python)" />
         <KV k="Frequency" v="Every 6 hours" />
-        <KV k="Destination" v="S3 bucket (Iceberg-managed)" />
+        <KV k="Destination" v="Snowflake (via Fivetran)" />
       </Section>
 
-      <Section n={2} title="S3 + Iceberg lake" layer={layers.s3_iceberg} sim={failures.has('s3_iceberg')} onSim={() => toggle('s3_iceberg')}>
-        <KV k="Bucket" v="s3://altavest-odi-lake/" mono />
-        <KV k="Catalog" v="AWS Glue Data Catalog (Iceberg REST)" />
+      <Section n={2} title="Snowflake Open Catalog (Iceberg)" layer={layers.snowflake_iceberg} sim={failures.has('snowflake_iceberg')} onSim={() => toggle('snowflake_iceberg')}>
+        <KV k="Catalog" v="Snowflake Open Catalog (Iceberg REST endpoint)" />
         <KV k="Tables" v="14 across bronze · silver · gold" />
         <KV k="Format" v="Apache Iceberg v2 · Parquet files · ZSTD compression" />
+        <KV k="Standard" v="Open table format — engine-agnostic, Snowflake-native" />
       </Section>
 
       <Section n={3} title="dbt medallion build" layer={layers.dbt} sim={failures.has('dbt')} onSim={() => toggle('dbt')}>
         <KV k="Project" v="altavest_odi" mono />
-        <KV k="Adapter" v="dbt-athena (Iceberg-native)" mono />
+        <KV k="Adapter" v="dbt-snowflake (Iceberg-native)" mono />
         <KV k="Models" v="8 staging · 4 silver · 6 gold" />
         <KV k="Trigger" v="Cron 04:00, 10:00, 16:00, 22:00 UTC — post-connector-sync" />
       </Section>
 
-      <Section n={4} title="AWS Athena query engine" layer={layers.athena} sim={failures.has('athena')} onSim={() => toggle('athena')}>
-        <KV k="Workgroup" v="altavest-odi" mono />
-        <KV k="Engine" v="Athena engine v3 (Trino) — Iceberg-aware" />
+      <Section n={4} title="Snowflake query engine" layer={layers.snowflake} sim={failures.has('snowflake')} onSim={() => toggle('snowflake')}>
+        <KV k="Warehouse" v="altavest_odi (XS)" mono />
+        <KV k="Engine" v="Snowflake — Iceberg external tables, dynamic tables" />
         <KV k="Snapshot export" v="scripts/build_snapshot.py → /public/data/*.json" />
-        <KV k="Auth" v="IAM role with Glue:GetTable + S3:GetObject" />
+        <KV k="Auth" v="Key-pair auth · ACCOUNTADMIN-delegated role" />
       </Section>
 
       <div className="mt-8 research-card p-4 text-xs text-[var(--ink-soft)] leading-relaxed">
         Live pipeline metadata appears once{' '}
         <code className="font-mono bg-[var(--paper-deep)] px-1.5 py-0.5 rounded border border-[var(--hairline)]">scripts/build_pipeline_status.py</code>{' '}
-        runs against the Fivetran + Athena APIs. Until then this page shows the configured topology so demo
+        runs against the Fivetran and Snowflake APIs. Until then this page shows the configured topology so demo
         presenters can walk through each layer manually.
       </div>
     </div>

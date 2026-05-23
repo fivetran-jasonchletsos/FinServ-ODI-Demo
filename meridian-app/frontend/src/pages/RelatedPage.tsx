@@ -565,7 +565,7 @@ export default function RelatedPage() {
                   Similarity scored over GICS sector, sub-industry, market-cap band,
                   geographic region, risk bucket, and factor exposure (value, momentum,
                   quality, defensive, growth). Top-8 neighbors per company.
-                  In production: <span className="text-[var(--gold-dim)] font-mono">CORTEX.EMBED_TEXT_768</span>.
+                  In production: vector embeddings via Snowflake ML functions materialized as a gold model.
                 </div>
               </div>
             ) : (

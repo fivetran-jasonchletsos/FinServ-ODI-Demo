@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { api, formatBytes, formatCurrencyShort, formatNumber } from '../api/queries';
 import type { SummaryStats, Company } from '../types';
 import Sparkline from '../components/Sparkline';
@@ -69,6 +69,51 @@ export default function HomePage() {
 
   return (
     <>
+      {/* dbt-wizard scenario — lead section for the booth demo */}
+      <section className="bg-white border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="eyebrow mb-3">dbt-wizard · Snowflake Summit demo</div>
+              <h2 className="font-serif text-3xl sm:text-4xl font-semibold leading-tight text-[var(--ink-strong)] tracking-tight">
+                The model that didn't exist at 7 a.m.<br />
+                <span style={{ color: 'var(--gold)' }}>existed by 7:01:30.</span>
+              </h2>
+              <p className="mt-4 text-base text-[var(--ink-muted)] leading-relaxed max-w-xl">
+                The Head of Research flagged a regional-bank underperformance versus the CPI print.
+                No gold model existed to attribute it. Four dbt-wizard sub-agents
+                authored, tested, and materialized one in 90 seconds — before the
+                Investment Committee met.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to="/scenario"
+                  className="inline-flex items-center gap-2 rounded-sm font-semibold text-sm text-white px-5 py-3 hover:opacity-95 transition-opacity"
+                  style={{ background: 'var(--navy-deep)' }}
+                >
+                  See the scenario
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </Link>
+                <Link
+                  to="/wizard-live"
+                  className="inline-flex items-center gap-2 rounded-sm font-semibold text-sm border px-5 py-3 hover:bg-[var(--paper-deep)] transition-colors"
+                  style={{ borderColor: 'var(--gold)', color: 'var(--gold-dim)' }}
+                >
+                  Watch the live build
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <DemoStat label="Build time" value="90s" sub="vs. 3–5 days manual" tone="gold" />
+              <DemoStat label="Sub-agents" value="4" sub="Explorer · Summary · Worker · Verification" tone="neutral" />
+              <DemoStat label="Tests written" value="8" sub="6 column + 1 combination + 1 not-null" tone="neutral" />
+              <DemoStat label="Position at risk" value="$4.2M" sub="3 regional-bank names · 11 bps gap" tone="bear" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Institutional hero — navy with gold accent rule */}
       <section className="bg-[var(--navy-deep)] text-white relative overflow-hidden">
         {/* Subtle diagonal pattern overlay */}
@@ -309,6 +354,17 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function DemoStat({ label, value, sub, tone }: { label: string; value: string; sub: string; tone: 'gold' | 'neutral' | 'bear' }) {
+  const color = tone === 'gold' ? 'var(--gold)' : tone === 'bear' ? 'var(--bear)' : 'var(--ink-strong)';
+  return (
+    <div className="research-card px-5 py-4" style={{ borderLeft: `3px solid ${color}` }}>
+      <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--ink-soft)]">{label}</div>
+      <div className="mt-1 font-serif text-2xl font-semibold leading-none tabular" style={{ color }}>{value}</div>
+      <div className="mt-1.5 text-[11px] text-[var(--ink-soft)]">{sub}</div>
+    </div>
   );
 }
 

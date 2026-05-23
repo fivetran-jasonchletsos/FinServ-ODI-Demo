@@ -1,0 +1,104 @@
+{
+  "materialized_model": "gold.fct_regional_bank_macro_attribution_daily",
+  "row_count": 312,
+  "tests_passed": 8,
+  "tests_written": "6 column-level + 1 combination + 1 not-null on macro_attribution_bps",
+  "build_seconds": 90,
+  "before": {
+    "nodes": [
+      { "id": "fct_holdings",          "name": "gold.fct_holdings",          "layer": "gold" },
+      { "id": "fct_macro_signal",      "name": "gold.fct_macro_signal",      "layer": "gold" },
+      { "id": "dim_company",           "name": "gold.dim_company",           "layer": "gold" },
+      { "id": "fct_consumer_complaint","name": "gold.fct_consumer_complaint","layer": "gold" },
+      { "id": "gap",                   "name": "gold.fct_regional_bank_macro_attribution_daily", "layer": "gap", "built": false }
+    ],
+    "edges": [
+      { "from": "fct_holdings",           "to": "gap" },
+      { "from": "fct_macro_signal",       "to": "gap" },
+      { "from": "dim_company",            "to": "gap" },
+      { "from": "fct_consumer_complaint", "to": "gap" }
+    ]
+  },
+  "after": {
+    "nodes": [
+      { "id": "fct_holdings",          "name": "gold.fct_holdings",          "layer": "gold" },
+      { "id": "fct_macro_signal",      "name": "gold.fct_macro_signal",      "layer": "gold" },
+      { "id": "dim_company",           "name": "gold.dim_company",           "layer": "gold" },
+      { "id": "fct_consumer_complaint","name": "gold.fct_consumer_complaint","layer": "gold" },
+      { "id": "new_gold",              "name": "gold.fct_regional_bank_macro_attribution_daily", "layer": "gold", "built": true, "new": true },
+      { "id": "ic_feed",               "name": "Investment Committee Report", "layer": "consumer" },
+      { "id": "risk_dash",             "name": "Portfolio Risk Dashboard",    "layer": "consumer" }
+    ],
+    "edges": [
+      { "from": "fct_holdings",           "to": "new_gold" },
+      { "from": "fct_macro_signal",       "to": "new_gold" },
+      { "from": "dim_company",            "to": "new_gold" },
+      { "from": "fct_consumer_complaint", "to": "new_gold" },
+      { "from": "new_gold",               "to": "ic_feed" },
+      { "from": "new_gold",               "to": "risk_dash" }
+    ]
+  },
+  "root_cause": {
+    "headline": "Three regional-bank names overweight in complaint ratio jumped on CPI day — sentiment-vs-fundamental gap widened by 11 bps",
+    "detail": "On 2026-05-22, CPIAUCSL printed +0.4% MoM (consensus +0.2%), triggering a broad risk-off rotation out of rate-sensitive financials. Within the regional-bank sub-universe, holdings in KeyCorp, Regions Financial, and Zions Bancorporation carried a complaint-sentiment ratio in the 88th percentile — meaning the market was already pricing in operational friction that the fundamentals hadn't confirmed. The CPI surprise compressed book values faster than the sector average by 11 bps on a size-adjusted basis. Altavest's position was overweight these three names by 2.4× relative to the benchmark. The rebalance recommendation is a trim, not a thesis change.",
+    "affected_cohort": "Three regional-bank holdings in 88th-percentile complaint-sentiment bracket",
+    "fallout_count": 3,
+    "total_reviewed": 14
+  },
+  "without_wizard": {
+    "label": "Without dbt-wizard",
+    "summary": "Question enters the analyst backlog. Investment Committee meets Monday without the attribution.",
+    "metrics": [
+      { "label": "Time to model",             "value": "3 to 5 days" },
+      { "label": "Engineer hours",            "value": "8 to 14h" },
+      { "label": "Tests written",             "value": "ad-hoc" },
+      { "label": "Lineage entries",           "value": "manual" },
+      { "label": "Documentation",             "value": "PR-time only" },
+      { "label": "Investment Committee status","value": "no answer" }
+    ],
+    "narrative": [
+      "Head of Research files the question. It enters the analytics backlog at priority B.",
+      "Data engineer scopes the work Monday morning — after the committee meeting.",
+      "Engineer writes SQL from scratch, joining four gold tables by hand.",
+      "Tests, YAML, and contract get bolted on at PR time, sometimes.",
+      "Research team cannot attribute the underperformance before the committee meets.",
+      "Investment Committee sees a placeholder — full attribution pending."
+    ]
+  },
+  "with_wizard": {
+    "label": "With dbt-wizard",
+    "summary": "Four sub-agents surface the upstreams, author the SQL, write the tests, and materialize the asset in 90 seconds.",
+    "metrics": [
+      { "label": "Time to model",             "value": "90 seconds" },
+      { "label": "Engineer hours",            "value": "0.0h authored" },
+      { "label": "Tests written",             "value": "6 column + 1 combination + 1 not-null" },
+      { "label": "Lineage entries",           "value": "auto, 4 upstream" },
+      { "label": "Documentation",             "value": "in YAML on materialize" },
+      { "label": "Investment Committee status","value": "root cause in hand" }
+    ],
+    "narrative": [
+      "Explorer runs status and search. Returns the four gold upstream candidates.",
+      "Summary runs describe and lineage. Confirms join path and names the new grain.",
+      "Worker runs dbt_show on a 7-day slice. Validates the proposed grain and CPI attribution window.",
+      "Worker authors fct_regional_bank_macro_attribution_daily.sql with CTEs and final SELECT.",
+      "Verification writes the YAML — description, schema contract, 8 tests, ownership.",
+      "Worker materializes the table to Snowflake. Verification confirms downstream lineage.",
+      "Head of Research presents root-cause finding to Investment Committee 18 hours ahead of schedule."
+    ]
+  },
+  "governance": [
+    { "label": "Tests written",            "value": "6 column-level + 1 combination + 1 not-null" },
+    { "label": "Schema contract",          "value": "enforced on materialize" },
+    { "label": "Lineage upstreams",        "value": "4 declared, 4 validated" },
+    { "label": "Documentation",            "value": "auto-written in YAML" },
+    { "label": "Ownership",               "value": "equity_research" },
+    { "label": "Tag",                      "value": "ai_built · macro_attribution" },
+    { "label": "Snowflake table format",   "value": "Iceberg v2 · Parquet · ZSTD" },
+    { "label": "Open Catalog registration","value": "complete" }
+  ],
+  "hero": {
+    "label": "Root cause attributed 18 hours before the Investment Committee meets",
+    "value": "90 seconds",
+    "note": "From Head of Research question to materialized Snowflake gold table — versioned, tested, documented, lineage-tracked. The research team now knows the complaint-sentiment gap, not a macro thesis failure, drove the underperformance. The recommendation is a trim on three names, not a sector exit."
+  }
+}

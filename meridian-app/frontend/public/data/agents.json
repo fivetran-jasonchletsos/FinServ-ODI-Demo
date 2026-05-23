@@ -1,0 +1,60 @@
+{
+  "agents": [
+    {
+      "id": "explorer",
+      "name": "Explorer Agent",
+      "code": "EXP",
+      "color": "#0d9488",
+      "role": "Surfaces the relevant gold models for the research question. Starts from the investment question, not the file tree.",
+      "tools": ["status", "search"],
+      "sample_input": "Find the models in this project related to regional banks, holdings positions, macro observations, CPI, and consumer complaints.",
+      "responsibilities": [
+        "Runs status to confirm the dbt project is parsed and healthy",
+        "Runs search with financial vocabulary against model names, columns, and descriptions",
+        "Hands the candidate model list to Summary"
+      ]
+    },
+    {
+      "id": "summary",
+      "name": "Summary Agent",
+      "code": "SUM",
+      "color": "#7c3aed",
+      "role": "Explains the grain of each upstream, the join keys, and where the gap is. Decides before any SQL whether the data can answer the question at all.",
+      "tools": ["describe", "lineage"],
+      "sample_input": "For those models, show the grain, key columns, and how they join. Where does the gap sit between what we have and what the research team asked for?",
+      "responsibilities": [
+        "Runs describe on each candidate model to confirm grain",
+        "Runs lineage to validate the join path",
+        "Names the new grain the gold table has to land on"
+      ]
+    },
+    {
+      "id": "worker",
+      "name": "Worker Agent",
+      "code": "WRK",
+      "color": "#be185d",
+      "role": "Does file edits and model generation. Authors the new gold.fct_regional_bank_macro_attribution_daily with the right CTE structure, joins, and final select.",
+      "tools": ["warehouse", "dbt_show", "file edits", "model generation"],
+      "sample_input": "Create gold.fct_regional_bank_macro_attribution_daily as a table materialization. Validate the proposed grain with a deterministic dbt_show slice before committing the file.",
+      "responsibilities": [
+        "Runs warehouse and dbt_show on a targeted slice to validate proposed grain",
+        "Writes the SQL file with header comments, CTEs, joins, and final aggregation",
+        "Materializes the model to the gold schema on Snowflake"
+      ]
+    },
+    {
+      "id": "verification",
+      "name": "Verification Agent",
+      "code": "VER",
+      "color": "#145e36",
+      "role": "Adds dbt tests, schema contract, and ownership. Validates against existing lineage and confirms downstream consumers can read the new asset.",
+      "tools": ["describe", "lineage", "dbt_show"],
+      "sample_input": "Add tests covering uniqueness on (holding_id, observation_date) and not-null on macro_attribution_bps. Confirm lineage updates pick the new gold table up immediately.",
+      "responsibilities": [
+        "Writes the YAML companion with description, tests, and schema contract",
+        "Confirms uniqueness and not-null tests pass against the materialized slice",
+        "Updates lineage so downstream consumers pick the asset up immediately"
+      ]
+    }
+  ]
+}

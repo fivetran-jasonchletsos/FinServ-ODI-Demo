@@ -16,6 +16,9 @@ import WatchlistPage from './pages/WatchlistPage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import RelatedPage from './pages/RelatedPage';
+import AltavestScenarioPage from './pages/AltavestScenarioPage';
+import WizardLivePage from './pages/WizardLivePage';
+import AltavestOutcomePage from './pages/AltavestOutcomePage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +33,9 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path="/scenario" element={<AltavestScenarioPage />} />
+            <Route path="/wizard-live" element={<WizardLivePage />} />
+            <Route path="/outcome" element={<AltavestOutcomePage />} />
             <Route path="/holdings" element={<HoldingsPage />} />
             <Route path="/companies/:cik" element={<CompanyDetailPage />} />
             <Route path="/macro" element={<MacroPage />} />
