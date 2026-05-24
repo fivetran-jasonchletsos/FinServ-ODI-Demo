@@ -19,6 +19,7 @@ import RelatedPage from './pages/RelatedPage';
 import AltavestScenarioPage from './pages/AltavestScenarioPage';
 import WizardLivePage from './pages/WizardLivePage';
 import AltavestOutcomePage from './pages/AltavestOutcomePage';
+import OdiDbtWizardPage from './pages/OdiDbtWizardPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +48,7 @@ export default function App() {
             <Route path="/ask" element={<AskPage />} />
             <Route path="/architecture" element={<ArchitecturePage />} />
             <Route path="/pipeline" element={<PipelinePage />} />
+            <Route path="/dbt-wizard" element={<OdiDbtWizardPage />} />
             <Route path="/watchlist" element={<WatchlistPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/related" element={<RelatedPage />} />
