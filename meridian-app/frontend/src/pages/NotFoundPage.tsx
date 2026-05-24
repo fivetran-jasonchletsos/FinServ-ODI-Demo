@@ -11,7 +11,7 @@ export default function NotFoundPage() {
         Page not in this portfolio.
       </h1>
       <p className="mt-3 text-sm text-[var(--ink-muted)]">
-        The view you requested isn't part of the Meridian research surface. It may have been moved or
+        The view you requested isn't part of the Altavest research surface. It may have been moved or
         never published.
       </p>
       <div className="mt-8 flex items-center justify-center gap-3">

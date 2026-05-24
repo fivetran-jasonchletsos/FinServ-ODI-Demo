@@ -34,7 +34,7 @@ const INTENTS = [
     label: 'Composite risk score',
     pattern: '/(risk|highest.+risk|risky)/i',
     example: 'Highest risk score in Financials',
-    body: 'Ranks the universe by Meridian\'s composite risk score, blending complaint velocity, revenue trend, 8-K cadence, and sector macro overlay.',
+    body: 'Ranks the universe by Altavest\'s composite risk score, blending complaint velocity, revenue trend, 8-K cadence, and sector macro overlay.',
   },
   {
     name: 'sector_filter',
@@ -121,7 +121,7 @@ export default function AboutAgentPage() {
         <p className="text-[var(--ink)] leading-relaxed">
           When enabled, questions are sent to Claude with a structured summary of the snapshot
           (totals by sector, market-cap aggregates, risk-bucket histogram). The system prompt
-          casts Claude as a senior Meridian analyst — measured tone, no hype, no invented numbers.
+          casts Claude as a senior Altavest analyst — measured tone, no hype, no invented numbers.
           The API key lives only in your browser's localStorage under{' '}
           <code className="font-mono text-xs bg-[var(--paper-deep)] px-1.5 py-0.5 rounded border border-[var(--hairline)]">meridian-odi:anthropic-api-key</code>.
         </p>

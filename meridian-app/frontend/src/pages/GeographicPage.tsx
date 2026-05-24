@@ -1,6 +1,6 @@
 // Geographic Intelligence — branch-network + regional risk surface.
 //
-// Story: Meridian Capital is a mid-size wealth + retail bank. CEO/CFO levers
+// Story: Altavest Capital is a mid-size wealth + retail bank. CEO/CFO levers
 // on this page are branch ROA, regional NIM, lending concentration / CRE
 // exposure, deposit beta and advisor productivity. Data is synthetic but
 // deterministic across renders — every number derives from a small handful
@@ -235,7 +235,7 @@ export default function GeographicPage() {
               </div>
               <p className="text-sm leading-relaxed text-[var(--ink-strong)]">
                 <span className="font-mono font-semibold text-[var(--bear)]">{formatCurrencyShort(totals.creBreach)}</span>{' '}
-                of the loan book sits above Meridian&apos;s 18% CRE concentration policy,
+                of the loan book sits above Altavest&apos;s 18% CRE concentration policy,
                 concentrated in{' '}
                 <span className="font-serif font-semibold">{outlier.msa.split(',')[0]}</span> ({outlier.id}) where CRE
                 share is{' '}
