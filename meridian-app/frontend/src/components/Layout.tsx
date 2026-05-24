@@ -8,22 +8,33 @@ import HelpTour from './HelpTour';
 // Konami code: ↑ ↑ ↓ ↓ ← → ← → B A — unlocks the SpaceSync/PacSync easter egg.
 const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 
+// Canonical 3-group nav order, shared across Clarity / Verity / Altavest:
+//   1. Narrative (Home → Scenario → Live → Outcome)
+//   2. Persona pages (industry-specific)
+//   3. ODI plumbing (Architecture → Pipeline → Wizard → About)
+// A vertical divider renders before /architecture so the two groups read
+// as separate clusters without crowding the bar.
 const NAV_ITEMS: [string, string][] = [
+  // — narrative —
   ['/', 'Home'],
   ['/scenario', 'Scenario'],
   ['/wizard-live', 'Live'],
   ['/outcome', 'Outcome'],
+  // — persona —
   ['/holdings', 'Holdings'],
   ['/related', 'Related'],
   ['/macro', 'Macro'],
   ['/complaints', 'Complaint Radar'],
   ['/geography', 'Geographic'],
   ['/agent', 'Research AI'],
+  // — ODI plumbing —
   ['/architecture', 'ODI Architecture'],
   ['/pipeline', 'Pipeline'],
   ['/dbt-wizard', 'Wizard'],
   ['/about', 'About'],
 ];
+
+const NAV_DIVIDER_BEFORE = new Set(['/architecture']);
 
 const DEMOS = [
   { key: 'tax-assessment', name: 'Allegheny County Tax', industry: 'Public sector · Property assessment', url: 'https://fivetran-jasonchletsos.github.io/tax-assessment-databricks-demo/', accent: '#dc2626' },
@@ -120,25 +131,29 @@ export default function Layout() {
 
             <nav className="hidden lg:flex items-center gap-0.5 text-sm">
               {NAV_ITEMS.map(([to, label]) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap ${
-                      isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
-                    }`
-                  }
-                >
-                  {({ isActive }) => (
-                    <>
-                      {label}
-                      {isActive && (
-                        <span className="absolute left-2.5 right-2.5 -bottom-[1px] h-[2px]" style={{ background: 'var(--gold)' }} />
-                      )}
-                    </>
+                <span key={to} className="contents">
+                  {NAV_DIVIDER_BEFORE.has(to) && (
+                    <span aria-hidden className="mx-2 h-5 w-px self-center" style={{ background: 'rgba(255,255,255,0.18)' }} />
                   )}
-                </NavLink>
+                  <NavLink
+                    to={to}
+                    end={to === '/'}
+                    className={({ isActive }) =>
+                      `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap ${
+                        isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        {label}
+                        {isActive && (
+                          <span className="absolute left-2.5 right-2.5 -bottom-[1px] h-[2px]" style={{ background: 'var(--gold)' }} />
+                        )}
+                      </>
+                    )}
+                  </NavLink>
+                </span>
               ))}
             </nav>
 
