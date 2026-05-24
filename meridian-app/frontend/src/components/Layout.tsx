@@ -8,33 +8,138 @@ import HelpTour from './HelpTour';
 // Konami code: ↑ ↑ ↓ ↓ ← → ← → B A — unlocks the SpaceSync/PacSync easter egg.
 const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 
-// Canonical 3-group nav order, shared across Clarity / Verity / Altavest:
-//   1. Narrative (Home → Scenario → Live → Outcome)
-//   2. Persona pages (industry-specific)
-//   3. ODI plumbing (Architecture → Pipeline → Wizard → About)
-// A vertical divider renders before /architecture so the two groups read
-// as separate clusters without crowding the bar.
-const NAV_ITEMS: [string, string][] = [
-  // — narrative —
-  ['/', 'Home'],
-  ['/scenario', 'Scenario'],
-  ['/wizard-live', 'Live'],
-  ['/outcome', 'Outcome'],
-  // — persona —
-  ['/holdings', 'Holdings'],
-  ['/related', 'Related'],
-  ['/macro', 'Macro'],
-  ['/complaints', 'Complaint Radar'],
-  ['/geography', 'Geographic'],
-  ['/agent', 'Research AI'],
-  // — ODI plumbing —
-  ['/architecture', 'ODI Architecture'],
-  ['/pipeline', 'Pipeline'],
-  ['/dbt-wizard', 'Wizard'],
-  ['/about', 'About'],
+// Three-cluster nav, mirrors Clarity / Verity:
+//   1. Persona links (Home + industry pages, flat)
+//   2. dbt-Wizard ▾ — narrative dropdown (Overview / Scenario / Live / Outcome)
+//   3. ODI ▾ — plumbing dropdown (Architecture / Pipeline / About)
+type NavEntry =
+  | { kind: 'link'; to: string; label: string }
+  | { kind: 'group'; label: string; rootTo: string; matchPrefixes: string[]; children: { to: string; label: string }[] };
+
+const NAV: NavEntry[] = [
+  { kind: 'link', to: '/',           label: 'Home' },
+  { kind: 'link', to: '/holdings',   label: 'Holdings' },
+  { kind: 'link', to: '/related',    label: 'Related' },
+  { kind: 'link', to: '/macro',      label: 'Macro' },
+  { kind: 'link', to: '/complaints', label: 'Complaints' },
+  { kind: 'link', to: '/geography',  label: 'Geographic' },
+  { kind: 'link', to: '/agent',      label: 'Research AI' },
+  {
+    kind: 'group',
+    label: 'dbt-Wizard',
+    rootTo: '/dbt-wizard',
+    matchPrefixes: ['/dbt-wizard', '/scenario', '/wizard-live', '/outcome'],
+    children: [
+      { to: '/dbt-wizard',  label: 'Overview' },
+      { to: '/scenario',    label: 'Scenario' },
+      { to: '/wizard-live', label: 'Live build' },
+      { to: '/outcome',     label: 'Outcome' },
+    ],
+  },
+  {
+    kind: 'group',
+    label: 'ODI',
+    rootTo: '/architecture',
+    matchPrefixes: ['/architecture', '/pipeline', '/about'],
+    children: [
+      { to: '/architecture', label: 'Architecture' },
+      { to: '/pipeline',     label: 'Pipeline' },
+      { to: '/about',        label: 'About' },
+    ],
+  },
 ];
 
-const NAV_DIVIDER_BEFORE = new Set(['/architecture']);
+// Flattened version for the mobile grid (dropdown groups become rows of links).
+const NAV_FLAT: { to: string; label: string }[] = NAV.flatMap((e) =>
+  e.kind === 'link' ? [{ to: e.to, label: e.label }] : e.children,
+);
+
+function NavEntryEl({ entry, pathname }: { entry: NavEntry; pathname: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  useEffect(() => { setOpen(false); }, [pathname]);
+
+  if (entry.kind === 'link') {
+    return (
+      <NavLink
+        to={entry.to}
+        end={entry.to === '/'}
+        className={({ isActive }) =>
+          `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap ${
+            isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
+          }`
+        }
+      >
+        {({ isActive }) => (
+          <>
+            {entry.label}
+            {isActive && (
+              <span className="absolute left-2.5 right-2.5 -bottom-[1px] h-[2px]" style={{ background: 'var(--gold)' }} />
+            )}
+          </>
+        )}
+      </NavLink>
+    );
+  }
+
+  const isActive = entry.matchPrefixes.some((p) => pathname === p || pathname.startsWith(p + '/'));
+  return (
+    <span ref={ref} className="relative inline-block">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        className={`relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap inline-flex items-center gap-1 ${
+          isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
+        }`}
+      >
+        {entry.label}
+        <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden className={`transition-transform ${open ? 'rotate-180' : ''}`}>
+          <path d="M2 4 L5 7 L8 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        {isActive && (
+          <span className="absolute left-2.5 right-5 -bottom-[1px] h-[2px]" style={{ background: 'var(--gold)' }} />
+        )}
+      </button>
+      {open && (
+        <span role="menu" className="absolute left-0 top-full mt-1 min-w-[200px] rounded-sm border border-white/15 bg-[var(--navy-deep)] shadow-xl overflow-hidden z-50">
+          {entry.children.map((c) => (
+            <NavLink
+              key={c.to}
+              to={c.to}
+              end={c.to === '/'}
+              className={({ isActive: ia }) =>
+                `block px-4 py-2.5 text-[13px] font-medium transition-colors ${
+                  ia
+                    ? 'bg-white/10 text-[var(--gold-bright)]'
+                    : 'text-white/80 hover:bg-white/10 hover:text-white'
+                }`
+              }
+            >
+              {c.label}
+            </NavLink>
+          ))}
+        </span>
+      )}
+    </span>
+  );
+}
 
 const DEMOS = [
   { key: 'tax-assessment', name: 'Allegheny County Tax', industry: 'Public sector · Property assessment', url: 'https://fivetran-jasonchletsos.github.io/tax-assessment-databricks-demo/', accent: '#dc2626' },
@@ -130,30 +235,8 @@ export default function Layout() {
             </form>
 
             <nav className="hidden lg:flex items-center gap-0.5 text-sm">
-              {NAV_ITEMS.map(([to, label]) => (
-                <span key={to} className="contents">
-                  {NAV_DIVIDER_BEFORE.has(to) && (
-                    <span aria-hidden className="mx-2 h-5 w-px self-center" style={{ background: 'rgba(255,255,255,0.18)' }} />
-                  )}
-                  <NavLink
-                    to={to}
-                    end={to === '/'}
-                    className={({ isActive }) =>
-                      `relative px-2.5 py-2 font-medium tracking-tight transition-colors text-[13px] whitespace-nowrap ${
-                        isActive ? 'text-[var(--gold-bright)]' : 'text-white/80 hover:text-white'
-                      }`
-                    }
-                  >
-                    {({ isActive }) => (
-                      <>
-                        {label}
-                        {isActive && (
-                          <span className="absolute left-2.5 right-2.5 -bottom-[1px] h-[2px]" style={{ background: 'var(--gold)' }} />
-                        )}
-                      </>
-                    )}
-                  </NavLink>
-                </span>
+              {NAV.map((entry) => (
+                <NavEntryEl key={entry.kind === 'link' ? entry.to : entry.label} entry={entry} pathname={location.pathname} />
               ))}
             </nav>
 
@@ -202,7 +285,7 @@ export default function Layout() {
                 />
               </form>
               <nav className="grid grid-cols-2 gap-1 text-sm">
-                {NAV_ITEMS.map(([to, label]) => (
+                {NAV_FLAT.map(({ to, label }) => (
                   <NavLink
                     key={to}
                     to={to}
