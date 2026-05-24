@@ -1,4 +1,4 @@
-// AliveMedallion v2 — three-container Databricks-style lakehouse diagram.
+// AliveMedallion — three-container Databricks-style lakehouse diagram.
 //
 // HTML chrome (group containers, source cards, engine chips, roles) wraps
 // an SVG inset that owns the cylinder geometry, particle flow, and the
@@ -84,7 +84,7 @@ export function AliveMedallion({
   }, [engines.length]);
 
   return (
-    <div className="alive-medallion-v2">
+    <div className="alive-medallion">
       <style>{CSS}</style>
 
       <div className="am-grid">
@@ -439,7 +439,7 @@ function formatBytes(b: number): string {
 // ─── Styles ─────────────────────────────────────────────────────────────────
 
 const CSS = `
-.alive-medallion-v2 {
+.alive-medallion {
   --am-ink: #0b1220;
   --am-ink-2: #4b5563;
   --am-ink-3: #6b7280;
