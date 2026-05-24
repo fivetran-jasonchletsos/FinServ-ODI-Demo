@@ -11,21 +11,26 @@
 // render in the recording even if connectors are paused.
 
 import { useState, useEffect } from 'react';
-import { AliveMedallion, type SourceNode, type EngineNode } from '../components/AliveMedallion';
+import { AliveMedallion, type SourceNode, type EngineNode, type ConsumerRole } from '../components/AliveMedallion';
 
 const ALTAVEST_SOURCES: SourceNode[] = [
-  { id: 'sec',    label: 'SEC EDGAR',  sub: '13F holdings · quarterly',          logo: 'sec',       freshness: '14 min ago', lagP99: '22 min', status: 'healthy' },
-  { id: 'fred',   label: 'FRED',       sub: 'Macro time series · daily',         logo: 'fred',      freshness: '4 h ago',    lagP99: '6 h',    status: 'healthy' },
-  { id: 'cfpb',   label: 'CFPB',       sub: 'Complaint database · weekly',       logo: 'cfpb',      freshness: '2 d ago',    lagP99: '—',      status: 'healthy' },
-  { id: 'spciq',  label: 'S&P Cap IQ', sub: 'Company reference · Kafka topic',   logo: 'sqlserver', freshness: 'live',       lagP99: '18 s',   status: 'healthy', streaming: true },
+  { id: 'ledger',  label: 'Trade Ledger',         sub: 'SQL Server log-CDC',     logo: 'sqlserver', freshness: '38s lag',  status: 'healthy' },
+  { id: 'pms',     label: 'Portfolio Mgmt Sys',   sub: 'Oracle LogMiner',         logo: 'oracle',    freshness: '90s lag',  status: 'healthy' },
+  { id: 'market',  label: 'Market Data Feed',     sub: 'Polygon stream',          logo: 'hl7',       freshness: 'live',     status: 'healthy', streaming: true },
+  { id: 'edgar',   label: 'SEC EDGAR',            sub: 'Daily regulatory filings',logo: 'sec',       freshness: '1d lag',   status: 'healthy' },
 ];
-
 const ALTAVEST_ENGINES: EngineNode[] = [
   { name: 'Snowflake', active: true,  logo: 'snowflake' },
   { name: 'Athena',                   logo: 'athena' },
   { name: 'DuckDB',                   logo: 'duckdb' },
   { name: 'Trino',                    logo: 'trino' },
   { name: 'Spark',                    logo: 'spark' },
+];
+const ALTAVEST_ROLES: ConsumerRole[] = [
+  { label: 'Portfolio Mgrs', sub: 'positions & P&L' },
+  { label: 'Risk',           sub: 'VaR & exposure' },
+  { label: 'Compliance',     sub: 'SOX & SEC filings' },
+  { label: 'Research',       sub: 'alpha discovery' },
 ];
 
 // ─── Types (local) ──────────────────────────────────────────────────────────
@@ -204,6 +209,8 @@ export default function ArchitecturePage() {
           silver={{ ...layerStats('silver'), trend: [120, 130, 142, 155, 168, 180, 192] }}
           gold={{   ...layerStats('gold'),   trend: [80, 88, 95, 104, 112, 124, 138] }}
           engines={ALTAVEST_ENGINES}
+          roles={ALTAVEST_ROLES}
+          enginesCaption="All five read the same data — no copies, no rebuilds per tool."
           accent="#b8975c"
         />
 
