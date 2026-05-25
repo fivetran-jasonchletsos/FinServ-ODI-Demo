@@ -14,8 +14,8 @@ import { useState, useEffect } from 'react';
 import { AliveMedallion, type SourceNode, type EngineNode, type ConsumerRole } from '../components/AliveMedallion';
 
 const ALTAVEST_SOURCES: SourceNode[] = [
-  { id: 'ledger',  label: 'Trade Ledger',         sub: 'SQL Server log-CDC',     logo: 'sqlserver', freshness: '38s lag',  status: 'healthy' },
-  { id: 'pms',     label: 'Portfolio Mgmt Sys',   sub: 'Oracle LogMiner',         logo: 'oracle',    freshness: '90s lag',  status: 'healthy' },
+  { id: 'ledger',  label: 'Trade Ledger',         sub: 'SQL Server log-CDC',     logo: 'sqlserver', freshness: '38s lag',  status: 'healthy', pipelineUrl: 'https://fivetran.com/dashboard/connectors/mercy_individualism' },
+  { id: 'pms',     label: 'Portfolio Mgmt Sys',   sub: 'Oracle Binary Log Reader',logo: 'oracle',    freshness: '90s lag',  status: 'healthy', pipelineUrl: 'https://fivetran.com/dashboard/connectors/vanguard_chapter' },
   { id: 'market',  label: 'Market Data Feed',     sub: 'Polygon stream',          logo: 'hl7',       freshness: 'live',     status: 'healthy', streaming: true },
   { id: 'edgar',   label: 'SEC EDGAR',            sub: 'Daily regulatory filings',logo: 'sec',       freshness: '1d lag',   status: 'healthy' },
 ];
@@ -347,7 +347,9 @@ export default function ArchitecturePage() {
             <p className="text-sm text-[var(--ink-muted)] mt-1">
               Tests defined in dbt Labs run on every build, against the same Iceberg tables every
               engine reads. Failures block promotion to the next layer &mdash; bad data never
-              reaches the trade desk.
+              reaches the trade desk. Pairs with the Great Expectations checkpoints below: GX
+              validates the raw Bronze landings, dbt asserts the SQL-level constraints on Silver
+              and Gold.
             </p>
           </div>
           <div className="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shrink-0" style={{ background: '#FF694A' }}>
@@ -392,6 +394,9 @@ export default function ArchitecturePage() {
           <span className="uppercase tracking-wider font-semibold">dbt build · merged into Fivetran</span>
         </div>
       </section>
+
+      {/* ── Data Quality — Great Expectations (Fivetran-stewarded OSS) ──── */}
+      <GreatExpectationsPanel />
 
       {/* ── Before / After ───────────────────────────────────────────────── */}
       <BeforeAfterPanel />
@@ -714,6 +719,213 @@ function Policy({ label, value }: { label: string; value: string }) {
         <span className="text-[var(--ink-muted)]"> · {value}</span>
       </div>
     </li>
+  );
+}
+
+// =============================================================================
+// GreatExpectationsPanel — GX Core as the validation gate before Silver
+// promotion. Fivetran became steward of the Great Expectations community
+// and the GX Core project on 2026-05-13; dbt tests sit alongside GX as
+// the "trust" pillar of Fivetran's ODI story (move · transform · trust).
+// =============================================================================
+interface GxSuite {
+  suite: string;
+  table: string;
+  layer: 'bronze' | 'silver' | 'gold';
+  expectations: number;
+  passing: number;
+  last_run: string;
+  why: string;
+}
+
+const GX_SUITES: GxSuite[] = [
+  {
+    suite: 'sec.holdings_13f.completeness',
+    table: 'bronze.sec__holdings_13f',
+    layer: 'bronze',
+    expectations: 18,
+    passing: 18,
+    last_run: '07:14:22',
+    why: 'cik populated and 10-digit; value_usd ≥ 0; shares ≥ 0; filing_quarter matches YYYYQ# format.',
+  },
+  {
+    suite: 'sec.filings_index.schema',
+    table: 'bronze.sec__filings_index',
+    layer: 'bronze',
+    expectations: 14,
+    passing: 14,
+    last_run: '07:14:29',
+    why: 'form_type ∈ SEC published list; filing_date ≤ today; accession_number matches NN-NNNNNNN-NN format.',
+  },
+  {
+    suite: 'sec.company_facts.referential',
+    table: 'bronze.sec__company_facts',
+    layer: 'bronze',
+    expectations: 13,
+    passing: 13,
+    last_run: '07:14:34',
+    why: 'cik resolves to filings_index; fact_value numeric; reporting_period within last 30 years.',
+  },
+  {
+    suite: 'fred.macro_series.ranges',
+    table: 'bronze.fred__macro_series',
+    layer: 'bronze',
+    expectations: 12,
+    passing: 11,
+    last_run: '07:11:09',
+    why: 'observation_value not null on published dates; observation_date within last 60 years; one warn on 47 stale series IDs FRED deprecated this month.',
+  },
+  {
+    suite: 'cfpb.complaints.value_set',
+    table: 'bronze.cfpb__complaints',
+    layer: 'bronze',
+    expectations: 15,
+    passing: 15,
+    last_run: '06:22:18',
+    why: 'product ∈ CFPB published list; state ∈ US states + territories; date_received within last 12 years.',
+  },
+  {
+    suite: 'sp_ciq.intraday_quotes.tick',
+    table: 'bronze.sp_ciq__intraday_quotes',
+    layer: 'bronze',
+    expectations: 17,
+    passing: 17,
+    last_run: '07:14:48',
+    why: 'streaming Cap IQ quotes — bid ≤ ask; volume ≥ 0; ticker ∈ company_ref universe; lag p99 within 12s.',
+  },
+  {
+    suite: 'silver.holdings_spine.integrity',
+    table: 'silver.int_holdings_spine',
+    layer: 'silver',
+    expectations: 20,
+    passing: 20,
+    last_run: '07:18:11',
+    why: 'one row per (cik, ticker, filing_quarter); no orphan holdings; share count reconciles to filings_index totals.',
+  },
+  {
+    suite: 'gold.fct_13f_position_changes.delta',
+    table: 'gold.fct_13f_position_changes',
+    layer: 'gold',
+    expectations: 13,
+    passing: 13,
+    last_run: '07:22:51',
+    why: '|delta_shares| ≤ 5× prior position (catches data ingestion glitches that look like 100× position changes); quarter-over-quarter consistency.',
+  },
+];
+
+function GreatExpectationsPanel() {
+  const totals = GX_SUITES.reduce(
+    (a, s) => ({ exp: a.exp + s.expectations, pass: a.pass + s.passing, suites: a.suites + 1 }),
+    { exp: 0, pass: 0, suites: 0 },
+  );
+  const warns = totals.exp - totals.pass;
+
+  return (
+    <section className="mb-8 research-card overflow-hidden" style={cardStyle}>
+      <header className="research-card-header flex items-start justify-between gap-4" style={cardHeaderStyle}>
+        <div>
+          <div className="eyebrow" style={{ color: '#ff6310' }}>Data Quality · Great Expectations</div>
+          <h2 className="font-serif text-xl font-semibold text-[var(--ink-strong)] mt-0.5">
+            Validation runs on Bronze before anything reaches Silver.
+          </h2>
+          <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-3xl">
+            Expectation suites define what "valid" looks like for each table &mdash; SEC EDGAR
+            schema conformance, FRED macro-series ranges, intraday quote tick-integrity,
+            position-change delta bounds. A failed expectation blocks promotion. Same lake, same
+            Iceberg snapshots, just gated.
+          </p>
+        </div>
+        <div className="flex flex-col items-end gap-1.5 shrink-0">
+          <div className="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white" style={{ background: '#ff6310' }}>
+            GX Core · OSS
+          </div>
+          <div className="text-[10px] text-[var(--ink-soft)] font-mono">Fivetran-stewarded · May 2026</div>
+        </div>
+      </header>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)]">
+        <RecoveryTile label="Expectation suites"        big={String(totals.suites)}              sub="across bronze · silver · gold layers" />
+        <RecoveryTile label="Expectations · today"      big={`${totals.pass}/${totals.exp}`}     sub={`${warns} warn · 0 errors · gates Silver promotion`} color={warns ? '#b45309' : '#16a34a'} />
+        <RecoveryTile label="Checkpoint cadence"        big="every sync"                          sub="triggered by Fivetran sync-complete · runs before dbt build" />
+        <RecoveryTile label="Failed-expectation queue"  big="47 rows"                             sub="stale FRED series · held in dlq.gx_quarantine · retried after suite update" color="#b45309" />
+      </div>
+
+      <div className="overflow-x-auto border-t border-[var(--hairline-soft,#e8e4d8)]">
+        <table className="min-w-full text-sm" style={{ fontVariantNumeric: 'tabular-nums' }}>
+          <thead className="border-b border-[var(--hairline)]" style={{ background: 'var(--paper-deep,#f4efe2)' }}>
+            <tr>
+              <Th>Layer</Th>
+              <Th>Suite</Th>
+              <Th>Table under test</Th>
+              <Th align="right">Expectations</Th>
+              <Th align="right">Last run</Th>
+              <Th>What it asserts</Th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-[var(--hairline-soft,#e8e4d8)]">
+            {GX_SUITES.map((s) => {
+              const ok = s.passing === s.expectations;
+              return (
+                <tr key={s.suite} className="hover:bg-[var(--paper-deep,#f4efe2)] cursor-default">
+                  <td className="px-4 py-2.5"><LayerChip layer={s.layer} /></td>
+                  <td className="px-4 py-2.5 font-mono text-[12px] text-[var(--ink-strong)]">{s.suite}</td>
+                  <td className="px-4 py-2.5 text-xs text-[var(--ink-muted)] font-mono">{s.table}</td>
+                  <td className="px-4 py-2.5 text-right font-semibold" style={{ color: ok ? '#16a34a' : '#b45309' }}>
+                    {s.passing}/{s.expectations}
+                    {!ok && <span className="ml-1 text-[10px] uppercase tracking-wider">warn</span>}
+                  </td>
+                  <td className="px-4 py-2.5 text-right text-xs text-[var(--ink-muted)] font-mono">{s.last_run}</td>
+                  <td className="px-4 py-2.5 text-xs text-[var(--ink)] leading-snug max-w-md">{s.why}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)] border-t border-[var(--hairline-soft,#e8e4d8)]">
+        <div className="p-5">
+          <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold mb-3">Sample expectation suite · sec.holdings_13f.completeness</div>
+          <pre className="font-mono text-[11.5px] leading-relaxed overflow-x-auto rounded-sm p-3" style={{ background: '#0b2545', color: '#e6e9f0' }}><code>{`# sec_holdings_13f_completeness.yml
+expectation_suite_name: sec.holdings_13f.completeness
+data_asset_name: bronze.sec__holdings_13f
+
+expectations:
+  - expect_column_values_to_not_be_null:
+      column: cik
+  - expect_column_value_lengths_to_equal:
+      column: cik
+      value: 10
+  - expect_column_values_to_be_between:
+      column: value_usd
+      min_value: 0
+  - expect_column_values_to_be_between:
+      column: shares
+      min_value: 0
+  - expect_column_values_to_match_regex:
+      column: filing_quarter
+      regex: '^[0-9]{4}Q[1-4]$'
+  - expect_table_row_count_to_be_between:
+      min_value: 4500000
+      max_value: 5200000`}</code></pre>
+        </div>
+        <div className="p-5">
+          <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold mb-3">How this fits the stack</div>
+          <ul className="space-y-2.5 text-sm">
+            <Policy label="Fivetran moves" value="SEC EDGAR + FRED + CFPB + S&P Cap IQ streams into Bronze (Iceberg)" />
+            <Policy label="Great Expectations validates" value="Bronze landings against suites before Silver promotion" />
+            <Policy label="dbt transforms" value="Silver holdings spine + Gold marts; dbt tests assert SQL-level constraints" />
+            <Policy label="Failed rows" value="route to dlq.gx_quarantine on the same lake; retried after suite update" />
+            <Policy label="Open source" value="GX Core remains community-driven; Fivetran funds maintenance, ecosystem, and engineering investment" />
+          </ul>
+          <div className="mt-4 pt-3 border-t border-[var(--hairline-soft,#e8e4d8)] text-[11px] text-[var(--ink-soft)] leading-relaxed">
+            On May 13, 2026 Fivetran announced it is becoming steward of the Great Expectations open
+            source community and the GX Core project, supporting ongoing maintenance, ecosystem
+            integrations, and community engagement. Same open project, backed by sustained engineering.
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
