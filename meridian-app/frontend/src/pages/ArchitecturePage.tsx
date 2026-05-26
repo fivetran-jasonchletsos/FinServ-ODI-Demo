@@ -192,13 +192,16 @@ export default function ArchitecturePage() {
           no extract, no proprietary format between EDGAR and the portfolio manager.
         </p>
         <p className="mt-3 font-serif italic text-[15px] text-[var(--ink-strong)] max-w-3xl leading-relaxed">
-          Run cache decides what moves. Great Expectations decides what passes. dbt decides what
+          Fivetran moves what's new. Great Expectations decides what passes. dbt decides what
           becomes business-ready.
         </p>
       </header>
 
       {/* ── Live throughput hero ──────────────────────────────────────────── */}
       <ThroughputHero />
+
+      {/* ── Sync-aware dbt savings teaser — actuals only; full forecast below ── */}
+      <RunCacheSavingsTeaser hitPercent={84} hoursSaved={1.44} dollarsSaved={2.87} />
 
       {/* ── Data Flow diagram ─────────────────────────────────────────────── */}
       <section className="research-card p-6 sm:p-8 mb-8" style={cardStyle}>
@@ -228,7 +231,7 @@ export default function ArchitecturePage() {
       {/* ── Schema-evolution ticker ──────────────────────────────────────── */}
       <SchemaEvolutionTicker />
 
-      {/* ── Run Cache — Fivetran skips syncs when source data hasn't changed ─ */}
+      {/* ── Sync-aware dbt incrementals — zero-row builds when Fivetran no-ops ─ */}
       <RunCachePanel />
 
       {/* ── Cost panel ───────────────────────────────────────────────────── */}
@@ -526,6 +529,54 @@ function Sparklike({ values }: { values: number[] }) {
 }
 
 // =============================================================================
+// RunCacheSavingsTeaser — slim band placed beneath ThroughputHero. Shows
+// today's *actuals* (not the annual projection) with a jump-link to the
+// full forecast model inside RunCachePanel below. Neutral slate card +
+// violet left-border so it doesn't fight the ThroughputHero palette.
+// =============================================================================
+function RunCacheSavingsTeaser({
+  hitPercent,
+  hoursSaved,
+  dollarsSaved,
+}: {
+  hitPercent: number;
+  hoursSaved: number;
+  dollarsSaved: number;
+}) {
+  return (
+    <section className="mb-8 research-card overflow-hidden" style={{ ...cardStyle, borderLeft: '4px solid #7c3aed' }}>
+      <div className="p-4 sm:p-5 flex items-center gap-x-6 gap-y-3 flex-wrap">
+        <div className="shrink-0">
+          <div className="text-[10px] uppercase tracking-[0.16em] font-semibold" style={{ color: '#7c3aed' }}>
+            Sync-aware dbt · last 24h
+          </div>
+          <div className="text-[11px] text-[var(--ink-muted)] mt-0.5">Today's actuals · annual model below</div>
+        </div>
+        <div className="flex items-baseline gap-x-6 gap-y-2 flex-wrap" style={{ fontVariantNumeric: 'tabular-nums' }}>
+          <TeaserStat big={`$${dollarsSaved.toFixed(2)}`} sub="saved today" accent />
+          <TeaserStat big={`${hoursSaved.toFixed(1)} h`} sub="compute skipped" />
+          <TeaserStat big={`${hitPercent}%`} sub="no-op rate" />
+        </div>
+        <a href="#run-cache-forecast" className="ml-auto text-[11px] font-semibold whitespace-nowrap hover:underline" style={{ color: '#7c3aed' }}>
+          See annual forecast &rarr;
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function TeaserStat({ big, sub, accent = false }: { big: string; sub: string; accent?: boolean }) {
+  return (
+    <div className="flex items-baseline gap-2">
+      <span className="font-serif font-semibold leading-none" style={{ fontSize: 22, color: accent ? '#7c3aed' : 'var(--ink-strong)' }}>
+        {big}
+      </span>
+      <span className="text-[10.5px] uppercase tracking-wider text-[var(--ink-soft)] font-semibold">{sub}</span>
+    </div>
+  );
+}
+
+// =============================================================================
 // RunCachePanel — Fivetran skips a sync entirely when source data hasn't
 // changed. Hit rate runs in the mid-80s on Altavest connectors because most
 // reference / regulatory feeds (SEC EDGAR outside filing windows, FRED
@@ -551,34 +602,34 @@ function RunCachePanel() {
     <section className="mb-8 research-card overflow-hidden" style={cardStyle}>
       <header className="research-card-header flex items-start justify-between gap-4" style={cardHeaderStyle}>
         <div>
-          <div className="eyebrow" style={{ color: '#7c3aed' }}>Fivetran · Run Cache</div>
+          <div className="eyebrow" style={{ color: '#7c3aed' }}>Sync-aware dbt incrementals</div>
           <h2 className="font-serif text-xl font-semibold text-[var(--ink-strong)] mt-0.5">
-            The cheapest sync is the one we don't run.
+            The cheapest dbt build is the one that processes zero rows.
           </h2>
           <p className="text-sm text-[var(--ink-muted)] mt-1 max-w-3xl">
-            Before each scheduled sync, Fivetran checks the source for changes. No changes
-            &rarr; the sync is skipped entirely, the <code className="font-mono text-[12px]">_fivetran_synced</code> timestamp
-            doesn't advance, and dbt incrementals filtered on it process zero rows.
-            Regulatory feeds (EDGAR, FRED, CFPB) sit idle for most of the day; Cap IQ
-            reference data changes a few times an hour during market hours. The run-cache
-            check sleeps through the quiet stretches and wakes up only when filings drop or
+            Before each scheduled sync, Fivetran checks the source for changes. When there are
+            none, the sync is a no-op and the <code className="font-mono text-[12px]">_fivetran_synced</code> timestamp
+            doesn't advance &mdash; so dbt incrementals filtered on it process zero rows on the
+            downstream build. Regulatory feeds (EDGAR, FRED, CFPB) sit idle for most of the day;
+            Cap IQ reference data changes a few times an hour during market hours. The no-op
+            detection sleeps through the quiet stretches and wakes up only when filings drop or
             tickers move.
           </p>
         </div>
         <div className="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shrink-0" style={{ background: '#7c3aed' }}>
-          {hit}% hit rate · 24h
+          {hit}% Fivetran no-op · 24h
         </div>
       </header>
 
       <div className="grid grid-cols-2 md:grid-cols-4 divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)]">
-        <RecoveryTile label="Run-cache hit rate · 24h"    big={`${hit}%`}                                  sub={`${tot.k} of ${tot.s} scheduled syncs skipped — source hadn't changed`} color="#7c3aed" />
-        <RecoveryTile label="Compute hours saved · 90d"   big="164 h"                                       sub="≈ $328 in warehouse time at XS rate · idle hours bill at zero" color="#16a34a" />
-        <RecoveryTile label="Annual savings · stack-wide" big="$20.1k"                                      sub="Run cache + dbt skip · sized to typical Tier-1 buy-side connector footprint" color="#16a34a" />
-        <RecoveryTile label="Skipped-sync check time"     big="~200 ms"                                     sub="p50 control-plane check · no warehouse spin-up · no rows landed" />
+        <RecoveryTile label="Fivetran no-op sync rate · 24h" big={`${hit}%`}                                  sub={`${tot.k} of ${tot.s} scheduled syncs ended in no-op — source hadn't changed`} color="#7c3aed" />
+        <RecoveryTile label="Compute hours saved · 90d"      big="164 h"                                       sub="≈ $328 in warehouse time at XS rate · idle hours bill at zero" color="#16a34a" />
+        <RecoveryTile label="Annual savings · stack-wide"    big="$20.1k"                                      sub="Zero-row dbt builds + downstream skip · sized to typical Tier-1 buy-side connector footprint" color="#16a34a" />
+        <RecoveryTile label="No-op-sync check time"          big="~200 ms"                                     sub="p50 control-plane check · no warehouse spin-up · no rows landed" />
       </div>
 
       <div className="p-5 border-t border-[var(--hairline-soft,#e8e4d8)]">
-        <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold mb-3">Hit rate · by connector · last 24h</div>
+        <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold mb-3">No-op sync rate · by connector · last 24h</div>
         <ul className="space-y-2 max-w-4xl">
           {CONNECTORS.map((c) => {
             const pct = Math.round(c.hit * 100);
@@ -597,9 +648,15 @@ function RunCachePanel() {
           })}
         </ul>
         <div className="mt-4 pt-3 border-t border-[var(--hairline-soft,#e8e4d8)] grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-2 text-[12px] text-[var(--ink-muted)] leading-snug">
-          <div><strong className="text-[var(--ink-strong)]">Filter on <code className="font-mono text-[11px]">_fivetran_synced</code></strong> in every dbt incremental &mdash; that's what propagates the run-cache decision downstream.</div>
+          <div><strong className="text-[var(--ink-strong)]">Filter on <code className="font-mono text-[11px]">_fivetran_synced</code></strong> in every dbt incremental &mdash; that's what propagates Fivetran's no-op decision into the dbt build.</div>
           <div><strong className="text-[var(--ink-strong)]">Honor <code className="font-mono text-[11px]">_fivetran_deleted</code></strong> for soft deletes; the staging layer carries the flag through to gold.</div>
           <div><strong className="text-[var(--ink-strong)]">Never <code className="font-mono text-[11px]">--full-refresh</code></strong> on a schedule &mdash; one rebuild defeats months of saved compute.</div>
+        </div>
+        <div className="mt-4 rounded-sm border border-[var(--hairline-soft,#e8e4d8)] p-3 flex items-start gap-3 text-[12px]" style={{ background: 'rgba(125,58,237,0.04)' }}>
+          <span className="inline-flex items-center justify-center rounded-sm px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-white shrink-0 mt-0.5" style={{ background: '#7c3aed' }}>Related</span>
+          <div className="text-[var(--ink-muted)] leading-relaxed">
+            <strong className="text-[var(--ink-strong)]">Looking for Run Cache the product?</strong> Run Cache is a separate dbt Core plugin (<code className="font-mono text-[11px]">pip install run-cache</code>) that skips, defers, or clones dbt models at the build level — different from this connector-side pattern. See the canonical page at <span className="font-mono text-[11px]">github.com/fivetran-jasonchletsos/00-Intro-ODI-Demo/run-cache</span>.
+          </div>
         </div>
       </div>
 
@@ -665,7 +722,7 @@ function RunCacheForecast({
             Forecast · projected savings
           </div>
           <p className="text-xs text-[var(--ink-muted)] mt-0.5">
-            At today's modeled hit rate, what skipping the unchanged syncs is worth in time and money.
+            At today's modeled no-op rate, what skipping the unchanged syncs is worth in time and money.
           </p>
         </div>
         <span
@@ -681,7 +738,7 @@ function RunCacheForecast({
         <span className="opacity-50">·</span>
         <span><strong className="text-[var(--ink-strong)]">{secPerSync}s</strong>/sync uncached</span>
         <span className="opacity-50">·</span>
-        <span><strong className="text-[var(--ink-strong)]">{Math.round(hitRate * 100)}%</strong> modeled hit rate</span>
+        <span><strong className="text-[var(--ink-strong)]">{Math.round(hitRate * 100)}%</strong> modeled no-op rate</span>
         <span className="opacity-50">·</span>
         <span><strong className="text-[var(--ink-strong)]">${ratePerHour.toFixed(2)}</strong>/credit-hour XS</span>
         <span className="opacity-50">·</span>
@@ -694,7 +751,7 @@ function RunCacheForecast({
 
           <div>
             <div className="flex items-baseline justify-between text-[11px] mb-1">
-              <span className="font-semibold text-[var(--ink-strong)]">Without Run Cache</span>
+              <span className="font-semibold text-[var(--ink-strong)]">Without no-op detection</span>
               <span className="font-mono text-[var(--ink-muted)]" style={{ fontVariantNumeric: 'tabular-nums' }}>{hoursBaseline.toFixed(2)} h · ${dollarsBaselineDay.toFixed(2)}</span>
             </div>
             <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
@@ -704,7 +761,7 @@ function RunCacheForecast({
 
           <div>
             <div className="flex items-baseline justify-between text-[11px] mb-1">
-              <span className="font-semibold text-[var(--ink-strong)]">With Run Cache</span>
+              <span className="font-semibold text-[var(--ink-strong)]">With no-op detection</span>
               <span className="font-mono text-[var(--ink-muted)]" style={{ fontVariantNumeric: 'tabular-nums' }}>{hoursCached.toFixed(2)} h · ${dollarsCachedDay.toFixed(2)}</span>
             </div>
             <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
@@ -714,7 +771,7 @@ function RunCacheForecast({
 
           <div className="pt-2 border-t border-[var(--hairline-soft,#e8e4d8)]">
             <div className="flex items-baseline justify-between text-[11.5px] mb-1">
-              <span className="font-semibold" style={{ color: '#15803d' }}>Saved · run cache + dbt amp</span>
+              <span className="font-semibold" style={{ color: '#15803d' }}>Saved · zero-row dbt + amp</span>
               <span className="font-mono font-bold" style={{ color: '#15803d', fontVariantNumeric: 'tabular-nums' }}>{hoursSaved.toFixed(2)} h · ${dollarsSavedDay.toFixed(2)}</span>
             </div>
             <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
@@ -753,7 +810,7 @@ function RunCacheForecast({
       <p className="text-[11px] text-[var(--ink-soft)] leading-relaxed mt-5">
         <strong className="text-[var(--ink-strong)]">Validate in your environment.</strong> Demo-mix savings
         scale with sync cadence, warehouse rate, and downstream dbt model count &mdash; the dbt amplification
-        multiplier reflects that every run-cache-skipped sync zero-rows the incrementals downstream of it.
+        multiplier reflects that every no-op-detected sync zero-rows the incrementals downstream of it.
         We size the enterprise extrapolation from your typical connector count and re-fit the assumptions during POC.
       </p>
     </div>
@@ -846,7 +903,7 @@ function CostPanel() {
       <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)]">
         <CostTile label="Storage · per day"   value="$1.12"  sub="3.1 TB across bronze/silver/gold · S3 Standard-IA"  color="#15803d" />
         <CostTile label="Compute · per day"   value="$5.34"  sub="Snowflake XS auto-suspend · dbt · Athena ad-hoc" color="#b8975c" />
-        <CostTile label="Run cache · saved"   value="$2.87"  sub="84% of scheduled syncs skipped today · direct compute saved" color="#7c3aed" />
+        <CostTile label="Zero-row dbt · saved" value="$2.87"  sub="84% of Fivetran syncs no-op today · downstream dbt builds finish in zero rows" color="#7c3aed" />
         <CostTile label="Equivalent MDS"      value="$19.80" sub="Internal benchmark · same data, warehouse-resident" color="#b91c1c" />
       </div>
       <div className="px-5 py-3 border-t border-[var(--hairline-soft,#e8e4d8)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep,#f4efe2)]">
