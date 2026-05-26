@@ -713,7 +713,8 @@ function RunCacheForecast({
 
   return (
     <div
-      className="border-t border-[var(--hairline-soft,#e8e4d8)] p-5"
+      id="run-cache-forecast"
+      className="border-t border-[var(--hairline-soft,#e8e4d8)] p-5 scroll-mt-20"
       style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.04) 0%, rgba(124,58,237,0) 100%)' }}
     >
       <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
