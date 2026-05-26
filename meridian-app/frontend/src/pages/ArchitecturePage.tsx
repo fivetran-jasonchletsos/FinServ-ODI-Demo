@@ -602,7 +602,171 @@ function RunCachePanel() {
           <div><strong className="text-[var(--ink-strong)]">Never <code className="font-mono text-[11px]">--full-refresh</code></strong> on a schedule &mdash; one rebuild defeats months of saved compute.</div>
         </div>
       </div>
+
+      <RunCacheForecast
+        syncsPerDay={tot.s}
+        hitRate={tot.k / tot.s}
+        secPerSync={35}
+        ratePerHour={2.0}
+        dbtAmplification={2.4}
+        enterpriseScale={11.3}
+        connectorCount={CONNECTORS.length}
+      />
     </section>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// RunCacheForecast — transparent savings model attached to RunCachePanel.
+// Labelled "Model output · not actuals." Reconciles to the headline annual-
+// savings tile via an enterprise-scale multiplier (Altavest finserv has a
+// wider connector footprint than the 6-connector demo — Bloomberg /
+// Refinitiv / multiple custodians / internal OMS bring the real number up).
+// -----------------------------------------------------------------------------
+function RunCacheForecast({
+  syncsPerDay,
+  hitRate,
+  secPerSync,
+  ratePerHour,
+  dbtAmplification,
+  enterpriseScale,
+  connectorCount,
+}: {
+  syncsPerDay: number;
+  hitRate: number;
+  secPerSync: number;
+  ratePerHour: number;
+  dbtAmplification: number;
+  enterpriseScale: number;
+  connectorCount: number;
+}) {
+  const syncsRun = Math.round(syncsPerDay * (1 - hitRate));
+  const hoursBaseline = (syncsPerDay * secPerSync) / 3600;
+  const hoursCached = (syncsRun * secPerSync) / 3600;
+  const hoursSaved = hoursBaseline - hoursCached;
+  const dollarsBaselineDay = hoursBaseline * ratePerHour * dbtAmplification;
+  const dollarsCachedDay = hoursCached * ratePerHour * dbtAmplification;
+  const dollarsSavedDay = dollarsBaselineDay - dollarsCachedDay;
+  const cachedPctOfBase = (hoursCached / hoursBaseline) * 100;
+  const savedPctOfBase = 100 - cachedPctOfBase;
+
+  const yr = dollarsSavedDay * 365;
+  const yrEnterprise = yr * enterpriseScale;
+  const hoursYrEnterprise = hoursSaved * 365 * enterpriseScale;
+
+  return (
+    <div
+      className="border-t border-[var(--hairline-soft,#e8e4d8)] p-5"
+      style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.04) 0%, rgba(124,58,237,0) 100%)' }}
+    >
+      <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.16em] font-semibold" style={{ color: '#7c3aed' }}>
+            Forecast · projected savings
+          </div>
+          <p className="text-xs text-[var(--ink-muted)] mt-0.5">
+            At today's modeled hit rate, what skipping the unchanged syncs is worth in time and money.
+          </p>
+        </div>
+        <span
+          className="inline-flex items-center gap-1.5 rounded-sm px-2 py-1 text-[9.5px] font-bold uppercase tracking-wider"
+          style={{ background: '#ffffff', color: '#7c3aed', border: '1px solid #c4b5fd' }}
+        >
+          Model output · not actuals
+        </span>
+      </div>
+
+      <div className="flex flex-wrap gap-x-3 gap-y-1 mb-5 text-[11px] font-mono text-[var(--ink-muted)]" style={{ fontVariantNumeric: 'tabular-nums' }}>
+        <span><strong className="text-[var(--ink-strong)]">{syncsPerDay}</strong> syncs/day</span>
+        <span className="opacity-50">·</span>
+        <span><strong className="text-[var(--ink-strong)]">{secPerSync}s</strong>/sync uncached</span>
+        <span className="opacity-50">·</span>
+        <span><strong className="text-[var(--ink-strong)]">{Math.round(hitRate * 100)}%</strong> modeled hit rate</span>
+        <span className="opacity-50">·</span>
+        <span><strong className="text-[var(--ink-strong)]">${ratePerHour.toFixed(2)}</strong>/credit-hour XS</span>
+        <span className="opacity-50">·</span>
+        <span><strong className="text-[var(--ink-strong)]">{dbtAmplification}×</strong> dbt incremental amplification</span>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+        <div className="space-y-3">
+          <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold">Daily picture</div>
+
+          <div>
+            <div className="flex items-baseline justify-between text-[11px] mb-1">
+              <span className="font-semibold text-[var(--ink-strong)]">Without Run Cache</span>
+              <span className="font-mono text-[var(--ink-muted)]" style={{ fontVariantNumeric: 'tabular-nums' }}>{hoursBaseline.toFixed(2)} h · ${dollarsBaselineDay.toFixed(2)}</span>
+            </div>
+            <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
+              <div className="h-full" style={{ width: '100%', background: 'linear-gradient(90deg, #dc2626 0%, #b91c1c 100%)', opacity: 0.85 }} />
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-baseline justify-between text-[11px] mb-1">
+              <span className="font-semibold text-[var(--ink-strong)]">With Run Cache</span>
+              <span className="font-mono text-[var(--ink-muted)]" style={{ fontVariantNumeric: 'tabular-nums' }}>{hoursCached.toFixed(2)} h · ${dollarsCachedDay.toFixed(2)}</span>
+            </div>
+            <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
+              <div className="h-full" style={{ width: `${cachedPctOfBase.toFixed(1)}%`, background: 'linear-gradient(90deg, #7c3aed 0%, #6d28d9 100%)', opacity: 0.9, transition: 'width 900ms ease' }} />
+            </div>
+          </div>
+
+          <div className="pt-2 border-t border-[var(--hairline-soft,#e8e4d8)]">
+            <div className="flex items-baseline justify-between text-[11.5px] mb-1">
+              <span className="font-semibold" style={{ color: '#15803d' }}>Saved · run cache + dbt amp</span>
+              <span className="font-mono font-bold" style={{ color: '#15803d', fontVariantNumeric: 'tabular-nums' }}>{hoursSaved.toFixed(2)} h · ${dollarsSavedDay.toFixed(2)}</span>
+            </div>
+            <div className="h-3.5 rounded-sm overflow-hidden" style={{ background: '#f4f4ef', border: '1px solid var(--hairline-soft,#e8e4d8)' }}>
+              <div className="h-full" style={{ width: `${savedPctOfBase.toFixed(1)}%`, background: 'linear-gradient(90deg, #16a34a 0%, #15803d 100%)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.15)', transition: 'width 900ms ease' }} />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--ink-soft)] font-semibold mb-3">Cumulative savings · horizon</div>
+          <div className="space-y-2">
+            <HorizonRow label="Today"    big={`$${dollarsSavedDay.toFixed(2)}`}                sub={`${hoursSaved.toFixed(2)} compute-hours saved`} />
+            <HorizonRow label="30 days"  big={`$${(dollarsSavedDay * 30).toFixed(0)}`}         sub={`${(hoursSaved * 30).toFixed(0)} hours saved`} />
+            <HorizonRow label="Quarter"  big={`$${(dollarsSavedDay * 90).toFixed(0)}`}         sub={`${(hoursSaved * 90).toFixed(0)} hours saved`} />
+            <HorizonRow label="Annual"   big={`$${(yr).toLocaleString('en-US', { maximumFractionDigits: 0 })}`} sub={`${(hoursSaved * 365).toFixed(0)} hours saved · this ${connectorCount}-connector mix`} accent />
+          </div>
+          <div className="mt-3 pt-3 border-t border-[var(--hairline-soft,#e8e4d8)] rounded-sm p-2.5" style={{ background: 'rgba(22,163,74,0.06)', border: '1px solid rgba(22,163,74,0.18)' }}>
+            <div className="flex items-baseline justify-between gap-2 flex-wrap">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.16em] font-semibold" style={{ color: '#15803d' }}>Annual · enterprise scale</div>
+                <div className="text-[10.5px] text-[var(--ink-muted)] mt-0.5">≈ {Math.round(enterpriseScale * connectorCount)} connectors at this hit-rate pattern</div>
+              </div>
+              <div className="text-right">
+                <div className="font-serif font-semibold leading-none" style={{ fontSize: 22, color: '#15803d', fontVariantNumeric: 'tabular-nums' }}>
+                  ${(yrEnterprise / 1000).toFixed(1)}k
+                </div>
+                <div className="font-mono text-[10px] text-[var(--ink-muted)] mt-1" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  {(hoursYrEnterprise).toLocaleString('en-US', { maximumFractionDigits: 0 })} hours/yr
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-[11px] text-[var(--ink-soft)] leading-relaxed mt-5">
+        <strong className="text-[var(--ink-strong)]">Validate in your environment.</strong> Demo-mix savings
+        scale with sync cadence, warehouse rate, and downstream dbt model count &mdash; the dbt amplification
+        multiplier reflects that every run-cache-skipped sync zero-rows the incrementals downstream of it.
+        We size the enterprise extrapolation from your typical connector count and re-fit the assumptions during POC.
+      </p>
+    </div>
+  );
+}
+
+function HorizonRow({ label, big, sub, accent = false }: { label: string; big: string; sub: string; accent?: boolean }) {
+  return (
+    <div className="flex items-baseline gap-3">
+      <span className="text-[10.5px] uppercase tracking-wider text-[var(--ink-muted)] font-semibold shrink-0" style={{ width: 72 }}>{label}</span>
+      <span className="font-mono font-semibold shrink-0" style={{ color: accent ? '#15803d' : 'var(--ink-strong)', fontVariantNumeric: 'tabular-nums', fontSize: accent ? 14 : 12, minWidth: 70 }}>{big}</span>
+      <span className="text-[10.5px] text-[var(--ink-soft)] truncate">{sub}</span>
+    </div>
   );
 }
 
