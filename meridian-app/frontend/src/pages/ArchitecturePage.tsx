@@ -655,7 +655,7 @@ function RunCachePanel() {
         <div className="mt-4 rounded-sm border border-[var(--hairline-soft,#e8e4d8)] p-3 flex items-start gap-3 text-[12px]" style={{ background: 'rgba(125,58,237,0.04)' }}>
           <span className="inline-flex items-center justify-center rounded-sm px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-white shrink-0 mt-0.5" style={{ background: '#7c3aed' }}>Related</span>
           <div className="text-[var(--ink-muted)] leading-relaxed">
-            <strong className="text-[var(--ink-strong)]">Looking for Run Cache the product?</strong> Run Cache is a separate dbt Core plugin (<code className="font-mono text-[11px]">pip install run-cache</code>) that skips, defers, or clones dbt models at the build level — different from this connector-side pattern. See the canonical page at <span className="font-mono text-[11px]">github.com/fivetran-jasonchletsos/00-Intro-ODI-Demo/run-cache</span>.
+            <strong className="text-[var(--ink-strong)]">Looking for Run Cache the product?</strong> Run Cache is a separate dbt Core plugin (<code className="font-mono text-[11px]">pip install run-cache</code>) that skips, defers, or clones dbt models at the build level — different from this connector-side pattern. See the canonical page at <a className="font-mono text-[11px] underline hover:no-underline" style={{ color: '#7c3aed' }} href="https://fivetran-jasonchletsos.github.io/00-Intro-ODI-Demo/run-cache/" target="_blank" rel="noopener noreferrer">fivetran-jasonchletsos.github.io/00-Intro-ODI-Demo/run-cache</a>.
           </div>
         </div>
       </div>
