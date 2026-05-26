@@ -354,9 +354,9 @@ export default function ArchitecturePage() {
             <p className="text-sm text-[var(--ink-muted)] mt-1">
               Tests defined in dbt Labs run on every build, against the same Iceberg tables every
               engine reads. Failures block promotion to the next layer &mdash; bad data never
-              reaches the trade desk. Pairs with the Great Expectations checkpoints below: GX
-              validates the raw Bronze landings, dbt asserts the SQL-level constraints on Silver
-              and Gold.
+              reaches the trade desk. Paired with the Great Expectations checkpoints below: GX
+              runs suite-based expectations against raw landings; dbt enforces SQL-native
+              contracts across bronze, silver, and gold.
             </p>
           </div>
           <div className="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shrink-0" style={{ background: '#FF694A' }}>
@@ -398,7 +398,7 @@ export default function ArchitecturePage() {
         </div>
         <div className="px-5 py-3 border-t border-[var(--hairline-soft,#e8e4d8)] flex items-center justify-between text-[11px] text-[var(--ink-soft)]" style={{ background: 'var(--paper-deep,#f4efe2)' }}>
           <span className="font-mono">124 tests · 123 passing · 1 warn · 0 errors</span>
-          <span className="uppercase tracking-wider font-semibold">dbt build · merged into Fivetran</span>
+          <span className="uppercase tracking-wider font-semibold">dbt Labs · joining Fivetran</span>
         </div>
       </section>
 
@@ -537,12 +537,12 @@ function RunCachePanel() {
   // day -> near 100%; Cap IQ ref ticks during market hours -> mid-70s. The
   // mix lands the aggregate at ~84%.
   const CONNECTORS = [
-    { name: 'SEC EDGAR · 13F holdings',         scheduled: 24, skipped: 23, hit: 0.958 },
+    { name: 'SEC EDGAR · 13F holdings',         scheduled:  4, skipped:  4, hit: 1.000 },
     { name: 'SEC EDGAR · filings index',        scheduled: 24, skipped: 20, hit: 0.833 },
     { name: 'SEC EDGAR · company facts',        scheduled: 24, skipped: 23, hit: 0.958 },
     { name: 'FRED · macro series',              scheduled: 24, skipped: 23, hit: 0.958 },
     { name: 'CFPB · complaints',                scheduled:  4, skipped:  4, hit: 1.000 },
-    { name: 'S&P Cap IQ · company reference',   scheduled: 96, skipped: 72, hit: 0.750 },
+    { name: 'S&P Cap IQ · company reference',   scheduled: 96, skipped: 74, hit: 0.771 },
   ];
   const tot = CONNECTORS.reduce((a, c) => ({ s: a.s + c.scheduled, k: a.k + c.skipped }), { s: 0, k: 0 });
   const hit = tot.s ? Math.round((tot.k / tot.s) * 100) : 0;
@@ -573,8 +573,8 @@ function RunCachePanel() {
       <div className="grid grid-cols-2 md:grid-cols-4 divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)]">
         <RecoveryTile label="Run-cache hit rate · 24h"    big={`${hit}%`}                                  sub={`${tot.k} of ${tot.s} scheduled syncs skipped — source hadn't changed`} color="#7c3aed" />
         <RecoveryTile label="Compute hours saved · 90d"   big="164 h"                                       sub="≈ $328 in warehouse time at XS rate · idle hours bill at zero" color="#16a34a" />
-        <RecoveryTile label="Annual savings · stack-wide" big="$31.8k"                                      sub="Run cache + downstream dbt skip · projected at full Altavest connector mix" color="#16a34a" />
-        <RecoveryTile label="Skipped-sync check time"     big="~200 ms"                                     sub="p50 control-plane check · log-based CDC connectors · no warehouse spin-up" />
+        <RecoveryTile label="Annual savings · stack-wide" big="$20.1k"                                      sub="Run cache + dbt skip · sized to typical Tier-1 buy-side connector footprint" color="#16a34a" />
+        <RecoveryTile label="Skipped-sync check time"     big="~200 ms"                                     sub="p50 control-plane check · no warehouse spin-up · no rows landed" />
       </div>
 
       <div className="p-5 border-t border-[var(--hairline-soft,#e8e4d8)]">
@@ -609,7 +609,7 @@ function RunCachePanel() {
         secPerSync={35}
         ratePerHour={2.0}
         dbtAmplification={2.4}
-        enterpriseScale={11.3}
+        enterpriseScale={8.0}
         connectorCount={CONNECTORS.length}
       />
     </section>
@@ -685,7 +685,7 @@ function RunCacheForecast({
         <span className="opacity-50">·</span>
         <span><strong className="text-[var(--ink-strong)]">${ratePerHour.toFixed(2)}</strong>/credit-hour XS</span>
         <span className="opacity-50">·</span>
-        <span><strong className="text-[var(--ink-strong)]">{dbtAmplification}×</strong> dbt incremental amplification</span>
+        <span><strong className="text-[var(--ink-strong)]">{dbtAmplification}×</strong> dbt amp <span className="opacity-70">(incremental models only)</span></span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
@@ -845,8 +845,8 @@ function CostPanel() {
       </header>
       <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[var(--hairline-soft,#e8e4d8)]">
         <CostTile label="Storage · per day"   value="$1.12"  sub="3.1 TB across bronze/silver/gold · S3 Standard-IA"  color="#15803d" />
-        <CostTile label="Compute · per day"   value="$5.34"  sub="Snowflake XS auto-suspend · dbt Cloud · Athena ad-hoc" color="#b8975c" />
-        <CostTile label="Run cache · saved"   value="$4.21"  sub="84% of scheduled syncs skipped today · no source changes detected" color="#7c3aed" />
+        <CostTile label="Compute · per day"   value="$5.34"  sub="Snowflake XS auto-suspend · dbt · Athena ad-hoc" color="#b8975c" />
+        <CostTile label="Run cache · saved"   value="$2.87"  sub="84% of scheduled syncs skipped today · direct compute saved" color="#7c3aed" />
         <CostTile label="Equivalent MDS"      value="$19.80" sub="Internal benchmark · same data, warehouse-resident" color="#b91c1c" />
       </div>
       <div className="px-5 py-3 border-t border-[var(--hairline-soft,#e8e4d8)] flex items-center justify-between text-[11px] text-[var(--ink-soft)] bg-[var(--paper-deep,#f4efe2)]">
@@ -1169,6 +1169,7 @@ expectations:
             <Policy label="dbt transforms" value="Silver holdings spine + Gold marts; dbt tests assert SQL-level constraints" />
             <Policy label="Failed rows" value="route to dlq.gx_quarantine on the same lake; retried after suite update" />
             <Policy label="Open source" value="GX Core remains community-driven; Fivetran funds maintenance, ecosystem, and engineering investment" />
+            <Policy label="Community" value="github.com/great-expectations/great_expectations · thousands of teams use GX outside Fivetran's customer base" />
           </ul>
           <div className="mt-4 pt-3 border-t border-[var(--hairline-soft,#e8e4d8)] text-[11px] text-[var(--ink-soft)] leading-relaxed">
             On May 13, 2026 Fivetran announced it is becoming steward of the Great Expectations open
