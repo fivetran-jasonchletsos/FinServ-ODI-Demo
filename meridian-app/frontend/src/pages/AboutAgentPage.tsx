@@ -76,7 +76,7 @@ export default function AboutAgentPage() {
         <h2 className="font-serif text-2xl font-semibold text-[var(--ink-strong)] mb-3">How it works</h2>
         <div className="space-y-4 text-[var(--ink)] leading-relaxed">
           <p>
-            The agent runs entirely client-side over the published JSON snapshot of the gold-layer
+            The agent runs entirely client-side over the published gold-layer via Snowflake / Athena / Trino
             Iceberg tables. A small intent classifier recognizes six patterns over the question, then
             executes the matching aggregation in your browser.
           </p>

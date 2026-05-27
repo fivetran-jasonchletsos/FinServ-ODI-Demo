@@ -137,6 +137,10 @@ export default function HelpTour() {
     try {
       if (!localStorage.getItem(LS_KEY)) {
         // Small delay so initial-load loading states settle before the modal pops.
+        // Skip auto-open on narrow viewports — modal mocks crowd <=480px.
+        if (typeof window !== 'undefined' && !window.matchMedia('(min-width: 640px)').matches) {
+          return;
+        }
         const t = setTimeout(() => setOpen(true), 1200);
         return () => clearTimeout(t);
       }
@@ -210,7 +214,7 @@ export default function HelpTour() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm"
           onClick={(e) => { if (e.target === e.currentTarget) closeTour(); }}
         >
-          <div className="w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-hidden">
+          <div className="w-full max-w-2xl rounded-2xl bg-white shadow-2xl overflow-hidden mx-4 sm:mx-0">
             {/* Progress dots */}
             <div className="flex items-center gap-1.5 px-6 pt-5">
               {STEPS.map((_, i) => (
@@ -232,7 +236,7 @@ export default function HelpTour() {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-6 p-4 sm:p-6">
               <div className="sm:col-span-3">
                 <div className="inline-flex items-center rounded-full bg-primary-50 text-primary-700 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider mb-3">
                   Capability {step + 1} of {STEPS.length}

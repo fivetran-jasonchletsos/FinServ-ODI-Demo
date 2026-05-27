@@ -414,8 +414,8 @@ export default function Layout() {
           <div>
             <div className="eyebrow-light mb-2">Data Pipeline</div>
             <p className="leading-relaxed text-white/70">
-              SEC EDGAR · FRED · CFPB → Fivetran connectors → S3 + Apache Iceberg → dbt
-              (bronze / silver / gold) → Snowflake → static JSON snapshot
+              SEC EDGAR · FRED · CFPB → Fivetran → Iceberg on S3 → dbt → Great Expectations
+              → Snowflake / Athena / Trino → Cortex
             </p>
           </div>
           <div>

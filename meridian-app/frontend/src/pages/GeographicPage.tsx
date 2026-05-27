@@ -11,10 +11,11 @@ import { CircleMarker, MapContainer, TileLayer, Tooltip, useMap } from 'react-le
 import L from 'leaflet';
 import { formatCurrencyShort, formatNumber, formatPercent } from '../api/queries';
 
+const LEAFLET_BASE = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/leaflet`;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  iconRetinaUrl: `${LEAFLET_BASE}/marker-icon-2x.png`,
+  iconUrl: `${LEAFLET_BASE}/marker-icon.png`,
+  shadowUrl: `${LEAFLET_BASE}/marker-shadow.png`,
 });
 
 // ─── Synthetic branch network ───────────────────────────────────────────────

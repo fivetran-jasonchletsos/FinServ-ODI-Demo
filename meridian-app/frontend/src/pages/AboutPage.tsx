@@ -150,7 +150,7 @@ const STACK = [
   { layer: 'Catalog',    name: 'AWS Glue Data Catalog',      note: 'Iceberg REST + table-level access control.' },
   { layer: 'Transform',  name: 'dbt-athena',                 note: 'Iceberg-native materializations · 18 tested models.' },
   { layer: 'Query',      name: 'AWS Athena',                 note: 'Engine v3 (Trino) — serverless, Iceberg-aware.' },
-  { layer: 'Frontend',   name: 'React 19 + Vite + Tailwind v4', note: 'Static SPA on GitHub Pages, reads JSON snapshot.' },
+  { layer: 'Frontend',   name: 'React 19 + Vite + Tailwind v4', note: 'Static SPA on GitHub Pages, reads the gold layer via Snowflake / Athena / Trino.' },
   { layer: 'Charts',     name: 'Recharts',                   note: 'Composable charts for macro time-series + complaints.' },
 ];
 

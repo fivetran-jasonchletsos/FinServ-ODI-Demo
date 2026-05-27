@@ -126,7 +126,7 @@ export default function PipelinePage() {
             </p>
           </div>
           <a
-            href="https://fivetran.com/dashboard/connectors"
+            href="https://fivetran.com/dashboard/connectors/mercy_individualism"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 rounded-sm border border-[var(--gold)] bg-[var(--gold-bg)] px-4 py-2 text-[12px] font-semibold uppercase tracking-wider text-[var(--gold-dim)] hover:bg-[var(--gold)] hover:text-[var(--navy-deep)] transition-colors"
