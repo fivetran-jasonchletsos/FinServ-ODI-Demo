@@ -103,7 +103,7 @@ sources:
                   data_tests:
                       - not_null
                 - name: period_type
-                  description: 'duration' or 'instant'.
+                  description: "'duration' or 'instant'."
                 - name: value
                   description: Numeric value of the fact.
                 - name: unit

@@ -110,7 +110,7 @@ models:
             data_tests:
                 - not_null
           - name: period_type
-            description: 'duration' or 'instant'.
+            description: "'duration' or 'instant'."
             data_tests:
                 - accepted_values:
                       values:
