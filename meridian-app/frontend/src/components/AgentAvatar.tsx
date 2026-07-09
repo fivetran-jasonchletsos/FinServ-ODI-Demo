@@ -3,12 +3,17 @@
 
 import type { WizardAgent, AgentId } from './wizardTypes';
 
+// Structural pick so this avatar can render agents from other playback
+// experiences (e.g. ActivationLivePage's ActivationAgent) that share the
+// name/code/color shape but aren't the full dbt-wizard WizardAgent type.
+type AvatarAgent = Pick<WizardAgent, 'name' | 'code' | 'color'>;
+
 interface Props {
-  agent?: WizardAgent;
+  agent?: AvatarAgent;
   systemColor?: string;
   active?: boolean;
   size?: number;
-  from?: AgentId;
+  from?: AgentId | string;
 }
 
 export default function AgentAvatar({ agent, systemColor = '#0d9488', active = false, size = 40, from }: Props) {
