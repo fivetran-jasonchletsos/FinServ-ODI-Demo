@@ -17,6 +17,10 @@
     '}',
     '#ftfb-btn:hover{transform:translateY(-2px);box-shadow:0 6px 32px rgba(6,182,212,.6);}',
 
+    /* stack above a demo help/tour launcher instead of overlapping it */
+    'body:has(button[aria-label="Open product tour"]) #ftfb-btn{bottom:84px;}',
+    'body:has(button[aria-label="Open product tour"]) #ftfb-panel{bottom:84px;}',
+
     '#ftfb-panel{',
       'position:fixed;bottom:28px;right:28px;z-index:10000;',
       'width:380px;max-width:calc(100vw - 32px);',
